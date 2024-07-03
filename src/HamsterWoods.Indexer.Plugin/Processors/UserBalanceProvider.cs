@@ -23,7 +23,7 @@ public class UserBalanceProvider : IUserBalanceProvider, ITransientDependency
     private readonly IAElfIndexerClientEntityRepository<UserBalanceIndex, TransactionInfo> _userBalanceIndexRepository;
     private readonly IObjectMapper _objectMapper;
     private readonly ILogger<IUserBalanceProvider> _logger;
-    private const string BeanGoTownCollectionSymbol = "BEANPASS-"; 
+    private const string BeanGoTownCollectionSymbol = "HAMSTERPASS-"; 
     
     public UserBalanceProvider(IObjectMapper objectMapper, IAElfIndexerClientEntityRepository<UserBalanceIndex, TransactionInfo> userBalanceIndexRepository, ILogger<IUserBalanceProvider> logger)
     {

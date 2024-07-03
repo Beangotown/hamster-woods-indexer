@@ -79,14 +79,14 @@ public class PickedProcessor : AElfLogEventProcessorBase<Picked, TransactionInfo
             rankWeekUserIndex = new UserWeekRankIndex()
             {
                 Id = rankWeekUserId,
-                WeekOfYear = weekInfo.WeekOfYear,
+                WeekNum = weekInfo.WeekOfYear,
                 CaAddress = AddressUtil.ToFullAddress(eventValue.PlayerAddress.ToBase58(), context.ChainId),
                 UpdateTime = context.BlockTime,
                 SumScore = eventValue.Score,
-                RankBeginTime = DateTimeHelper.ParseDateTimeByStr(weekInfo.RankBeginTime),
-                RankEndTime = DateTimeHelper.ParseDateTimeByStr(weekInfo.RankEndTime),
-                ShowBeginTime = DateTimeHelper.ParseDateTimeByStr(weekInfo.ShowBeginTime),
-                ShowEndTime = DateTimeHelper.ParseDateTimeByStr(weekInfo.ShowEndTime),
+                // RankBeginTime = DateTimeHelper.ParseDateTimeByStr(weekInfo.RankBeginTime),
+                // RankEndTime = DateTimeHelper.ParseDateTimeByStr(weekInfo.RankEndTime),
+                // ShowBeginTime = DateTimeHelper.ParseDateTimeByStr(weekInfo.ShowBeginTime),
+                // ShowEndTime = DateTimeHelper.ParseDateTimeByStr(weekInfo.ShowEndTime),
                 Rank = HamsterWoodsIndexerConstants.UserDefaultRank,
                 IsRace = eventValue.IsRace
             };

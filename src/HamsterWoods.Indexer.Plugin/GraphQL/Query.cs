@@ -44,7 +44,7 @@ public class Query
         }
 
         var mustQuery = new List<Func<QueryContainerDescriptor<UserWeekRankIndex>, QueryContainer>>();
-        mustQuery.Add(q => q.Term(i => i.Field(f => f.WeekOfYear).Value(getWeekRankDto.Week)));
+        mustQuery.Add(q => q.Term(i => i.Field(f => f.WeekNum).Value(getWeekRankDto.Week)));
 
         QueryContainer Filter(QueryContainerDescriptor<UserWeekRankIndex> f) => f.Bool(b => b.Must(mustQuery));
 
@@ -52,7 +52,7 @@ public class Query
             sortFunc: s => s.Descending(a => Convert.ToInt64(a.SumScore)).Ascending(a => a.UpdateTime)
             , getWeekRankDto.MaxResultCount,
             getWeekRankDto.SkipCount);
-        
+
         var rankDtos = new List<RankDto>();
         foreach (var item in result.Item2)
         {
@@ -81,7 +81,7 @@ public class Query
         }
 
         var mustQuery = new List<Func<QueryContainerDescriptor<UserWeekRankIndex>, QueryContainer>>();
-        mustQuery.Add(q => q.Term(i => i.Field(f => f.WeekOfYear).Value(week)));
+        mustQuery.Add(q => q.Term(i => i.Field(f => f.WeekNum).Value(week)));
 
         QueryContainer Filter(QueryContainerDescriptor<UserWeekRankIndex> f) => f.Bool(b => b.Must(mustQuery));
 
@@ -113,16 +113,18 @@ public class Query
                 Math.Min(getRankDto.MaxResultCount, seasonIndex.PlayerWeekShowCount - getRankDto.SkipCount));
             rankResultDto.RankingList = rankDtos.GetRange(getRankDto.SkipCount, count);
         }
+
         if (rankResultDto.SelfRank == null)
         {
-            var id = IdGenerateHelper.GenerateId(seasonIndex.Id, week, AddressUtil.ToShortAddress(getRankDto.CaAddress));
+            var id = IdGenerateHelper.GenerateId(seasonIndex.Id, week,
+                AddressUtil.ToShortAddress(getRankDto.CaAddress));
             var userWeekRankIndex = await rankWeekUserRepository.GetAsync(id);
             rankResultDto.SelfRank = ConvertWeekRankDto(objectMapper, getRankDto.CaAddress, userWeekRankIndex);
         }
 
         return rankResultDto;
     }
-    
+
 
     private static async Task<RankSeasonConfigIndex?> GetRankSeasonConfigIndexAsync(
         IAElfIndexerClientEntityRepository<RankSeasonConfigIndex, TransactionInfo> rankSeasonRepository)
@@ -199,7 +201,7 @@ public class Query
         QueryContainer Filter(QueryContainerDescriptor<UserWeekRankIndex> f) => f.Bool(b => b.Must(mustQuery));
 
         var result = await userRankWeekRepository.GetSortListAsync(Filter, null,
-            sortFunc: s => s.Ascending(a => a.WeekOfYear)
+            sortFunc: s => s.Ascending(a => a.WeekNum)
         );
         if (result.Item2.Count > 0)
         {
@@ -308,7 +310,6 @@ public class Query
 
         gameBlockHeightDto.BingoBlockHeight = getLatestGameHisDto.BlockHeight;
         return gameBlockHeightDto;
-
     }
 
     public static async Task<SeasonDto> GetSeasonConfigAsync(
@@ -318,7 +319,7 @@ public class Query
         var result = await repository.GetAsync(getSeasonDto.SeasonId);
         return objectMapper.Map<RankSeasonConfigIndex, SeasonDto>(result);
     }
-    
+
     [Name("getGoRecords")]
     public static async Task<List<GameRecordDto>> GetGoRecordsAsync(
         [FromServices] IAElfIndexerClientEntityRepository<GameIndex, TransactionInfo> gameRepository,
@@ -348,7 +349,7 @@ public class Query
 
         return recordList;
     }
-    
+
     [Name("getGoCount")]
     public static async Task<GameGoCountDto> GetGoCountAsync(
         [FromServices] IAElfIndexerClientEntityRepository<GameIndex, TransactionInfo> gameRepository,
@@ -359,13 +360,17 @@ public class Query
         {
             mustQuery.Add(q => q.Terms(i => i.Field(f => f.CaAddress).Terms(getGoDto.CaAddressList)));
         }
+
         if (getGoDto.StartTime != null)
         {
-            mustQuery.Add(q => q.DateRange(i => i.Field(f => f.BingoTransactionInfo.TriggerTime).GreaterThanOrEquals(getGoDto.StartTime)));
+            mustQuery.Add(q => q.DateRange(i =>
+                i.Field(f => f.BingoTransactionInfo.TriggerTime).GreaterThanOrEquals(getGoDto.StartTime)));
         }
+
         if (getGoDto.EndTime != null)
         {
-            mustQuery.Add(q => q.DateRange(i => i.Field(f => f.BingoTransactionInfo.TriggerTime).LessThanOrEquals(getGoDto.EndTime)));
+            mustQuery.Add(q =>
+                q.DateRange(i => i.Field(f => f.BingoTransactionInfo.TriggerTime).LessThanOrEquals(getGoDto.EndTime)));
         }
 
         QueryContainer Filter(QueryContainerDescriptor<GameIndex> f) => f.Bool(b => b.Must(mustQuery));
@@ -417,7 +422,7 @@ public class Query
             GameList = objectMapper.Map<List<GameIndex>, List<GameResultDto>>(gameResult.Item2)
         };
     }
-    
+
     [Name("getUserBalanceList")]
     public static async Task<List<UserBalanceResultDto>> GetUserBalanceList(
         [FromServices] IAElfIndexerClientEntityRepository<UserBalanceIndex, LogEventInfo> repository,
@@ -428,18 +433,82 @@ public class Query
         {
             return null;
         }
-        
+
         var mustQuery = new List<Func<QueryContainerDescriptor<UserBalanceIndex>, QueryContainer>>();
         mustQuery.Add(q => q.Term(i => i.Field(f => f.Address).Value(userBalanceDto.address)));
-        
+
         mustQuery.Add(q => q.Term(i => i.Field(f => f.ChainId).Value(userBalanceDto.chainId)));
-        
+
         mustQuery.Add(q => q.Terms(i => i.Field(f => f.Symbol).Terms(userBalanceDto.symbols)));
 
         QueryContainer Filter(QueryContainerDescriptor<UserBalanceIndex> f) => f.Bool(b => b.Must(mustQuery));
-        
+
         var userBalanceIndexList = await repository.GetListAsync(Filter);
 
-        return userBalanceIndexList.Item2.IsNullOrEmpty() ? new List<UserBalanceResultDto>() : objectMapper.Map<List<UserBalanceIndex>, List<UserBalanceResultDto>>(userBalanceIndexList.Item2);
+        return userBalanceIndexList.Item2.IsNullOrEmpty()
+            ? new List<UserBalanceResultDto>()
+            : objectMapper.Map<List<UserBalanceIndex>, List<UserBalanceResultDto>>(userBalanceIndexList.Item2);
+    }
+
+
+    [Name("getBuyChanceRecords")]
+    public static async Task<PurchaseResultDto> GetBuyChanceRecordsAsync(
+        [FromServices] IAElfIndexerClientEntityRepository<PurchaseChanceIndex, LogEventInfo> purchaseIndexRepository,
+        [FromServices]
+        IAElfIndexerClientEntityRepository<TransactionChargedFeeIndex, LogEventInfo> transactionChargeFeeRepository,
+        [FromServices] IObjectMapper objectMapper, GetBuyChanceRecordsDto getBuyChanceRecordsDto)
+    {
+        if (string.IsNullOrEmpty(getBuyChanceRecordsDto.CaAddress))
+        {
+            return new PurchaseResultDto()
+            {
+                BuyChanceList = new List<PurchaseDto>()
+            };
+        }
+
+        var mustQuery = new List<Func<QueryContainerDescriptor<PurchaseChanceIndex>, QueryContainer>>();
+        mustQuery.Add(q => q.Term(i => i.Field(f => f.CaAddress).Value(getBuyChanceRecordsDto.CaAddress)));
+
+        QueryContainer Filter(QueryContainerDescriptor<PurchaseChanceIndex> f) => f.Bool(b => b.Must(mustQuery));
+
+        var gameResult = await purchaseIndexRepository.GetSortListAsync(Filter, null,
+            sortFunc: s => s.Descending(a => a.BlockHeight), getBuyChanceRecordsDto.MaxResultCount, getBuyChanceRecordsDto.SkipCount
+        );
+        if (!gameResult.Item2.IsNullOrEmpty())
+        {
+            var transactionIdList = gameResult.Item2.Where(game => game.TransactionInfo?.TransactionFee > 0)
+                .Select(game => game.TransactionInfo?.TransactionId).ToList();
+            var feeQuery = new List<Func<QueryContainerDescriptor<TransactionChargedFeeIndex>, QueryContainer>>();
+            feeQuery.Add(q => q.Terms(i => i.Field(f => f.TransactionId).Terms(transactionIdList)));
+
+            QueryContainer FeeFilter(QueryContainerDescriptor<TransactionChargedFeeIndex> f) =>
+                f.Bool(b => b.Must(feeQuery));
+
+            var transactionChargeFeeResult = await transactionChargeFeeRepository.GetListAsync(FeeFilter);
+            if (!transactionChargeFeeResult.Item2.IsNullOrEmpty())
+            {
+                var transactionChargeFeeMap = transactionChargeFeeResult.Item2.ToDictionary(
+                    item => item.TransactionId,
+                    item => item.ChargingAddress);
+                foreach (var gameIndex in gameResult.Item2)
+                {
+                    var transactionId = gameIndex.TransactionInfo?.TransactionId;
+                    var address = "";
+                    if (transactionId != null)
+                    {
+                        transactionChargeFeeMap.TryGetValue(transactionId, out address);
+                        if (!gameIndex.CaAddress.Equals(address))
+                        {
+                            gameIndex.TransactionInfo.TransactionFee = 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        return new PurchaseResultDto()
+        {
+            BuyChanceList = objectMapper.Map<List<PurchaseChanceIndex>, List<PurchaseDto>>(gameResult.Item2)
+        };
     }
 }

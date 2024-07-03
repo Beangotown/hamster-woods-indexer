@@ -15,12 +15,15 @@ public class ChancePurchasedProcessor : AElfLogEventProcessorBase<ChancePurchase
     private readonly ContractInfoOptions _contractInfoOptions;
     private readonly IObjectMapper _objectMapper;
     private readonly ILogger<ChancePurchasedProcessor> _chanceLogger;
+
     private readonly IAElfIndexerClientEntityRepository<PurchaseChanceIndex, TransactionInfo>
         _purchaseChanceIndexRepository;
 
     public ChancePurchasedProcessor(ILogger<AElfLogEventProcessorBase<ChancePurchased, TransactionInfo>> logger,
         IOptionsSnapshot<ContractInfoOptions> contractInfoOptions, IObjectMapper objectMapper,
-        ILogger<ChancePurchasedProcessor> chanceLogger, IAElfIndexerClientEntityRepository<PurchaseChanceIndex, TransactionInfo> purchaseChanceIndexRepository) : base(logger)
+        ILogger<ChancePurchasedProcessor> chanceLogger,
+        IAElfIndexerClientEntityRepository<PurchaseChanceIndex, TransactionInfo> purchaseChanceIndexRepository) :
+        base(logger)
     {
         _objectMapper = objectMapper;
         _chanceLogger = chanceLogger;
@@ -35,7 +38,8 @@ public class ChancePurchasedProcessor : AElfLogEventProcessorBase<ChancePurchase
 
     protected override async Task HandleEventAsync(ChancePurchased eventValue, LogEventContext context)
     {
-        _chanceLogger.LogDebug("ChancePurchased HandleEventAsync BlockHeight:{BlockHeight} TransactionId:{TransactionId}",
+        _chanceLogger.LogDebug(
+            "ChancePurchased HandleEventAsync BlockHeight:{BlockHeight} TransactionId:{TransactionId}",
             context.BlockHeight, context.TransactionId);
 
         var feeAmount = GetFeeAmount(context.ExtraProperties);
@@ -54,12 +58,14 @@ public class ChancePurchasedProcessor : AElfLogEventProcessorBase<ChancePurchase
             }
         };
         
-        _objectMapper.Map(eventValue, index);
         _objectMapper.Map(context, index);
         await _purchaseChanceIndexRepository.AddOrUpdateAsync(index);
+        
+        _chanceLogger.LogDebug("ChancePurchased Save success: {BlockHeight}",
+            JsonConvert.SerializeObject(index));
     }
-    
-    
+
+
     protected Dictionary<string, long> GetTransactionFee(Dictionary<string, string> extraProperties)
     {
         var feeMap = new Dictionary<string, long>();

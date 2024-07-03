@@ -17,6 +17,7 @@ public class HamsterWoodsIndexerClientAutoMapperProfile : Profile
         CreateMap<LogEventContext, RankSeasonConfigIndex>();
         CreateMap<LogEventContext, GameIndex>();
         CreateMap<LogEventContext, PurchaseChanceIndex>();
+        CreateMap<PurchaseChanceIndex, PurchaseDto>();
         CreateMap<LogEventContext, UserBalanceIndex>();
         CreateMap<LogEventContext, UserWeekRankIndex>();
         CreateMap<BlockInfo, UserWeekRankIndex>().Ignore(destination => destination.Id);
