@@ -3,7 +3,7 @@ using AElf.CSharp.Core;
 using AElfIndexer.Client.Handlers;
 using AElfIndexer.Grains.State.Client;
 using AutoMapper;
-using Contracts.HamsterWoodsContract;
+using Contracts.HamsterWoods;
 using HamsterWoods.Indexer.Plugin.Entities;
 using HamsterWoods.Indexer.Plugin.GraphQL;
 using Volo.Abp.AutoMapper;
@@ -16,6 +16,7 @@ public class HamsterWoodsIndexerClientAutoMapperProfile : Profile
     {
         CreateMap<LogEventContext, RankSeasonConfigIndex>();
         CreateMap<LogEventContext, GameIndex>();
+        CreateMap<LogEventContext, PurchaseChanceIndex>();
         CreateMap<LogEventContext, UserBalanceIndex>();
         CreateMap<LogEventContext, UserWeekRankIndex>();
         CreateMap<BlockInfo, UserWeekRankIndex>().Ignore(destination => destination.Id);

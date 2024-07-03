@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Contracts.HamsterWoodsContract {
+namespace Contracts.HamsterWoods {
 
   /// <summary>Holder for reflection information generated from hamster_woods_contract.proto</summary>
   public static partial class HamsterWoodsContractReflection {
@@ -31,137 +31,137 @@ namespace Contracts.HamsterWoodsContract {
             "YXlJbnB1dBITCgtyZXNldF9zdGFydBgBIAEoCBISCgpkaWNlX2NvdW50GAIg",
             "ASgFIisKClBsYXlPdXRwdXQSHQoVZXhwZWN0ZWRfYmxvY2tfaGVpZ2h0GAEg",
             "ASgDIjYKF0dldEJvdXRJbmZvcm1hdGlvbklucHV0EhsKB3BsYXlfaWQYASAB",
-            "KAsyCi5hZWxmLkhhc2gipAMKEVBsYXllckluZm9ybWF0aW9uEiUKDnBsYXll",
+            "KAsyCi5hZWxmLkhhc2gi1wMKEVBsYXllckluZm9ybWF0aW9uEiUKDnBsYXll",
             "cl9hZGRyZXNzGAEgASgLMg0uYWVsZi5BZGRyZXNzEhYKDnBsYXlhYmxlX2Nv",
-            "dW50GAIgASgFEjIKDmxhc3RfcGxheV90aW1lGAMgASgLMhouZ29vZ2xlLnBy",
-            "b3RvYnVmLlRpbWVzdGFtcBIUCgxjdXJfZ3JpZF9udW0YBCABKAUSGgoSaGFt",
-            "c3Rlcl9wYXNzX293bmVkGAUgASgIEhQKDHRvdGFsX2Fjb3JucxgGIAEoAxIV",
-            "Cg13ZWVrbHlfYWNvcm5zGAcgASgDEh8KF3B1cmNoYXNlZF9jaGFuY2VzX2Nv",
-            "dW50GAggASgFEh8KF2xhc3RfYmluZ29fYmxvY2tfaGVpZ2h0GAkgASgDEhUK",
-            "DWxvY2tlZF9hY29ybnMYCiABKAMSPQoZbGFzdF9wdXJjaGFzZV9jaGFuY2Vf",
-            "dGltZRgLIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASJQodZGFp",
-            "bHlfcHVyY2hhc2VkX2NoYW5jZXNfY291bnQYDCABKAUitwIKD0JvdXRJbmZv",
-            "cm1hdGlvbhIcCglncmlkX3R5cGUYASABKA4yCS5HcmlkVHlwZRIQCghncmlk",
-            "X251bRgCIAEoBRINCgVzY29yZRgDIAEoBRIbCgdwbGF5X2lkGAQgASgLMgou",
-            "YWVsZi5IYXNoEhoKEmJpbmdvX2Jsb2NrX2hlaWdodBgFIAEoAxItCglwbGF5",
-            "X3RpbWUYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEiUKDnBs",
-            "YXllcl9hZGRyZXNzGAcgASgLMg0uYWVsZi5BZGRyZXNzEhIKCmRpY2VfY291",
-            "bnQYCCABKAUSFAoMZGljZV9udW1iZXJzGAkgAygFEhYKDnN0YXJ0X2dyaWRf",
-            "bnVtGAogASgFEhQKDGVuZF9ncmlkX251bRgLIAEoBSJXChFHYW1lTGltaXRT",
-            "ZXR0aW5ncxIcChRkYWlseV9tYXhfcGxheV9jb3VudBgBIAEoBRIkChxkYWls",
-            "eV9wbGF5X2NvdW50X3Jlc2V0X2hvdXJzGAIgASgFIo8BCglHYW1lUnVsZXMS",
-            "LgoKYmVnaW5fdGltZRgBIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3Rh",
-            "bXASLAoIZW5kX3RpbWUYAiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0",
-            "YW1wEhEKCW1pbl9zY29yZRgDIAEoBRIRCgltYXhfc2NvcmUYBCABKAUi0QEK",
-            "DFJhbmtpbmdSdWxlcxIuCgpiZWdpbl90aW1lGAEgASgLMhouZ29vZ2xlLnBy",
+            "dW50GAIgASgFEhwKFGRhaWx5X3BsYXlhYmxlX2NvdW50GAMgASgFEjIKDmxh",
+            "c3RfcGxheV90aW1lGAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFt",
+            "cBIUCgxjdXJfZ3JpZF9udW0YBSABKAUSGgoSaGFtc3Rlcl9wYXNzX293bmVk",
+            "GAYgASgIEhQKDHRvdGFsX2Fjb3JucxgHIAEoAxIVCg13ZWVrbHlfYWNvcm5z",
+            "GAggASgDEhUKDWxvY2tlZF9hY29ybnMYCSABKAMSEgoKc3VtX3Njb3JlcxgK",
+            "IAEoAxIfChdwdXJjaGFzZWRfY2hhbmNlc19jb3VudBgLIAEoBRI9ChlsYXN0",
+            "X3B1cmNoYXNlX2NoYW5jZV90aW1lGAwgASgLMhouZ29vZ2xlLnByb3RvYnVm",
+            "LlRpbWVzdGFtcBImCh53ZWVrbHlfcHVyY2hhc2VkX2NoYW5jZXNfY291bnQY",
+            "DSABKAUSHwoXbGFzdF9iaW5nb19ibG9ja19oZWlnaHQYDiABKAMitwIKD0Jv",
+            "dXRJbmZvcm1hdGlvbhIcCglncmlkX3R5cGUYASABKA4yCS5HcmlkVHlwZRIQ",
+            "CghncmlkX251bRgCIAEoBRINCgVzY29yZRgDIAEoBRIbCgdwbGF5X2lkGAQg",
+            "ASgLMgouYWVsZi5IYXNoEhoKEmJpbmdvX2Jsb2NrX2hlaWdodBgFIAEoAxIt",
+            "CglwbGF5X3RpbWUYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1w",
+            "EiUKDnBsYXllcl9hZGRyZXNzGAcgASgLMg0uYWVsZi5BZGRyZXNzEhIKCmRp",
+            "Y2VfY291bnQYCCABKAUSFAoMZGljZV9udW1iZXJzGAkgAygFEhYKDnN0YXJ0",
+            "X2dyaWRfbnVtGAogASgFEhQKDGVuZF9ncmlkX251bRgLIAEoBSJXChFHYW1l",
+            "TGltaXRTZXR0aW5ncxIcChRkYWlseV9tYXhfcGxheV9jb3VudBgBIAEoBRIk",
+            "ChxkYWlseV9wbGF5X2NvdW50X3Jlc2V0X2hvdXJzGAIgASgFIo8BCglHYW1l",
+            "UnVsZXMSLgoKYmVnaW5fdGltZRgBIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5U",
+            "aW1lc3RhbXASLAoIZW5kX3RpbWUYAiABKAsyGi5nb29nbGUucHJvdG9idWYu",
+            "VGltZXN0YW1wEhEKCW1pbl9zY29yZRgDIAEoBRIRCgltYXhfc2NvcmUYBCAB",
+            "KAUi0QEKDFJhbmtpbmdSdWxlcxIuCgpiZWdpbl90aW1lGAEgASgLMhouZ29v",
+            "Z2xlLnByb3RvYnVmLlRpbWVzdGFtcBIjCht3ZWVrbHlfdG91cm5hbWVudF9i",
+            "ZWdpbl9udW0YAiABKAUSFQoNcmFua2luZ19ob3VycxgDIAEoBRIXCg9wdWJs",
+            "aWNpdHlfaG91cnMYBCABKAUSHAoUcmFua2luZ19wbGF5ZXJfY291bnQYBSAB",
+            "KAUSHgoWcHVibGljaXR5X3BsYXllcl9jb3VudBgGIAEoBSLeAQoTUmFua2lu",
+            "Z1J1bGVzVXBkYXRlZBIuCgpiZWdpbl90aW1lGAEgASgLMhouZ29vZ2xlLnBy",
             "b3RvYnVmLlRpbWVzdGFtcBIjCht3ZWVrbHlfdG91cm5hbWVudF9iZWdpbl9u",
             "dW0YAiABKAUSFQoNcmFua2luZ19ob3VycxgDIAEoBRIXCg9wdWJsaWNpdHlf",
             "aG91cnMYBCABKAUSHAoUcmFua2luZ19wbGF5ZXJfY291bnQYBSABKAUSHgoW",
-            "cHVibGljaXR5X3BsYXllcl9jb3VudBgGIAEoBSLeAQoTUmFua2luZ1J1bGVz",
-            "VXBkYXRlZBIuCgpiZWdpbl90aW1lGAEgASgLMhouZ29vZ2xlLnByb3RvYnVm",
-            "LlRpbWVzdGFtcBIjCht3ZWVrbHlfdG91cm5hbWVudF9iZWdpbl9udW0YAiAB",
-            "KAUSFQoNcmFua2luZ19ob3VycxgDIAEoBRIXCg9wdWJsaWNpdHlfaG91cnMY",
-            "BCABKAUSHAoUcmFua2luZ19wbGF5ZXJfY291bnQYBSABKAUSHgoWcHVibGlj",
-            "aXR5X3BsYXllcl9jb3VudBgGIAEoBToEoLsYASIoCgxHcmlkVHlwZUxpc3QS",
-            "GAoFdmFsdWUYASADKA4yCS5HcmlkVHlwZSIZCghEaWNlTGlzdBINCgV2YWx1",
-            "ZRgBIAMoBSIwCgtSZXdhcmRSdWxlcxIhCgxyZXdhcmRfcnVsZXMYASADKAsy",
-            "Cy5SZXdhcmRSdWxlImwKClJld2FyZFJ1bGUSEgoKcmFua19iZWdpbhgBIAEo",
-            "BRIQCghyYW5rX2VuZBgCIAEoBRIbChNyZXdhcmRfdG9rZW5fYW1vdW50GAQg",
-            "ASgFEhsKE3Jld2FyZF90b2tlbl9zeW1ib2wYBSABKAkidAoUUHVyY2hhc2VD",
-            "aGFuY2VDb25maWcSHAoUZGFpbHlfcHVyY2hhc2VfY291bnQYASABKAUSFQoN",
-            "YWNvcm5zX2Ftb3VudBgCIAEoBRInCh9kYWlseV9wdXJjaGFzZV9jb3VudF9y",
-            "ZXNldF9ob3VyGAMgASgFIscCCgZQaWNrZWQSHAoJZ3JpZF90eXBlGAEgASgO",
-            "MgkuR3JpZFR5cGUSEAoIZ3JpZF9udW0YAiABKAUSDQoFc2NvcmUYAyABKAMS",
-            "GgoSYmluZ29fYmxvY2tfaGVpZ2h0GAQgASgDEiUKDnBsYXllcl9hZGRyZXNz",
-            "GAUgASgLMg0uYWVsZi5BZGRyZXNzEhIKCmRpY2VfY291bnQYBiABKAUSHwoM",
-            "ZGljZV9udW1iZXJzGAcgASgLMgkuRGljZUxpc3QSFgoOc3RhcnRfZ3JpZF9u",
-            "dW0YCCABKAUSFAoMZW5kX2dyaWRfbnVtGAkgASgFEhUKDXdlZWtseV9hY29y",
-            "bnMYCiABKAMSFAoMdG90YWxfYWNvcm5zGAsgASgDEhQKDHRvdGFsX2NoYW5j",
-            "ZRgMIAEoBRIPCgdpc19yYWNlGA0gASgIOgSguxgBIm4KDkFjb3Juc1VubG9j",
-            "a2VkEhsKBGZyb20YASABKAsyDS5hZWxmLkFkZHJlc3MSGQoCdG8YAiABKAsy",
-            "DS5hZWxmLkFkZHJlc3MSDgoGc3ltYm9sGAMgASgJEg4KBmFtb3VudBgEIAEo",
-            "AzoEoLsYASKuAQoPUHVyY2hhc2VkQ2hhbmNlEiUKDnBsYXllcl9hZGRyZXNz",
-            "GAEgASgLMg0uYWVsZi5BZGRyZXNzEhUKDWFjb3Juc19hbW91bnQYAiABKAUS",
-            "FAoMY2hhbmNlX2NvdW50GAMgASgFEhUKDXdlZWtseV9hY29ybnMYBCABKAMS",
-            "FAoMdG90YWxfYWNvcm5zGAUgASgDEhQKDHRvdGFsX2NoYW5jZRgGIAEoBToE",
-            "oLsYASI4ChRMb2NrZWRBY29ybnNJbmZvTGlzdBIgCgV2YWx1ZRgBIAMoCzIR",
-            "LkxvY2tlZEFjb3Juc0luZm8idgoQTG9ja2VkQWNvcm5zSW5mbxIMCgR3ZWVr",
-            "GAEgASgFEg4KBmFjb3JucxgCIAEoAxIvCgtzZXR0bGVfdGltZRgDIAEoCzIa",
-            "Lmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASEwoLaXNfdW5sb2NrZWQYBCAB",
-            "KAgiMQoRVW5sb2NrQWNvcm5zSW5wdXQSHAoFdmFsdWUYASADKAsyDS5hZWxm",
-            "LkFkZHJlc3MiKwoLTWFuYWdlckxpc3QSHAoFdmFsdWUYASADKAsyDS5hZWxm",
-            "LkFkZHJlc3MiywEKClJhY2VDb25maWcSLgoKYmVnaW5fdGltZRgBIAEoCzIa",
-            "Lmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLAoIZW5kX3RpbWUYAiABKAsy",
-            "Gi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEhkKEXN0YXJ0X2RheV9vZl93",
-            "ZWVrGAMgASgFEhcKD2VuZF9kYXlfb2Zfd2VlaxgEIAEoBRIaChJzZXR0bGVf",
-            "ZGF5X29mX3dlZWsYBSABKAUSDwoHaXNfcmFjZRgGIAEoCCLYAQoMUmFjZVRp",
-            "bWVJbmZvEi4KCmJlZ2luX3RpbWUYASABKAsyGi5nb29nbGUucHJvdG9idWYu",
-            "VGltZXN0YW1wEiwKCGVuZF90aW1lGAIgASgLMhouZ29vZ2xlLnByb3RvYnVm",
-            "LlRpbWVzdGFtcBI1ChFzZXR0bGVfYmVnaW5fdGltZRgDIAEoCzIaLmdvb2ds",
-            "ZS5wcm90b2J1Zi5UaW1lc3RhbXASMwoPc2V0dGxlX2VuZF90aW1lGAQgASgL",
-            "MhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcConCghHcmlkVHlwZRIICgRC",
-            "bHVlEAASBwoDUmVkEAESCAoER29sZBACMu0LChRIYW1zdGVyV29vZHNDb250",
-            "cmFjdBIsCgRQbGF5EgouUGxheUlucHV0GhYuZ29vZ2xlLnByb3RvYnVmLkVt",
-            "cHR5IgASRwoOUHVyY2hhc2VDaGFuY2USGy5nb29nbGUucHJvdG9idWYuSW50",
-            "MzJWYWx1ZRoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIAEkQKFFNldEdhbWVM",
-            "aW1pdFNldHRpbmdzEhIuR2FtZUxpbWl0U2V0dGluZ3MaFi5nb29nbGUucHJv",
-            "dG9idWYuRW1wdHkiABI+CgpJbml0aWFsaXplEhYuZ29vZ2xlLnByb3RvYnVm",
-            "LkVtcHR5GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgASNgoLQ2hhbmdlQWRt",
-            "aW4SDS5hZWxmLkFkZHJlc3MaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABI0",
-            "CgxTZXRHYW1lUnVsZXMSCi5HYW1lUnVsZXMaFi5nb29nbGUucHJvdG9idWYu",
-            "RW1wdHkiABI6Cg9TZXRSYW5raW5nUnVsZXMSDS5SYW5raW5nUnVsZXMaFi5n",
-            "b29nbGUucHJvdG9idWYuRW1wdHkiABJKChdTZXRQdXJjaGFzZUNoYW5jZUNv",
-            "bmZpZxIVLlB1cmNoYXNlQ2hhbmNlQ29uZmlnGhYuZ29vZ2xlLnByb3RvYnVm",
-            "LkVtcHR5IgASOwoQU2V0VW5sb2NrTWFuYWdlchINLmFlbGYuQWRkcmVzcxoW",
-            "Lmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIAEkEKEUJhdGNoVW5sb2NrQWNvcm5z",
-            "EhIuVW5sb2NrQWNvcm5zSW5wdXQaFi5nb29nbGUucHJvdG9idWYuRW1wdHki",
-            "ABI9CglTdGFydFJhY2USFi5nb29nbGUucHJvdG9idWYuRW1wdHkaFi5nb29n",
-            "bGUucHJvdG9idWYuRW1wdHkiABI8CghTdG9wUmFjZRIWLmdvb2dsZS5wcm90",
-            "b2J1Zi5FbXB0eRoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIAEjYKDVNldFJh",
-            "Y2VDb25maWcSCy5SYWNlQ29uZmlnGhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5",
-            "IgASRAoQQ2hlY2tIYW1zdGVyUGFzcxINLmFlbGYuQWRkcmVzcxoaLmdvb2ds",
-            "ZS5wcm90b2J1Zi5Cb29sVmFsdWUiBYiJ9wEBEkAKFEdldFBsYXllckluZm9y",
-            "bWF0aW9uEg0uYWVsZi5BZGRyZXNzGhIuUGxheWVySW5mb3JtYXRpb24iBYiJ",
-            "9wEBEkcKEkdldEJvdXRJbmZvcm1hdGlvbhIYLkdldEJvdXRJbmZvcm1hdGlv",
-            "bklucHV0GhAuQm91dEluZm9ybWF0aW9uIgWIifcBARI4CghHZXRBZG1pbhIW",
-            "Lmdvb2dsZS5wcm90b2J1Zi5FbXB0eRoNLmFlbGYuQWRkcmVzcyIFiIn3AQES",
-            "SQoUR2V0R2FtZUxpbWl0U2V0dGluZ3MSFi5nb29nbGUucHJvdG9idWYuRW1w",
-            "dHkaEi5HYW1lTGltaXRTZXR0aW5ncyIFiIn3AQESOQoMR2V0R2FtZVJ1bGVz",
-            "EhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5GgouR2FtZVJ1bGVzIgWIifcBARI/",
-            "Cg9HZXRSYW5raW5nUnVsZXMSFi5nb29nbGUucHJvdG9idWYuRW1wdHkaDS5S",
-            "YW5raW5nUnVsZXMiBYiJ9wEBEk8KF0dldFB1cmNoYXNlQ2hhbmNlQ29uZmln",
-            "EhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5GhUuUHVyY2hhc2VDaGFuY2VDb25m",
-            "aWciBYiJ9wEBEjsKDUdldFJhY2VDb25maWcSFi5nb29nbGUucHJvdG9idWYu",
-            "RW1wdHkaCy5SYWNlQ29uZmlnIgWIifcBARpNssz2AThDb250cmFjdHMuSGFt",
-            "c3Rlcldvb2RzQ29udHJhY3QuSGFtc3Rlcldvb2RzQ29udHJhY3RTdGF0ZcrK",
-            "9gELYWNzMTIucHJvdG9CIaoCHkNvbnRyYWN0cy5IYW1zdGVyV29vZHNDb250",
-            "cmFjdGIGcHJvdG8z"));
+            "cHVibGljaXR5X3BsYXllcl9jb3VudBgGIAEoBToEoLsYASIoCgxHcmlkVHlw",
+            "ZUxpc3QSGAoFdmFsdWUYASADKA4yCS5HcmlkVHlwZSIZCghEaWNlTGlzdBIN",
+            "CgV2YWx1ZRgBIAMoBSIwCgtSZXdhcmRSdWxlcxIhCgxyZXdhcmRfcnVsZXMY",
+            "ASADKAsyCy5SZXdhcmRSdWxlImwKClJld2FyZFJ1bGUSEgoKcmFua19iZWdp",
+            "bhgBIAEoBRIQCghyYW5rX2VuZBgCIAEoBRIbChNyZXdhcmRfdG9rZW5fYW1v",
+            "dW50GAQgASgFEhsKE3Jld2FyZF90b2tlbl9zeW1ib2wYBSABKAkidgoUUHVy",
+            "Y2hhc2VDaGFuY2VDb25maWcSHQoVd2Vla2x5X3B1cmNoYXNlX2NvdW50GAEg",
+            "ASgFEhUKDWFjb3Juc19hbW91bnQYAiABKAUSKAogd2Vla2x5X3B1cmNoYXNl",
+            "X2NvdW50X3Jlc2V0X2hvdXIYAyABKAUi2QIKBlBpY2tlZBIcCglncmlkX3R5",
+            "cGUYASABKA4yCS5HcmlkVHlwZRIQCghncmlkX251bRgCIAEoBRINCgVzY29y",
+            "ZRgDIAEoAxIaChJiaW5nb19ibG9ja19oZWlnaHQYBCABKAMSJQoOcGxheWVy",
+            "X2FkZHJlc3MYBSABKAsyDS5hZWxmLkFkZHJlc3MSEgoKZGljZV9jb3VudBgG",
+            "IAEoBRIfCgxkaWNlX251bWJlcnMYByABKAsyCS5EaWNlTGlzdBIWCg5zdGFy",
+            "dF9ncmlkX251bRgIIAEoBRIUCgxlbmRfZ3JpZF9udW0YCSABKAUSFQoNd2Vl",
+            "a2x5X2Fjb3JucxgKIAEoAxIUCgx0b3RhbF9hY29ybnMYCyABKAMSFAoMdG90",
+            "YWxfY2hhbmNlGAwgASgFEg8KB2lzX3JhY2UYDSABKAgSEAoId2Vla19udW0Y",
+            "DiABKAU6BKC7GAEibgoOQWNvcm5zVW5sb2NrZWQSGwoEZnJvbRgBIAEoCzIN",
+            "LmFlbGYuQWRkcmVzcxIZCgJ0bxgCIAEoCzINLmFlbGYuQWRkcmVzcxIOCgZz",
+            "eW1ib2wYAyABKAkSDgoGYW1vdW50GAQgASgDOgSguxgBIq4BCg9DaGFuY2VQ",
+            "dXJjaGFzZWQSJQoOcGxheWVyX2FkZHJlc3MYASABKAsyDS5hZWxmLkFkZHJl",
+            "c3MSFQoNYWNvcm5zX2Ftb3VudBgCIAEoBRIUCgxjaGFuY2VfY291bnQYAyAB",
+            "KAUSFQoNd2Vla2x5X2Fjb3JucxgEIAEoAxIUCgx0b3RhbF9hY29ybnMYBSAB",
+            "KAMSFAoMdG90YWxfY2hhbmNlGAYgASgFOgSguxgBIjgKFExvY2tlZEFjb3Ju",
+            "c0luZm9MaXN0EiAKBXZhbHVlGAEgAygLMhEuTG9ja2VkQWNvcm5zSW5mbyJ2",
+            "ChBMb2NrZWRBY29ybnNJbmZvEgwKBHdlZWsYASABKAUSDgoGYWNvcm5zGAIg",
+            "ASgDEi8KC3NldHRsZV90aW1lGAMgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRp",
+            "bWVzdGFtcBITCgtpc191bmxvY2tlZBgEIAEoCCIxChFVbmxvY2tBY29ybnNJ",
+            "bnB1dBIcCgV2YWx1ZRgBIAMoCzINLmFlbGYuQWRkcmVzcyIrCgtNYW5hZ2Vy",
+            "TGlzdBIcCgV2YWx1ZRgBIAMoCzINLmFlbGYuQWRkcmVzcyKXAQoKUmFjZUNv",
+            "bmZpZxIuCgpiZWdpbl90aW1lGAEgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRp",
+            "bWVzdGFtcBISCgpnYW1lX2hvdXJzGAIgASgFEg8KB2lzX3JhY2UYAyABKAgS",
+            "NAoQY2FsaWJyYXRpb25fdGltZRgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5U",
+            "aW1lc3RhbXAi2AEKDFJhY2VUaW1lSW5mbxIuCgpiZWdpbl90aW1lGAEgASgL",
+            "MhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIsCghlbmRfdGltZRgCIAEo",
+            "CzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASNQoRc2V0dGxlX2JlZ2lu",
+            "X3RpbWUYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEjMKD3Nl",
+            "dHRsZV9lbmRfdGltZRgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3Rh",
+            "bXAqJwoIR3JpZFR5cGUSCAoEQmx1ZRAAEgcKA1JlZBABEggKBEdvbGQQAjLl",
+            "CwoUSGFtc3Rlcldvb2RzQ29udHJhY3QSLAoEUGxheRIKLlBsYXlJbnB1dBoW",
+            "Lmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIAEkcKDlB1cmNoYXNlQ2hhbmNlEhsu",
+            "Z29vZ2xlLnByb3RvYnVmLkludDMyVmFsdWUaFi5nb29nbGUucHJvdG9idWYu",
+            "RW1wdHkiABJEChRTZXRHYW1lTGltaXRTZXR0aW5ncxISLkdhbWVMaW1pdFNl",
+            "dHRpbmdzGhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgASPgoKSW5pdGlhbGl6",
+            "ZRIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eRoWLmdvb2dsZS5wcm90b2J1Zi5F",
+            "bXB0eSIAEjYKC0NoYW5nZUFkbWluEg0uYWVsZi5BZGRyZXNzGhYuZ29vZ2xl",
+            "LnByb3RvYnVmLkVtcHR5IgASNAoMU2V0R2FtZVJ1bGVzEgouR2FtZVJ1bGVz",
+            "GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgASOgoPU2V0UmFua2luZ1J1bGVz",
+            "Eg0uUmFua2luZ1J1bGVzGhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgASSgoX",
+            "U2V0UHVyY2hhc2VDaGFuY2VDb25maWcSFS5QdXJjaGFzZUNoYW5jZUNvbmZp",
+            "ZxoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIAEjsKEFNldFVubG9ja01hbmFn",
+            "ZXISDS5hZWxmLkFkZHJlc3MaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABJB",
+            "ChFCYXRjaFVubG9ja0Fjb3JucxISLlVubG9ja0Fjb3Juc0lucHV0GhYuZ29v",
+            "Z2xlLnByb3RvYnVmLkVtcHR5IgASPQoJU3RhcnRSYWNlEhYuZ29vZ2xlLnBy",
+            "b3RvYnVmLkVtcHR5GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgASPAoIU3Rv",
+            "cFJhY2USFi5nb29nbGUucHJvdG9idWYuRW1wdHkaFi5nb29nbGUucHJvdG9i",
+            "dWYuRW1wdHkiABI2Cg1TZXRSYWNlQ29uZmlnEgsuUmFjZUNvbmZpZxoWLmdv",
+            "b2dsZS5wcm90b2J1Zi5FbXB0eSIAEkQKEENoZWNrSGFtc3RlclBhc3MSDS5h",
+            "ZWxmLkFkZHJlc3MaGi5nb29nbGUucHJvdG9idWYuQm9vbFZhbHVlIgWIifcB",
+            "ARJAChRHZXRQbGF5ZXJJbmZvcm1hdGlvbhINLmFlbGYuQWRkcmVzcxoSLlBs",
+            "YXllckluZm9ybWF0aW9uIgWIifcBARJHChJHZXRCb3V0SW5mb3JtYXRpb24S",
+            "GC5HZXRCb3V0SW5mb3JtYXRpb25JbnB1dBoQLkJvdXRJbmZvcm1hdGlvbiIF",
+            "iIn3AQESOAoIR2V0QWRtaW4SFi5nb29nbGUucHJvdG9idWYuRW1wdHkaDS5h",
+            "ZWxmLkFkZHJlc3MiBYiJ9wEBEkkKFEdldEdhbWVMaW1pdFNldHRpbmdzEhYu",
+            "Z29vZ2xlLnByb3RvYnVmLkVtcHR5GhIuR2FtZUxpbWl0U2V0dGluZ3MiBYiJ",
+            "9wEBEjkKDEdldEdhbWVSdWxlcxIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eRoK",
+            "LkdhbWVSdWxlcyIFiIn3AQESPwoPR2V0UmFua2luZ1J1bGVzEhYuZ29vZ2xl",
+            "LnByb3RvYnVmLkVtcHR5Gg0uUmFua2luZ1J1bGVzIgWIifcBARJPChdHZXRQ",
+            "dXJjaGFzZUNoYW5jZUNvbmZpZxIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eRoV",
+            "LlB1cmNoYXNlQ2hhbmNlQ29uZmlnIgWIifcBARI7Cg1HZXRSYWNlQ29uZmln",
+            "EhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5GgsuUmFjZUNvbmZpZyIFiIn3AQEa",
+            "RbLM9gEwQ29udHJhY3RzLkhhbXN0ZXJXb29kcy5IYW1zdGVyV29vZHNDb250",
+            "cmFjdFN0YXRlysr2AQthY3MxMi5wcm90b0IZqgIWQ29udHJhY3RzLkhhbXN0",
+            "ZXJXb29kc2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::AElf.Types.CoreReflection.Descriptor, global::AElf.OptionsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::AElf.Standards.ACS12.Acs12Reflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Contracts.HamsterWoodsContract.GridType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoodsContract.PlayInput), global::Contracts.HamsterWoodsContract.PlayInput.Parser, new[]{ "ResetStart", "DiceCount" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoodsContract.PlayOutput), global::Contracts.HamsterWoodsContract.PlayOutput.Parser, new[]{ "ExpectedBlockHeight" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoodsContract.GetBoutInformationInput), global::Contracts.HamsterWoodsContract.GetBoutInformationInput.Parser, new[]{ "PlayId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoodsContract.PlayerInformation), global::Contracts.HamsterWoodsContract.PlayerInformation.Parser, new[]{ "PlayerAddress", "PlayableCount", "LastPlayTime", "CurGridNum", "HamsterPassOwned", "TotalAcorns", "WeeklyAcorns", "PurchasedChancesCount", "LastBingoBlockHeight", "LockedAcorns", "LastPurchaseChanceTime", "DailyPurchasedChancesCount" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoodsContract.BoutInformation), global::Contracts.HamsterWoodsContract.BoutInformation.Parser, new[]{ "GridType", "GridNum", "Score", "PlayId", "BingoBlockHeight", "PlayTime", "PlayerAddress", "DiceCount", "DiceNumbers", "StartGridNum", "EndGridNum" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoodsContract.GameLimitSettings), global::Contracts.HamsterWoodsContract.GameLimitSettings.Parser, new[]{ "DailyMaxPlayCount", "DailyPlayCountResetHours" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoodsContract.GameRules), global::Contracts.HamsterWoodsContract.GameRules.Parser, new[]{ "BeginTime", "EndTime", "MinScore", "MaxScore" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoodsContract.RankingRules), global::Contracts.HamsterWoodsContract.RankingRules.Parser, new[]{ "BeginTime", "WeeklyTournamentBeginNum", "RankingHours", "PublicityHours", "RankingPlayerCount", "PublicityPlayerCount" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoodsContract.RankingRulesUpdated), global::Contracts.HamsterWoodsContract.RankingRulesUpdated.Parser, new[]{ "BeginTime", "WeeklyTournamentBeginNum", "RankingHours", "PublicityHours", "RankingPlayerCount", "PublicityPlayerCount" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoodsContract.GridTypeList), global::Contracts.HamsterWoodsContract.GridTypeList.Parser, new[]{ "Value" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoodsContract.DiceList), global::Contracts.HamsterWoodsContract.DiceList.Parser, new[]{ "Value" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoodsContract.RewardRules), global::Contracts.HamsterWoodsContract.RewardRules.Parser, new[]{ "RewardRules_" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoodsContract.RewardRule), global::Contracts.HamsterWoodsContract.RewardRule.Parser, new[]{ "RankBegin", "RankEnd", "RewardTokenAmount", "RewardTokenSymbol" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoodsContract.PurchaseChanceConfig), global::Contracts.HamsterWoodsContract.PurchaseChanceConfig.Parser, new[]{ "DailyPurchaseCount", "AcornsAmount", "DailyPurchaseCountResetHour" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoodsContract.Picked), global::Contracts.HamsterWoodsContract.Picked.Parser, new[]{ "GridType", "GridNum", "Score", "BingoBlockHeight", "PlayerAddress", "DiceCount", "DiceNumbers", "StartGridNum", "EndGridNum", "WeeklyAcorns", "TotalAcorns", "TotalChance", "IsRace" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoodsContract.AcornsUnlocked), global::Contracts.HamsterWoodsContract.AcornsUnlocked.Parser, new[]{ "From", "To", "Symbol", "Amount" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoodsContract.PurchasedChance), global::Contracts.HamsterWoodsContract.PurchasedChance.Parser, new[]{ "PlayerAddress", "AcornsAmount", "ChanceCount", "WeeklyAcorns", "TotalAcorns", "TotalChance" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoodsContract.LockedAcornsInfoList), global::Contracts.HamsterWoodsContract.LockedAcornsInfoList.Parser, new[]{ "Value" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoodsContract.LockedAcornsInfo), global::Contracts.HamsterWoodsContract.LockedAcornsInfo.Parser, new[]{ "Week", "Acorns", "SettleTime", "IsUnlocked" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoodsContract.UnlockAcornsInput), global::Contracts.HamsterWoodsContract.UnlockAcornsInput.Parser, new[]{ "Value" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoodsContract.ManagerList), global::Contracts.HamsterWoodsContract.ManagerList.Parser, new[]{ "Value" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoodsContract.RaceConfig), global::Contracts.HamsterWoodsContract.RaceConfig.Parser, new[]{ "BeginTime", "EndTime", "StartDayOfWeek", "EndDayOfWeek", "SettleDayOfWeek", "IsRace" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoodsContract.RaceTimeInfo), global::Contracts.HamsterWoodsContract.RaceTimeInfo.Parser, new[]{ "BeginTime", "EndTime", "SettleBeginTime", "SettleEndTime" }, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Contracts.HamsterWoods.GridType), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.PlayInput), global::Contracts.HamsterWoods.PlayInput.Parser, new[]{ "ResetStart", "DiceCount" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.PlayOutput), global::Contracts.HamsterWoods.PlayOutput.Parser, new[]{ "ExpectedBlockHeight" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.GetBoutInformationInput), global::Contracts.HamsterWoods.GetBoutInformationInput.Parser, new[]{ "PlayId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.PlayerInformation), global::Contracts.HamsterWoods.PlayerInformation.Parser, new[]{ "PlayerAddress", "PlayableCount", "DailyPlayableCount", "LastPlayTime", "CurGridNum", "HamsterPassOwned", "TotalAcorns", "WeeklyAcorns", "LockedAcorns", "SumScores", "PurchasedChancesCount", "LastPurchaseChanceTime", "WeeklyPurchasedChancesCount", "LastBingoBlockHeight" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.BoutInformation), global::Contracts.HamsterWoods.BoutInformation.Parser, new[]{ "GridType", "GridNum", "Score", "PlayId", "BingoBlockHeight", "PlayTime", "PlayerAddress", "DiceCount", "DiceNumbers", "StartGridNum", "EndGridNum" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.GameLimitSettings), global::Contracts.HamsterWoods.GameLimitSettings.Parser, new[]{ "DailyMaxPlayCount", "DailyPlayCountResetHours" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.GameRules), global::Contracts.HamsterWoods.GameRules.Parser, new[]{ "BeginTime", "EndTime", "MinScore", "MaxScore" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.RankingRules), global::Contracts.HamsterWoods.RankingRules.Parser, new[]{ "BeginTime", "WeeklyTournamentBeginNum", "RankingHours", "PublicityHours", "RankingPlayerCount", "PublicityPlayerCount" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.RankingRulesUpdated), global::Contracts.HamsterWoods.RankingRulesUpdated.Parser, new[]{ "BeginTime", "WeeklyTournamentBeginNum", "RankingHours", "PublicityHours", "RankingPlayerCount", "PublicityPlayerCount" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.GridTypeList), global::Contracts.HamsterWoods.GridTypeList.Parser, new[]{ "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.DiceList), global::Contracts.HamsterWoods.DiceList.Parser, new[]{ "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.RewardRules), global::Contracts.HamsterWoods.RewardRules.Parser, new[]{ "RewardRules_" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.RewardRule), global::Contracts.HamsterWoods.RewardRule.Parser, new[]{ "RankBegin", "RankEnd", "RewardTokenAmount", "RewardTokenSymbol" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.PurchaseChanceConfig), global::Contracts.HamsterWoods.PurchaseChanceConfig.Parser, new[]{ "WeeklyPurchaseCount", "AcornsAmount", "WeeklyPurchaseCountResetHour" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.Picked), global::Contracts.HamsterWoods.Picked.Parser, new[]{ "GridType", "GridNum", "Score", "BingoBlockHeight", "PlayerAddress", "DiceCount", "DiceNumbers", "StartGridNum", "EndGridNum", "WeeklyAcorns", "TotalAcorns", "TotalChance", "IsRace", "WeekNum" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.AcornsUnlocked), global::Contracts.HamsterWoods.AcornsUnlocked.Parser, new[]{ "From", "To", "Symbol", "Amount" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.ChancePurchased), global::Contracts.HamsterWoods.ChancePurchased.Parser, new[]{ "PlayerAddress", "AcornsAmount", "ChanceCount", "WeeklyAcorns", "TotalAcorns", "TotalChance" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.LockedAcornsInfoList), global::Contracts.HamsterWoods.LockedAcornsInfoList.Parser, new[]{ "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.LockedAcornsInfo), global::Contracts.HamsterWoods.LockedAcornsInfo.Parser, new[]{ "Week", "Acorns", "SettleTime", "IsUnlocked" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.UnlockAcornsInput), global::Contracts.HamsterWoods.UnlockAcornsInput.Parser, new[]{ "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.ManagerList), global::Contracts.HamsterWoods.ManagerList.Parser, new[]{ "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.RaceConfig), global::Contracts.HamsterWoods.RaceConfig.Parser, new[]{ "BeginTime", "GameHours", "IsRace", "CalibrationTime" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.RaceTimeInfo), global::Contracts.HamsterWoods.RaceTimeInfo.Parser, new[]{ "BeginTime", "EndTime", "SettleBeginTime", "SettleEndTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -191,7 +191,7 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Contracts.HamsterWoodsContract.HamsterWoodsContractReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Contracts.HamsterWoods.HamsterWoodsContractReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -417,7 +417,7 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Contracts.HamsterWoodsContract.HamsterWoodsContractReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Contracts.HamsterWoods.HamsterWoodsContractReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -606,7 +606,7 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Contracts.HamsterWoodsContract.HamsterWoodsContractReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Contracts.HamsterWoods.HamsterWoodsContractReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -804,7 +804,7 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Contracts.HamsterWoodsContract.HamsterWoodsContractReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Contracts.HamsterWoods.HamsterWoodsContractReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -826,16 +826,18 @@ namespace Contracts.HamsterWoodsContract {
     public PlayerInformation(PlayerInformation other) : this() {
       playerAddress_ = other.playerAddress_ != null ? other.playerAddress_.Clone() : null;
       playableCount_ = other.playableCount_;
+      dailyPlayableCount_ = other.dailyPlayableCount_;
       lastPlayTime_ = other.lastPlayTime_ != null ? other.lastPlayTime_.Clone() : null;
       curGridNum_ = other.curGridNum_;
       hamsterPassOwned_ = other.hamsterPassOwned_;
       totalAcorns_ = other.totalAcorns_;
       weeklyAcorns_ = other.weeklyAcorns_;
-      purchasedChancesCount_ = other.purchasedChancesCount_;
-      lastBingoBlockHeight_ = other.lastBingoBlockHeight_;
       lockedAcorns_ = other.lockedAcorns_;
+      sumScores_ = other.sumScores_;
+      purchasedChancesCount_ = other.purchasedChancesCount_;
       lastPurchaseChanceTime_ = other.lastPurchaseChanceTime_ != null ? other.lastPurchaseChanceTime_.Clone() : null;
-      dailyPurchasedChancesCount_ = other.dailyPurchasedChancesCount_;
+      weeklyPurchasedChancesCount_ = other.weeklyPurchasedChancesCount_;
+      lastBingoBlockHeight_ = other.lastBingoBlockHeight_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -869,8 +871,20 @@ namespace Contracts.HamsterWoodsContract {
       }
     }
 
+    /// <summary>Field number for the "daily_playable_count" field.</summary>
+    public const int DailyPlayableCountFieldNumber = 3;
+    private int dailyPlayableCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int DailyPlayableCount {
+      get { return dailyPlayableCount_; }
+      set {
+        dailyPlayableCount_ = value;
+      }
+    }
+
     /// <summary>Field number for the "last_play_time" field.</summary>
-    public const int LastPlayTimeFieldNumber = 3;
+    public const int LastPlayTimeFieldNumber = 4;
     private global::Google.Protobuf.WellKnownTypes.Timestamp lastPlayTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -882,7 +896,7 @@ namespace Contracts.HamsterWoodsContract {
     }
 
     /// <summary>Field number for the "cur_grid_num" field.</summary>
-    public const int CurGridNumFieldNumber = 4;
+    public const int CurGridNumFieldNumber = 5;
     private int curGridNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -894,7 +908,7 @@ namespace Contracts.HamsterWoodsContract {
     }
 
     /// <summary>Field number for the "hamster_pass_owned" field.</summary>
-    public const int HamsterPassOwnedFieldNumber = 5;
+    public const int HamsterPassOwnedFieldNumber = 6;
     private bool hamsterPassOwned_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -906,7 +920,7 @@ namespace Contracts.HamsterWoodsContract {
     }
 
     /// <summary>Field number for the "total_acorns" field.</summary>
-    public const int TotalAcornsFieldNumber = 6;
+    public const int TotalAcornsFieldNumber = 7;
     private long totalAcorns_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -918,7 +932,7 @@ namespace Contracts.HamsterWoodsContract {
     }
 
     /// <summary>Field number for the "weekly_acorns" field.</summary>
-    public const int WeeklyAcornsFieldNumber = 7;
+    public const int WeeklyAcornsFieldNumber = 8;
     private long weeklyAcorns_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -929,32 +943,8 @@ namespace Contracts.HamsterWoodsContract {
       }
     }
 
-    /// <summary>Field number for the "purchased_chances_count" field.</summary>
-    public const int PurchasedChancesCountFieldNumber = 8;
-    private int purchasedChancesCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int PurchasedChancesCount {
-      get { return purchasedChancesCount_; }
-      set {
-        purchasedChancesCount_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "last_bingo_block_height" field.</summary>
-    public const int LastBingoBlockHeightFieldNumber = 9;
-    private long lastBingoBlockHeight_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long LastBingoBlockHeight {
-      get { return lastBingoBlockHeight_; }
-      set {
-        lastBingoBlockHeight_ = value;
-      }
-    }
-
     /// <summary>Field number for the "locked_acorns" field.</summary>
-    public const int LockedAcornsFieldNumber = 10;
+    public const int LockedAcornsFieldNumber = 9;
     private long lockedAcorns_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -965,8 +955,32 @@ namespace Contracts.HamsterWoodsContract {
       }
     }
 
+    /// <summary>Field number for the "sum_scores" field.</summary>
+    public const int SumScoresFieldNumber = 10;
+    private long sumScores_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long SumScores {
+      get { return sumScores_; }
+      set {
+        sumScores_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "purchased_chances_count" field.</summary>
+    public const int PurchasedChancesCountFieldNumber = 11;
+    private int purchasedChancesCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int PurchasedChancesCount {
+      get { return purchasedChancesCount_; }
+      set {
+        purchasedChancesCount_ = value;
+      }
+    }
+
     /// <summary>Field number for the "last_purchase_chance_time" field.</summary>
-    public const int LastPurchaseChanceTimeFieldNumber = 11;
+    public const int LastPurchaseChanceTimeFieldNumber = 12;
     private global::Google.Protobuf.WellKnownTypes.Timestamp lastPurchaseChanceTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -977,15 +991,27 @@ namespace Contracts.HamsterWoodsContract {
       }
     }
 
-    /// <summary>Field number for the "daily_purchased_chances_count" field.</summary>
-    public const int DailyPurchasedChancesCountFieldNumber = 12;
-    private int dailyPurchasedChancesCount_;
+    /// <summary>Field number for the "weekly_purchased_chances_count" field.</summary>
+    public const int WeeklyPurchasedChancesCountFieldNumber = 13;
+    private int weeklyPurchasedChancesCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int DailyPurchasedChancesCount {
-      get { return dailyPurchasedChancesCount_; }
+    public int WeeklyPurchasedChancesCount {
+      get { return weeklyPurchasedChancesCount_; }
       set {
-        dailyPurchasedChancesCount_ = value;
+        weeklyPurchasedChancesCount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "last_bingo_block_height" field.</summary>
+    public const int LastBingoBlockHeightFieldNumber = 14;
+    private long lastBingoBlockHeight_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long LastBingoBlockHeight {
+      get { return lastBingoBlockHeight_; }
+      set {
+        lastBingoBlockHeight_ = value;
       }
     }
 
@@ -1006,16 +1032,18 @@ namespace Contracts.HamsterWoodsContract {
       }
       if (!object.Equals(PlayerAddress, other.PlayerAddress)) return false;
       if (PlayableCount != other.PlayableCount) return false;
+      if (DailyPlayableCount != other.DailyPlayableCount) return false;
       if (!object.Equals(LastPlayTime, other.LastPlayTime)) return false;
       if (CurGridNum != other.CurGridNum) return false;
       if (HamsterPassOwned != other.HamsterPassOwned) return false;
       if (TotalAcorns != other.TotalAcorns) return false;
       if (WeeklyAcorns != other.WeeklyAcorns) return false;
-      if (PurchasedChancesCount != other.PurchasedChancesCount) return false;
-      if (LastBingoBlockHeight != other.LastBingoBlockHeight) return false;
       if (LockedAcorns != other.LockedAcorns) return false;
+      if (SumScores != other.SumScores) return false;
+      if (PurchasedChancesCount != other.PurchasedChancesCount) return false;
       if (!object.Equals(LastPurchaseChanceTime, other.LastPurchaseChanceTime)) return false;
-      if (DailyPurchasedChancesCount != other.DailyPurchasedChancesCount) return false;
+      if (WeeklyPurchasedChancesCount != other.WeeklyPurchasedChancesCount) return false;
+      if (LastBingoBlockHeight != other.LastBingoBlockHeight) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1025,16 +1053,18 @@ namespace Contracts.HamsterWoodsContract {
       int hash = 1;
       if (playerAddress_ != null) hash ^= PlayerAddress.GetHashCode();
       if (PlayableCount != 0) hash ^= PlayableCount.GetHashCode();
+      if (DailyPlayableCount != 0) hash ^= DailyPlayableCount.GetHashCode();
       if (lastPlayTime_ != null) hash ^= LastPlayTime.GetHashCode();
       if (CurGridNum != 0) hash ^= CurGridNum.GetHashCode();
       if (HamsterPassOwned != false) hash ^= HamsterPassOwned.GetHashCode();
       if (TotalAcorns != 0L) hash ^= TotalAcorns.GetHashCode();
       if (WeeklyAcorns != 0L) hash ^= WeeklyAcorns.GetHashCode();
-      if (PurchasedChancesCount != 0) hash ^= PurchasedChancesCount.GetHashCode();
-      if (LastBingoBlockHeight != 0L) hash ^= LastBingoBlockHeight.GetHashCode();
       if (LockedAcorns != 0L) hash ^= LockedAcorns.GetHashCode();
+      if (SumScores != 0L) hash ^= SumScores.GetHashCode();
+      if (PurchasedChancesCount != 0) hash ^= PurchasedChancesCount.GetHashCode();
       if (lastPurchaseChanceTime_ != null) hash ^= LastPurchaseChanceTime.GetHashCode();
-      if (DailyPurchasedChancesCount != 0) hash ^= DailyPurchasedChancesCount.GetHashCode();
+      if (WeeklyPurchasedChancesCount != 0) hash ^= WeeklyPurchasedChancesCount.GetHashCode();
+      if (LastBingoBlockHeight != 0L) hash ^= LastBingoBlockHeight.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1061,45 +1091,53 @@ namespace Contracts.HamsterWoodsContract {
         output.WriteRawTag(16);
         output.WriteInt32(PlayableCount);
       }
+      if (DailyPlayableCount != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(DailyPlayableCount);
+      }
       if (lastPlayTime_ != null) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(34);
         output.WriteMessage(LastPlayTime);
       }
       if (CurGridNum != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(40);
         output.WriteInt32(CurGridNum);
       }
       if (HamsterPassOwned != false) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(48);
         output.WriteBool(HamsterPassOwned);
       }
       if (TotalAcorns != 0L) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteInt64(TotalAcorns);
       }
       if (WeeklyAcorns != 0L) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(64);
         output.WriteInt64(WeeklyAcorns);
       }
-      if (PurchasedChancesCount != 0) {
-        output.WriteRawTag(64);
-        output.WriteInt32(PurchasedChancesCount);
-      }
-      if (LastBingoBlockHeight != 0L) {
-        output.WriteRawTag(72);
-        output.WriteInt64(LastBingoBlockHeight);
-      }
       if (LockedAcorns != 0L) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(72);
         output.WriteInt64(LockedAcorns);
       }
+      if (SumScores != 0L) {
+        output.WriteRawTag(80);
+        output.WriteInt64(SumScores);
+      }
+      if (PurchasedChancesCount != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(PurchasedChancesCount);
+      }
       if (lastPurchaseChanceTime_ != null) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(98);
         output.WriteMessage(LastPurchaseChanceTime);
       }
-      if (DailyPurchasedChancesCount != 0) {
-        output.WriteRawTag(96);
-        output.WriteInt32(DailyPurchasedChancesCount);
+      if (WeeklyPurchasedChancesCount != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(WeeklyPurchasedChancesCount);
+      }
+      if (LastBingoBlockHeight != 0L) {
+        output.WriteRawTag(112);
+        output.WriteInt64(LastBingoBlockHeight);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -1119,45 +1157,53 @@ namespace Contracts.HamsterWoodsContract {
         output.WriteRawTag(16);
         output.WriteInt32(PlayableCount);
       }
+      if (DailyPlayableCount != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(DailyPlayableCount);
+      }
       if (lastPlayTime_ != null) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(34);
         output.WriteMessage(LastPlayTime);
       }
       if (CurGridNum != 0) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(40);
         output.WriteInt32(CurGridNum);
       }
       if (HamsterPassOwned != false) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(48);
         output.WriteBool(HamsterPassOwned);
       }
       if (TotalAcorns != 0L) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(56);
         output.WriteInt64(TotalAcorns);
       }
       if (WeeklyAcorns != 0L) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(64);
         output.WriteInt64(WeeklyAcorns);
       }
-      if (PurchasedChancesCount != 0) {
-        output.WriteRawTag(64);
-        output.WriteInt32(PurchasedChancesCount);
-      }
-      if (LastBingoBlockHeight != 0L) {
-        output.WriteRawTag(72);
-        output.WriteInt64(LastBingoBlockHeight);
-      }
       if (LockedAcorns != 0L) {
-        output.WriteRawTag(80);
+        output.WriteRawTag(72);
         output.WriteInt64(LockedAcorns);
       }
+      if (SumScores != 0L) {
+        output.WriteRawTag(80);
+        output.WriteInt64(SumScores);
+      }
+      if (PurchasedChancesCount != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(PurchasedChancesCount);
+      }
       if (lastPurchaseChanceTime_ != null) {
-        output.WriteRawTag(90);
+        output.WriteRawTag(98);
         output.WriteMessage(LastPurchaseChanceTime);
       }
-      if (DailyPurchasedChancesCount != 0) {
-        output.WriteRawTag(96);
-        output.WriteInt32(DailyPurchasedChancesCount);
+      if (WeeklyPurchasedChancesCount != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(WeeklyPurchasedChancesCount);
+      }
+      if (LastBingoBlockHeight != 0L) {
+        output.WriteRawTag(112);
+        output.WriteInt64(LastBingoBlockHeight);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -1175,6 +1221,9 @@ namespace Contracts.HamsterWoodsContract {
       if (PlayableCount != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(PlayableCount);
       }
+      if (DailyPlayableCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(DailyPlayableCount);
+      }
       if (lastPlayTime_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(LastPlayTime);
       }
@@ -1190,20 +1239,23 @@ namespace Contracts.HamsterWoodsContract {
       if (WeeklyAcorns != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(WeeklyAcorns);
       }
-      if (PurchasedChancesCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PurchasedChancesCount);
-      }
-      if (LastBingoBlockHeight != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(LastBingoBlockHeight);
-      }
       if (LockedAcorns != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(LockedAcorns);
+      }
+      if (SumScores != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(SumScores);
+      }
+      if (PurchasedChancesCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PurchasedChancesCount);
       }
       if (lastPurchaseChanceTime_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(LastPurchaseChanceTime);
       }
-      if (DailyPurchasedChancesCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(DailyPurchasedChancesCount);
+      if (WeeklyPurchasedChancesCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(WeeklyPurchasedChancesCount);
+      }
+      if (LastBingoBlockHeight != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(LastBingoBlockHeight);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1226,6 +1278,9 @@ namespace Contracts.HamsterWoodsContract {
       if (other.PlayableCount != 0) {
         PlayableCount = other.PlayableCount;
       }
+      if (other.DailyPlayableCount != 0) {
+        DailyPlayableCount = other.DailyPlayableCount;
+      }
       if (other.lastPlayTime_ != null) {
         if (lastPlayTime_ == null) {
           LastPlayTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
@@ -1244,14 +1299,14 @@ namespace Contracts.HamsterWoodsContract {
       if (other.WeeklyAcorns != 0L) {
         WeeklyAcorns = other.WeeklyAcorns;
       }
-      if (other.PurchasedChancesCount != 0) {
-        PurchasedChancesCount = other.PurchasedChancesCount;
-      }
-      if (other.LastBingoBlockHeight != 0L) {
-        LastBingoBlockHeight = other.LastBingoBlockHeight;
-      }
       if (other.LockedAcorns != 0L) {
         LockedAcorns = other.LockedAcorns;
+      }
+      if (other.SumScores != 0L) {
+        SumScores = other.SumScores;
+      }
+      if (other.PurchasedChancesCount != 0) {
+        PurchasedChancesCount = other.PurchasedChancesCount;
       }
       if (other.lastPurchaseChanceTime_ != null) {
         if (lastPurchaseChanceTime_ == null) {
@@ -1259,8 +1314,11 @@ namespace Contracts.HamsterWoodsContract {
         }
         LastPurchaseChanceTime.MergeFrom(other.LastPurchaseChanceTime);
       }
-      if (other.DailyPurchasedChancesCount != 0) {
-        DailyPurchasedChancesCount = other.DailyPurchasedChancesCount;
+      if (other.WeeklyPurchasedChancesCount != 0) {
+        WeeklyPurchasedChancesCount = other.WeeklyPurchasedChancesCount;
+      }
+      if (other.LastBingoBlockHeight != 0L) {
+        LastBingoBlockHeight = other.LastBingoBlockHeight;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1288,50 +1346,58 @@ namespace Contracts.HamsterWoodsContract {
             PlayableCount = input.ReadInt32();
             break;
           }
-          case 26: {
+          case 24: {
+            DailyPlayableCount = input.ReadInt32();
+            break;
+          }
+          case 34: {
             if (lastPlayTime_ == null) {
               LastPlayTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(LastPlayTime);
             break;
           }
-          case 32: {
+          case 40: {
             CurGridNum = input.ReadInt32();
             break;
           }
-          case 40: {
+          case 48: {
             HamsterPassOwned = input.ReadBool();
             break;
           }
-          case 48: {
+          case 56: {
             TotalAcorns = input.ReadInt64();
             break;
           }
-          case 56: {
+          case 64: {
             WeeklyAcorns = input.ReadInt64();
             break;
           }
-          case 64: {
-            PurchasedChancesCount = input.ReadInt32();
-            break;
-          }
           case 72: {
-            LastBingoBlockHeight = input.ReadInt64();
-            break;
-          }
-          case 80: {
             LockedAcorns = input.ReadInt64();
             break;
           }
-          case 90: {
+          case 80: {
+            SumScores = input.ReadInt64();
+            break;
+          }
+          case 88: {
+            PurchasedChancesCount = input.ReadInt32();
+            break;
+          }
+          case 98: {
             if (lastPurchaseChanceTime_ == null) {
               LastPurchaseChanceTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(LastPurchaseChanceTime);
             break;
           }
-          case 96: {
-            DailyPurchasedChancesCount = input.ReadInt32();
+          case 104: {
+            WeeklyPurchasedChancesCount = input.ReadInt32();
+            break;
+          }
+          case 112: {
+            LastBingoBlockHeight = input.ReadInt64();
             break;
           }
         }
@@ -1360,50 +1426,58 @@ namespace Contracts.HamsterWoodsContract {
             PlayableCount = input.ReadInt32();
             break;
           }
-          case 26: {
+          case 24: {
+            DailyPlayableCount = input.ReadInt32();
+            break;
+          }
+          case 34: {
             if (lastPlayTime_ == null) {
               LastPlayTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(LastPlayTime);
             break;
           }
-          case 32: {
+          case 40: {
             CurGridNum = input.ReadInt32();
             break;
           }
-          case 40: {
+          case 48: {
             HamsterPassOwned = input.ReadBool();
             break;
           }
-          case 48: {
+          case 56: {
             TotalAcorns = input.ReadInt64();
             break;
           }
-          case 56: {
+          case 64: {
             WeeklyAcorns = input.ReadInt64();
             break;
           }
-          case 64: {
-            PurchasedChancesCount = input.ReadInt32();
-            break;
-          }
           case 72: {
-            LastBingoBlockHeight = input.ReadInt64();
-            break;
-          }
-          case 80: {
             LockedAcorns = input.ReadInt64();
             break;
           }
-          case 90: {
+          case 80: {
+            SumScores = input.ReadInt64();
+            break;
+          }
+          case 88: {
+            PurchasedChancesCount = input.ReadInt32();
+            break;
+          }
+          case 98: {
             if (lastPurchaseChanceTime_ == null) {
               LastPurchaseChanceTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(LastPurchaseChanceTime);
             break;
           }
-          case 96: {
-            DailyPurchasedChancesCount = input.ReadInt32();
+          case 104: {
+            WeeklyPurchasedChancesCount = input.ReadInt32();
+            break;
+          }
+          case 112: {
+            LastBingoBlockHeight = input.ReadInt64();
             break;
           }
         }
@@ -1427,7 +1501,7 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Contracts.HamsterWoodsContract.HamsterWoodsContractReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Contracts.HamsterWoods.HamsterWoodsContractReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1469,10 +1543,10 @@ namespace Contracts.HamsterWoodsContract {
 
     /// <summary>Field number for the "grid_type" field.</summary>
     public const int GridTypeFieldNumber = 1;
-    private global::Contracts.HamsterWoodsContract.GridType gridType_ = global::Contracts.HamsterWoodsContract.GridType.Blue;
+    private global::Contracts.HamsterWoods.GridType gridType_ = global::Contracts.HamsterWoods.GridType.Blue;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Contracts.HamsterWoodsContract.GridType GridType {
+    public global::Contracts.HamsterWoods.GridType GridType {
       get { return gridType_; }
       set {
         gridType_ = value;
@@ -1631,7 +1705,7 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (GridType != global::Contracts.HamsterWoodsContract.GridType.Blue) hash ^= GridType.GetHashCode();
+      if (GridType != global::Contracts.HamsterWoods.GridType.Blue) hash ^= GridType.GetHashCode();
       if (GridNum != 0) hash ^= GridNum.GetHashCode();
       if (Score != 0) hash ^= Score.GetHashCode();
       if (playId_ != null) hash ^= PlayId.GetHashCode();
@@ -1660,7 +1734,7 @@ namespace Contracts.HamsterWoodsContract {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (GridType != global::Contracts.HamsterWoodsContract.GridType.Blue) {
+      if (GridType != global::Contracts.HamsterWoods.GridType.Blue) {
         output.WriteRawTag(8);
         output.WriteEnum((int) GridType);
       }
@@ -1711,7 +1785,7 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (GridType != global::Contracts.HamsterWoodsContract.GridType.Blue) {
+      if (GridType != global::Contracts.HamsterWoods.GridType.Blue) {
         output.WriteRawTag(8);
         output.WriteEnum((int) GridType);
       }
@@ -1762,7 +1836,7 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (GridType != global::Contracts.HamsterWoodsContract.GridType.Blue) {
+      if (GridType != global::Contracts.HamsterWoods.GridType.Blue) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) GridType);
       }
       if (GridNum != 0) {
@@ -1805,7 +1879,7 @@ namespace Contracts.HamsterWoodsContract {
       if (other == null) {
         return;
       }
-      if (other.GridType != global::Contracts.HamsterWoodsContract.GridType.Blue) {
+      if (other.GridType != global::Contracts.HamsterWoods.GridType.Blue) {
         GridType = other.GridType;
       }
       if (other.GridNum != 0) {
@@ -1861,7 +1935,7 @@ namespace Contracts.HamsterWoodsContract {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            GridType = (global::Contracts.HamsterWoodsContract.GridType) input.ReadEnum();
+            GridType = (global::Contracts.HamsterWoods.GridType) input.ReadEnum();
             break;
           }
           case 16: {
@@ -1930,7 +2004,7 @@ namespace Contracts.HamsterWoodsContract {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            GridType = (global::Contracts.HamsterWoodsContract.GridType) input.ReadEnum();
+            GridType = (global::Contracts.HamsterWoods.GridType) input.ReadEnum();
             break;
           }
           case 16: {
@@ -2004,7 +2078,7 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Contracts.HamsterWoodsContract.HamsterWoodsContractReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Contracts.HamsterWoods.HamsterWoodsContractReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2230,7 +2304,7 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Contracts.HamsterWoodsContract.HamsterWoodsContractReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Contracts.HamsterWoods.HamsterWoodsContractReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2548,7 +2622,7 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Contracts.HamsterWoodsContract.HamsterWoodsContractReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Contracts.HamsterWoods.HamsterWoodsContractReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2931,7 +3005,7 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Contracts.HamsterWoodsContract.HamsterWoodsContractReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Contracts.HamsterWoods.HamsterWoodsContractReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3314,7 +3388,7 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Contracts.HamsterWoodsContract.HamsterWoodsContractReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Contracts.HamsterWoods.HamsterWoodsContractReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3346,15 +3420,15 @@ namespace Contracts.HamsterWoodsContract {
 
     /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Contracts.HamsterWoodsContract.GridType> _repeated_value_codec
-        = pb::FieldCodec.ForEnum(10, x => (int) x, x => (global::Contracts.HamsterWoodsContract.GridType) x);
-    private readonly pbc::RepeatedField<global::Contracts.HamsterWoodsContract.GridType> value_ = new pbc::RepeatedField<global::Contracts.HamsterWoodsContract.GridType>();
+    private static readonly pb::FieldCodec<global::Contracts.HamsterWoods.GridType> _repeated_value_codec
+        = pb::FieldCodec.ForEnum(10, x => (int) x, x => (global::Contracts.HamsterWoods.GridType) x);
+    private readonly pbc::RepeatedField<global::Contracts.HamsterWoods.GridType> value_ = new pbc::RepeatedField<global::Contracts.HamsterWoods.GridType>();
     /// <summary>
     /// The gridType list.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Contracts.HamsterWoodsContract.GridType> Value {
+    public pbc::RepeatedField<global::Contracts.HamsterWoods.GridType> Value {
       get { return value_; }
     }
 
@@ -3497,7 +3571,7 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Contracts.HamsterWoodsContract.HamsterWoodsContractReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Contracts.HamsterWoods.HamsterWoodsContractReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3677,7 +3751,7 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Contracts.HamsterWoodsContract.HamsterWoodsContractReflection.Descriptor.MessageTypes[11]; }
+      get { return global::Contracts.HamsterWoods.HamsterWoodsContractReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3709,12 +3783,12 @@ namespace Contracts.HamsterWoodsContract {
 
     /// <summary>Field number for the "reward_rules" field.</summary>
     public const int RewardRules_FieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Contracts.HamsterWoodsContract.RewardRule> _repeated_rewardRules_codec
-        = pb::FieldCodec.ForMessage(10, global::Contracts.HamsterWoodsContract.RewardRule.Parser);
-    private readonly pbc::RepeatedField<global::Contracts.HamsterWoodsContract.RewardRule> rewardRules_ = new pbc::RepeatedField<global::Contracts.HamsterWoodsContract.RewardRule>();
+    private static readonly pb::FieldCodec<global::Contracts.HamsterWoods.RewardRule> _repeated_rewardRules_codec
+        = pb::FieldCodec.ForMessage(10, global::Contracts.HamsterWoods.RewardRule.Parser);
+    private readonly pbc::RepeatedField<global::Contracts.HamsterWoods.RewardRule> rewardRules_ = new pbc::RepeatedField<global::Contracts.HamsterWoods.RewardRule>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Contracts.HamsterWoodsContract.RewardRule> RewardRules_ {
+    public pbc::RepeatedField<global::Contracts.HamsterWoods.RewardRule> RewardRules_ {
       get { return rewardRules_; }
     }
 
@@ -3855,7 +3929,7 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Contracts.HamsterWoodsContract.HamsterWoodsContractReflection.Descriptor.MessageTypes[12]; }
+      get { return global::Contracts.HamsterWoods.HamsterWoodsContractReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4155,7 +4229,7 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Contracts.HamsterWoodsContract.HamsterWoodsContractReflection.Descriptor.MessageTypes[13]; }
+      get { return global::Contracts.HamsterWoods.HamsterWoodsContractReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4175,9 +4249,9 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PurchaseChanceConfig(PurchaseChanceConfig other) : this() {
-      dailyPurchaseCount_ = other.dailyPurchaseCount_;
+      weeklyPurchaseCount_ = other.weeklyPurchaseCount_;
       acornsAmount_ = other.acornsAmount_;
-      dailyPurchaseCountResetHour_ = other.dailyPurchaseCountResetHour_;
+      weeklyPurchaseCountResetHour_ = other.weeklyPurchaseCountResetHour_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -4187,15 +4261,15 @@ namespace Contracts.HamsterWoodsContract {
       return new PurchaseChanceConfig(this);
     }
 
-    /// <summary>Field number for the "daily_purchase_count" field.</summary>
-    public const int DailyPurchaseCountFieldNumber = 1;
-    private int dailyPurchaseCount_;
+    /// <summary>Field number for the "weekly_purchase_count" field.</summary>
+    public const int WeeklyPurchaseCountFieldNumber = 1;
+    private int weeklyPurchaseCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int DailyPurchaseCount {
-      get { return dailyPurchaseCount_; }
+    public int WeeklyPurchaseCount {
+      get { return weeklyPurchaseCount_; }
       set {
-        dailyPurchaseCount_ = value;
+        weeklyPurchaseCount_ = value;
       }
     }
 
@@ -4211,15 +4285,15 @@ namespace Contracts.HamsterWoodsContract {
       }
     }
 
-    /// <summary>Field number for the "daily_purchase_count_reset_hour" field.</summary>
-    public const int DailyPurchaseCountResetHourFieldNumber = 3;
-    private int dailyPurchaseCountResetHour_;
+    /// <summary>Field number for the "weekly_purchase_count_reset_hour" field.</summary>
+    public const int WeeklyPurchaseCountResetHourFieldNumber = 3;
+    private int weeklyPurchaseCountResetHour_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int DailyPurchaseCountResetHour {
-      get { return dailyPurchaseCountResetHour_; }
+    public int WeeklyPurchaseCountResetHour {
+      get { return weeklyPurchaseCountResetHour_; }
       set {
-        dailyPurchaseCountResetHour_ = value;
+        weeklyPurchaseCountResetHour_ = value;
       }
     }
 
@@ -4238,9 +4312,9 @@ namespace Contracts.HamsterWoodsContract {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (DailyPurchaseCount != other.DailyPurchaseCount) return false;
+      if (WeeklyPurchaseCount != other.WeeklyPurchaseCount) return false;
       if (AcornsAmount != other.AcornsAmount) return false;
-      if (DailyPurchaseCountResetHour != other.DailyPurchaseCountResetHour) return false;
+      if (WeeklyPurchaseCountResetHour != other.WeeklyPurchaseCountResetHour) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -4248,9 +4322,9 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (DailyPurchaseCount != 0) hash ^= DailyPurchaseCount.GetHashCode();
+      if (WeeklyPurchaseCount != 0) hash ^= WeeklyPurchaseCount.GetHashCode();
       if (AcornsAmount != 0) hash ^= AcornsAmount.GetHashCode();
-      if (DailyPurchaseCountResetHour != 0) hash ^= DailyPurchaseCountResetHour.GetHashCode();
+      if (WeeklyPurchaseCountResetHour != 0) hash ^= WeeklyPurchaseCountResetHour.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -4269,17 +4343,17 @@ namespace Contracts.HamsterWoodsContract {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (DailyPurchaseCount != 0) {
+      if (WeeklyPurchaseCount != 0) {
         output.WriteRawTag(8);
-        output.WriteInt32(DailyPurchaseCount);
+        output.WriteInt32(WeeklyPurchaseCount);
       }
       if (AcornsAmount != 0) {
         output.WriteRawTag(16);
         output.WriteInt32(AcornsAmount);
       }
-      if (DailyPurchaseCountResetHour != 0) {
+      if (WeeklyPurchaseCountResetHour != 0) {
         output.WriteRawTag(24);
-        output.WriteInt32(DailyPurchaseCountResetHour);
+        output.WriteInt32(WeeklyPurchaseCountResetHour);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -4291,17 +4365,17 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (DailyPurchaseCount != 0) {
+      if (WeeklyPurchaseCount != 0) {
         output.WriteRawTag(8);
-        output.WriteInt32(DailyPurchaseCount);
+        output.WriteInt32(WeeklyPurchaseCount);
       }
       if (AcornsAmount != 0) {
         output.WriteRawTag(16);
         output.WriteInt32(AcornsAmount);
       }
-      if (DailyPurchaseCountResetHour != 0) {
+      if (WeeklyPurchaseCountResetHour != 0) {
         output.WriteRawTag(24);
-        output.WriteInt32(DailyPurchaseCountResetHour);
+        output.WriteInt32(WeeklyPurchaseCountResetHour);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -4313,14 +4387,14 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (DailyPurchaseCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(DailyPurchaseCount);
+      if (WeeklyPurchaseCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(WeeklyPurchaseCount);
       }
       if (AcornsAmount != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(AcornsAmount);
       }
-      if (DailyPurchaseCountResetHour != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(DailyPurchaseCountResetHour);
+      if (WeeklyPurchaseCountResetHour != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(WeeklyPurchaseCountResetHour);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -4334,14 +4408,14 @@ namespace Contracts.HamsterWoodsContract {
       if (other == null) {
         return;
       }
-      if (other.DailyPurchaseCount != 0) {
-        DailyPurchaseCount = other.DailyPurchaseCount;
+      if (other.WeeklyPurchaseCount != 0) {
+        WeeklyPurchaseCount = other.WeeklyPurchaseCount;
       }
       if (other.AcornsAmount != 0) {
         AcornsAmount = other.AcornsAmount;
       }
-      if (other.DailyPurchaseCountResetHour != 0) {
-        DailyPurchaseCountResetHour = other.DailyPurchaseCountResetHour;
+      if (other.WeeklyPurchaseCountResetHour != 0) {
+        WeeklyPurchaseCountResetHour = other.WeeklyPurchaseCountResetHour;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -4359,7 +4433,7 @@ namespace Contracts.HamsterWoodsContract {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            DailyPurchaseCount = input.ReadInt32();
+            WeeklyPurchaseCount = input.ReadInt32();
             break;
           }
           case 16: {
@@ -4367,7 +4441,7 @@ namespace Contracts.HamsterWoodsContract {
             break;
           }
           case 24: {
-            DailyPurchaseCountResetHour = input.ReadInt32();
+            WeeklyPurchaseCountResetHour = input.ReadInt32();
             break;
           }
         }
@@ -4386,7 +4460,7 @@ namespace Contracts.HamsterWoodsContract {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            DailyPurchaseCount = input.ReadInt32();
+            WeeklyPurchaseCount = input.ReadInt32();
             break;
           }
           case 16: {
@@ -4394,7 +4468,7 @@ namespace Contracts.HamsterWoodsContract {
             break;
           }
           case 24: {
-            DailyPurchaseCountResetHour = input.ReadInt32();
+            WeeklyPurchaseCountResetHour = input.ReadInt32();
             break;
           }
         }
@@ -4421,7 +4495,7 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Contracts.HamsterWoodsContract.HamsterWoodsContractReflection.Descriptor.MessageTypes[14]; }
+      get { return global::Contracts.HamsterWoods.HamsterWoodsContractReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4454,6 +4528,7 @@ namespace Contracts.HamsterWoodsContract {
       totalAcorns_ = other.totalAcorns_;
       totalChance_ = other.totalChance_;
       isRace_ = other.isRace_;
+      weekNum_ = other.weekNum_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -4465,10 +4540,10 @@ namespace Contracts.HamsterWoodsContract {
 
     /// <summary>Field number for the "grid_type" field.</summary>
     public const int GridTypeFieldNumber = 1;
-    private global::Contracts.HamsterWoodsContract.GridType gridType_ = global::Contracts.HamsterWoodsContract.GridType.Blue;
+    private global::Contracts.HamsterWoods.GridType gridType_ = global::Contracts.HamsterWoods.GridType.Blue;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Contracts.HamsterWoodsContract.GridType GridType {
+    public global::Contracts.HamsterWoods.GridType GridType {
       get { return gridType_; }
       set {
         gridType_ = value;
@@ -4537,10 +4612,10 @@ namespace Contracts.HamsterWoodsContract {
 
     /// <summary>Field number for the "dice_numbers" field.</summary>
     public const int DiceNumbersFieldNumber = 7;
-    private global::Contracts.HamsterWoodsContract.DiceList diceNumbers_;
+    private global::Contracts.HamsterWoods.DiceList diceNumbers_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Contracts.HamsterWoodsContract.DiceList DiceNumbers {
+    public global::Contracts.HamsterWoods.DiceList DiceNumbers {
       get { return diceNumbers_; }
       set {
         diceNumbers_ = value;
@@ -4619,6 +4694,18 @@ namespace Contracts.HamsterWoodsContract {
       }
     }
 
+    /// <summary>Field number for the "week_num" field.</summary>
+    public const int WeekNumFieldNumber = 14;
+    private int weekNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int WeekNum {
+      get { return weekNum_; }
+      set {
+        weekNum_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -4647,6 +4734,7 @@ namespace Contracts.HamsterWoodsContract {
       if (TotalAcorns != other.TotalAcorns) return false;
       if (TotalChance != other.TotalChance) return false;
       if (IsRace != other.IsRace) return false;
+      if (WeekNum != other.WeekNum) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -4654,7 +4742,7 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (GridType != global::Contracts.HamsterWoodsContract.GridType.Blue) hash ^= GridType.GetHashCode();
+      if (GridType != global::Contracts.HamsterWoods.GridType.Blue) hash ^= GridType.GetHashCode();
       if (GridNum != 0) hash ^= GridNum.GetHashCode();
       if (Score != 0L) hash ^= Score.GetHashCode();
       if (BingoBlockHeight != 0L) hash ^= BingoBlockHeight.GetHashCode();
@@ -4667,6 +4755,7 @@ namespace Contracts.HamsterWoodsContract {
       if (TotalAcorns != 0L) hash ^= TotalAcorns.GetHashCode();
       if (TotalChance != 0) hash ^= TotalChance.GetHashCode();
       if (IsRace != false) hash ^= IsRace.GetHashCode();
+      if (WeekNum != 0) hash ^= WeekNum.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -4685,7 +4774,7 @@ namespace Contracts.HamsterWoodsContract {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (GridType != global::Contracts.HamsterWoodsContract.GridType.Blue) {
+      if (GridType != global::Contracts.HamsterWoods.GridType.Blue) {
         output.WriteRawTag(8);
         output.WriteEnum((int) GridType);
       }
@@ -4736,6 +4825,10 @@ namespace Contracts.HamsterWoodsContract {
       if (IsRace != false) {
         output.WriteRawTag(104);
         output.WriteBool(IsRace);
+      }
+      if (WeekNum != 0) {
+        output.WriteRawTag(112);
+        output.WriteInt32(WeekNum);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -4747,7 +4840,7 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (GridType != global::Contracts.HamsterWoodsContract.GridType.Blue) {
+      if (GridType != global::Contracts.HamsterWoods.GridType.Blue) {
         output.WriteRawTag(8);
         output.WriteEnum((int) GridType);
       }
@@ -4799,6 +4892,10 @@ namespace Contracts.HamsterWoodsContract {
         output.WriteRawTag(104);
         output.WriteBool(IsRace);
       }
+      if (WeekNum != 0) {
+        output.WriteRawTag(112);
+        output.WriteInt32(WeekNum);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -4809,7 +4906,7 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (GridType != global::Contracts.HamsterWoodsContract.GridType.Blue) {
+      if (GridType != global::Contracts.HamsterWoods.GridType.Blue) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) GridType);
       }
       if (GridNum != 0) {
@@ -4848,6 +4945,9 @@ namespace Contracts.HamsterWoodsContract {
       if (IsRace != false) {
         size += 1 + 1;
       }
+      if (WeekNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(WeekNum);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -4860,7 +4960,7 @@ namespace Contracts.HamsterWoodsContract {
       if (other == null) {
         return;
       }
-      if (other.GridType != global::Contracts.HamsterWoodsContract.GridType.Blue) {
+      if (other.GridType != global::Contracts.HamsterWoods.GridType.Blue) {
         GridType = other.GridType;
       }
       if (other.GridNum != 0) {
@@ -4883,7 +4983,7 @@ namespace Contracts.HamsterWoodsContract {
       }
       if (other.diceNumbers_ != null) {
         if (diceNumbers_ == null) {
-          DiceNumbers = new global::Contracts.HamsterWoodsContract.DiceList();
+          DiceNumbers = new global::Contracts.HamsterWoods.DiceList();
         }
         DiceNumbers.MergeFrom(other.DiceNumbers);
       }
@@ -4905,6 +5005,9 @@ namespace Contracts.HamsterWoodsContract {
       if (other.IsRace != false) {
         IsRace = other.IsRace;
       }
+      if (other.WeekNum != 0) {
+        WeekNum = other.WeekNum;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -4921,7 +5024,7 @@ namespace Contracts.HamsterWoodsContract {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            GridType = (global::Contracts.HamsterWoodsContract.GridType) input.ReadEnum();
+            GridType = (global::Contracts.HamsterWoods.GridType) input.ReadEnum();
             break;
           }
           case 16: {
@@ -4949,7 +5052,7 @@ namespace Contracts.HamsterWoodsContract {
           }
           case 58: {
             if (diceNumbers_ == null) {
-              DiceNumbers = new global::Contracts.HamsterWoodsContract.DiceList();
+              DiceNumbers = new global::Contracts.HamsterWoods.DiceList();
             }
             input.ReadMessage(DiceNumbers);
             break;
@@ -4976,6 +5079,10 @@ namespace Contracts.HamsterWoodsContract {
           }
           case 104: {
             IsRace = input.ReadBool();
+            break;
+          }
+          case 112: {
+            WeekNum = input.ReadInt32();
             break;
           }
         }
@@ -4994,7 +5101,7 @@ namespace Contracts.HamsterWoodsContract {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            GridType = (global::Contracts.HamsterWoodsContract.GridType) input.ReadEnum();
+            GridType = (global::Contracts.HamsterWoods.GridType) input.ReadEnum();
             break;
           }
           case 16: {
@@ -5022,7 +5129,7 @@ namespace Contracts.HamsterWoodsContract {
           }
           case 58: {
             if (diceNumbers_ == null) {
-              DiceNumbers = new global::Contracts.HamsterWoodsContract.DiceList();
+              DiceNumbers = new global::Contracts.HamsterWoods.DiceList();
             }
             input.ReadMessage(DiceNumbers);
             break;
@@ -5049,6 +5156,10 @@ namespace Contracts.HamsterWoodsContract {
           }
           case 104: {
             IsRace = input.ReadBool();
+            break;
+          }
+          case 112: {
+            WeekNum = input.ReadInt32();
             break;
           }
         }
@@ -5072,7 +5183,7 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Contracts.HamsterWoodsContract.HamsterWoodsContractReflection.Descriptor.MessageTypes[15]; }
+      get { return global::Contracts.HamsterWoods.HamsterWoodsContractReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5376,21 +5487,21 @@ namespace Contracts.HamsterWoodsContract {
 
   }
 
-  public sealed partial class PurchasedChance : pb::IMessage<PurchasedChance>
+  public sealed partial class ChancePurchased : pb::IMessage<ChancePurchased>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<PurchasedChance> _parser = new pb::MessageParser<PurchasedChance>(() => new PurchasedChance());
+    private static readonly pb::MessageParser<ChancePurchased> _parser = new pb::MessageParser<ChancePurchased>(() => new ChancePurchased());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<PurchasedChance> Parser { get { return _parser; } }
+    public static pb::MessageParser<ChancePurchased> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Contracts.HamsterWoodsContract.HamsterWoodsContractReflection.Descriptor.MessageTypes[16]; }
+      get { return global::Contracts.HamsterWoods.HamsterWoodsContractReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5401,7 +5512,7 @@ namespace Contracts.HamsterWoodsContract {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public PurchasedChance() {
+    public ChancePurchased() {
       OnConstruction();
     }
 
@@ -5409,7 +5520,7 @@ namespace Contracts.HamsterWoodsContract {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public PurchasedChance(PurchasedChance other) : this() {
+    public ChancePurchased(ChancePurchased other) : this() {
       playerAddress_ = other.playerAddress_ != null ? other.playerAddress_.Clone() : null;
       acornsAmount_ = other.acornsAmount_;
       chanceCount_ = other.chanceCount_;
@@ -5421,8 +5532,8 @@ namespace Contracts.HamsterWoodsContract {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public PurchasedChance Clone() {
-      return new PurchasedChance(this);
+    public ChancePurchased Clone() {
+      return new ChancePurchased(this);
     }
 
     /// <summary>Field number for the "player_address" field.</summary>
@@ -5500,12 +5611,12 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as PurchasedChance);
+      return Equals(other as ChancePurchased);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(PurchasedChance other) {
+    public bool Equals(ChancePurchased other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -5643,7 +5754,7 @@ namespace Contracts.HamsterWoodsContract {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(PurchasedChance other) {
+    public void MergeFrom(ChancePurchased other) {
       if (other == null) {
         return;
       }
@@ -5773,7 +5884,7 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Contracts.HamsterWoodsContract.HamsterWoodsContractReflection.Descriptor.MessageTypes[17]; }
+      get { return global::Contracts.HamsterWoods.HamsterWoodsContractReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5805,12 +5916,12 @@ namespace Contracts.HamsterWoodsContract {
 
     /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Contracts.HamsterWoodsContract.LockedAcornsInfo> _repeated_value_codec
-        = pb::FieldCodec.ForMessage(10, global::Contracts.HamsterWoodsContract.LockedAcornsInfo.Parser);
-    private readonly pbc::RepeatedField<global::Contracts.HamsterWoodsContract.LockedAcornsInfo> value_ = new pbc::RepeatedField<global::Contracts.HamsterWoodsContract.LockedAcornsInfo>();
+    private static readonly pb::FieldCodec<global::Contracts.HamsterWoods.LockedAcornsInfo> _repeated_value_codec
+        = pb::FieldCodec.ForMessage(10, global::Contracts.HamsterWoods.LockedAcornsInfo.Parser);
+    private readonly pbc::RepeatedField<global::Contracts.HamsterWoods.LockedAcornsInfo> value_ = new pbc::RepeatedField<global::Contracts.HamsterWoods.LockedAcornsInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Contracts.HamsterWoodsContract.LockedAcornsInfo> Value {
+    public pbc::RepeatedField<global::Contracts.HamsterWoods.LockedAcornsInfo> Value {
       get { return value_; }
     }
 
@@ -5951,7 +6062,7 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Contracts.HamsterWoodsContract.HamsterWoodsContractReflection.Descriptor.MessageTypes[18]; }
+      get { return global::Contracts.HamsterWoods.HamsterWoodsContractReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6260,7 +6371,7 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Contracts.HamsterWoodsContract.HamsterWoodsContractReflection.Descriptor.MessageTypes[19]; }
+      get { return global::Contracts.HamsterWoods.HamsterWoodsContractReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6438,7 +6549,7 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Contracts.HamsterWoodsContract.HamsterWoodsContractReflection.Descriptor.MessageTypes[20]; }
+      get { return global::Contracts.HamsterWoods.HamsterWoodsContractReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6616,7 +6727,7 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Contracts.HamsterWoodsContract.HamsterWoodsContractReflection.Descriptor.MessageTypes[21]; }
+      get { return global::Contracts.HamsterWoods.HamsterWoodsContractReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6637,11 +6748,9 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RaceConfig(RaceConfig other) : this() {
       beginTime_ = other.beginTime_ != null ? other.beginTime_.Clone() : null;
-      endTime_ = other.endTime_ != null ? other.endTime_.Clone() : null;
-      startDayOfWeek_ = other.startDayOfWeek_;
-      endDayOfWeek_ = other.endDayOfWeek_;
-      settleDayOfWeek_ = other.settleDayOfWeek_;
+      gameHours_ = other.gameHours_;
       isRace_ = other.isRace_;
+      calibrationTime_ = other.calibrationTime_ != null ? other.calibrationTime_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -6663,56 +6772,20 @@ namespace Contracts.HamsterWoodsContract {
       }
     }
 
-    /// <summary>Field number for the "end_time" field.</summary>
-    public const int EndTimeFieldNumber = 2;
-    private global::Google.Protobuf.WellKnownTypes.Timestamp endTime_;
+    /// <summary>Field number for the "game_hours" field.</summary>
+    public const int GameHoursFieldNumber = 2;
+    private int gameHours_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Google.Protobuf.WellKnownTypes.Timestamp EndTime {
-      get { return endTime_; }
+    public int GameHours {
+      get { return gameHours_; }
       set {
-        endTime_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "start_day_of_week" field.</summary>
-    public const int StartDayOfWeekFieldNumber = 3;
-    private int startDayOfWeek_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int StartDayOfWeek {
-      get { return startDayOfWeek_; }
-      set {
-        startDayOfWeek_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "end_day_of_week" field.</summary>
-    public const int EndDayOfWeekFieldNumber = 4;
-    private int endDayOfWeek_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int EndDayOfWeek {
-      get { return endDayOfWeek_; }
-      set {
-        endDayOfWeek_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "settle_day_of_week" field.</summary>
-    public const int SettleDayOfWeekFieldNumber = 5;
-    private int settleDayOfWeek_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int SettleDayOfWeek {
-      get { return settleDayOfWeek_; }
-      set {
-        settleDayOfWeek_ = value;
+        gameHours_ = value;
       }
     }
 
     /// <summary>Field number for the "is_race" field.</summary>
-    public const int IsRaceFieldNumber = 6;
+    public const int IsRaceFieldNumber = 3;
     private bool isRace_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6720,6 +6793,18 @@ namespace Contracts.HamsterWoodsContract {
       get { return isRace_; }
       set {
         isRace_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "calibration_time" field.</summary>
+    public const int CalibrationTimeFieldNumber = 4;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp calibrationTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp CalibrationTime {
+      get { return calibrationTime_; }
+      set {
+        calibrationTime_ = value;
       }
     }
 
@@ -6739,11 +6824,9 @@ namespace Contracts.HamsterWoodsContract {
         return true;
       }
       if (!object.Equals(BeginTime, other.BeginTime)) return false;
-      if (!object.Equals(EndTime, other.EndTime)) return false;
-      if (StartDayOfWeek != other.StartDayOfWeek) return false;
-      if (EndDayOfWeek != other.EndDayOfWeek) return false;
-      if (SettleDayOfWeek != other.SettleDayOfWeek) return false;
+      if (GameHours != other.GameHours) return false;
       if (IsRace != other.IsRace) return false;
+      if (!object.Equals(CalibrationTime, other.CalibrationTime)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -6752,11 +6835,9 @@ namespace Contracts.HamsterWoodsContract {
     public override int GetHashCode() {
       int hash = 1;
       if (beginTime_ != null) hash ^= BeginTime.GetHashCode();
-      if (endTime_ != null) hash ^= EndTime.GetHashCode();
-      if (StartDayOfWeek != 0) hash ^= StartDayOfWeek.GetHashCode();
-      if (EndDayOfWeek != 0) hash ^= EndDayOfWeek.GetHashCode();
-      if (SettleDayOfWeek != 0) hash ^= SettleDayOfWeek.GetHashCode();
+      if (GameHours != 0) hash ^= GameHours.GetHashCode();
       if (IsRace != false) hash ^= IsRace.GetHashCode();
+      if (calibrationTime_ != null) hash ^= CalibrationTime.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -6779,25 +6860,17 @@ namespace Contracts.HamsterWoodsContract {
         output.WriteRawTag(10);
         output.WriteMessage(BeginTime);
       }
-      if (endTime_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(EndTime);
-      }
-      if (StartDayOfWeek != 0) {
-        output.WriteRawTag(24);
-        output.WriteInt32(StartDayOfWeek);
-      }
-      if (EndDayOfWeek != 0) {
-        output.WriteRawTag(32);
-        output.WriteInt32(EndDayOfWeek);
-      }
-      if (SettleDayOfWeek != 0) {
-        output.WriteRawTag(40);
-        output.WriteInt32(SettleDayOfWeek);
+      if (GameHours != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(GameHours);
       }
       if (IsRace != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(24);
         output.WriteBool(IsRace);
+      }
+      if (calibrationTime_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(CalibrationTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -6813,25 +6886,17 @@ namespace Contracts.HamsterWoodsContract {
         output.WriteRawTag(10);
         output.WriteMessage(BeginTime);
       }
-      if (endTime_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(EndTime);
-      }
-      if (StartDayOfWeek != 0) {
-        output.WriteRawTag(24);
-        output.WriteInt32(StartDayOfWeek);
-      }
-      if (EndDayOfWeek != 0) {
-        output.WriteRawTag(32);
-        output.WriteInt32(EndDayOfWeek);
-      }
-      if (SettleDayOfWeek != 0) {
-        output.WriteRawTag(40);
-        output.WriteInt32(SettleDayOfWeek);
+      if (GameHours != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(GameHours);
       }
       if (IsRace != false) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(24);
         output.WriteBool(IsRace);
+      }
+      if (calibrationTime_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(CalibrationTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -6846,20 +6911,14 @@ namespace Contracts.HamsterWoodsContract {
       if (beginTime_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(BeginTime);
       }
-      if (endTime_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(EndTime);
-      }
-      if (StartDayOfWeek != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(StartDayOfWeek);
-      }
-      if (EndDayOfWeek != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(EndDayOfWeek);
-      }
-      if (SettleDayOfWeek != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SettleDayOfWeek);
+      if (GameHours != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(GameHours);
       }
       if (IsRace != false) {
         size += 1 + 1;
+      }
+      if (calibrationTime_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CalibrationTime);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -6879,23 +6938,17 @@ namespace Contracts.HamsterWoodsContract {
         }
         BeginTime.MergeFrom(other.BeginTime);
       }
-      if (other.endTime_ != null) {
-        if (endTime_ == null) {
-          EndTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-        }
-        EndTime.MergeFrom(other.EndTime);
-      }
-      if (other.StartDayOfWeek != 0) {
-        StartDayOfWeek = other.StartDayOfWeek;
-      }
-      if (other.EndDayOfWeek != 0) {
-        EndDayOfWeek = other.EndDayOfWeek;
-      }
-      if (other.SettleDayOfWeek != 0) {
-        SettleDayOfWeek = other.SettleDayOfWeek;
+      if (other.GameHours != 0) {
+        GameHours = other.GameHours;
       }
       if (other.IsRace != false) {
         IsRace = other.IsRace;
+      }
+      if (other.calibrationTime_ != null) {
+        if (calibrationTime_ == null) {
+          CalibrationTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        CalibrationTime.MergeFrom(other.CalibrationTime);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -6919,27 +6972,19 @@ namespace Contracts.HamsterWoodsContract {
             input.ReadMessage(BeginTime);
             break;
           }
-          case 18: {
-            if (endTime_ == null) {
-              EndTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-            }
-            input.ReadMessage(EndTime);
+          case 16: {
+            GameHours = input.ReadInt32();
             break;
           }
           case 24: {
-            StartDayOfWeek = input.ReadInt32();
-            break;
-          }
-          case 32: {
-            EndDayOfWeek = input.ReadInt32();
-            break;
-          }
-          case 40: {
-            SettleDayOfWeek = input.ReadInt32();
-            break;
-          }
-          case 48: {
             IsRace = input.ReadBool();
+            break;
+          }
+          case 34: {
+            if (calibrationTime_ == null) {
+              CalibrationTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(CalibrationTime);
             break;
           }
         }
@@ -6964,27 +7009,19 @@ namespace Contracts.HamsterWoodsContract {
             input.ReadMessage(BeginTime);
             break;
           }
-          case 18: {
-            if (endTime_ == null) {
-              EndTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-            }
-            input.ReadMessage(EndTime);
+          case 16: {
+            GameHours = input.ReadInt32();
             break;
           }
           case 24: {
-            StartDayOfWeek = input.ReadInt32();
-            break;
-          }
-          case 32: {
-            EndDayOfWeek = input.ReadInt32();
-            break;
-          }
-          case 40: {
-            SettleDayOfWeek = input.ReadInt32();
-            break;
-          }
-          case 48: {
             IsRace = input.ReadBool();
+            break;
+          }
+          case 34: {
+            if (calibrationTime_ == null) {
+              CalibrationTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(CalibrationTime);
             break;
           }
         }
@@ -7008,7 +7045,7 @@ namespace Contracts.HamsterWoodsContract {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Contracts.HamsterWoodsContract.HamsterWoodsContractReflection.Descriptor.MessageTypes[22]; }
+      get { return global::Contracts.HamsterWoods.HamsterWoodsContractReflection.Descriptor.MessageTypes[22]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

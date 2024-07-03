@@ -29,19 +29,6 @@ public class Query
             ConfirmedBlockHeight = confirmedHeight
         };
     }
-    public static async Task<SeasonResultDto> GetRankingSeasonList(
-        [FromServices] IAElfIndexerClientEntityRepository<RankSeasonConfigIndex, TransactionInfo> repository,
-        [FromServices] IObjectMapper objectMapper)
-    {
-        var result = await repository.GetSortListAsync(null,
-            sortFunc: s => s.Descending(a => Convert.ToInt64(a.Id))
-        );
-
-        return new SeasonResultDto
-        {
-            Season = objectMapper.Map<List<RankSeasonConfigIndex>, List<SeasonDto>>(result.Item2)
-        };
-    }
 
     [Name("getWeekRankRecords")]
     public static async Task<WeekRankRecordDto> GetWeekRankRecordsAsync(
@@ -309,7 +296,6 @@ public class Query
         {
             var latestGame = result.Item2[0];
             gameBlockHeightDto.BingoBlockHeight = latestGame.BingoBlockHeight;
-            gameBlockHeightDto.SeasonId = latestGame.SeasonId;
             gameBlockHeightDto.LatestGameId = latestGame.Id;
             gameBlockHeightDto.BingoTime = latestGame.BingoTransactionInfo.TriggerTime;
             var countQuery = new List<Func<QueryContainerDescriptor<GameIndex>, QueryContainer>>();

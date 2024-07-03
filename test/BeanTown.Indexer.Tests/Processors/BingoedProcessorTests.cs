@@ -50,7 +50,7 @@ public class BingoProcessorTests : HamsterWoodsIndexerPluginTestBase
     [Fact]
     public async Task HandleBingoProcessorAsync_Test()
     {
-        var bingoProcessor = GetRequiredService<BingoProcessor>();
+        var bingoProcessor = GetRequiredService<PickedProcessor>();
         var blockStateSet = new BlockStateSet<TransactionInfo>
         {
             BlockHash = blockHash,

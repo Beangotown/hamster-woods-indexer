@@ -76,7 +76,7 @@ public class HamsterWoodsIndexerPluginTestModule : AbpModule
                 new ContractInfo
                 {
                     ChainId = "tDVW",
-                    BeangoTownAddress = "HamsterWoods"
+                    HamsterWoodsAddress = "HamsterWoods"
                 }
             };
         });

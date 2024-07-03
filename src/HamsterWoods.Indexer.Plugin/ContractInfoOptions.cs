@@ -8,6 +8,6 @@ public class ContractInfoOptions
 public class ContractInfo
 {
     public string ChainId { get; set; }
-    public string BeangoTownAddress { get; set; }
+    public string HamsterWoodsAddress { get; set; }
     public string TokenContractAddress { get; set; }
 }

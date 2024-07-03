@@ -1,15 +1,16 @@
 using AElfIndexer.Client;
 using AElfIndexer.Client.Handlers;
 using AElfIndexer.Grains.State.Client;
-using Contracts.HamsterWoodsContract;
+using Contracts.HamsterWoods;
 using HamsterWoods.Indexer.Plugin.Entities;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 using Volo.Abp.ObjectMapping;
 
 namespace HamsterWoods.Indexer.Plugin.Processors;
 
-public class BingoProcessor : HamsterWoodsProcessorBase<Picked>
+public class PickedProcessor : AElfLogEventProcessorBase<Picked, TransactionInfo>
 {
     private readonly IAElfIndexerClientEntityRepository<GameIndex, TransactionInfo> _gameInfoIndexRepository;
 
@@ -20,44 +21,41 @@ public class BingoProcessor : HamsterWoodsProcessorBase<Picked>
         _rankWeekUserIndexRepository;
 
     private readonly GameInfoOption _gameInfoOption;
-    private readonly ILogger<AElfLogEventProcessorBase<Picked, TransactionInfo>> _logger;
+    private readonly ILogger<PickedProcessor> _pickedLogger;
+    private readonly IObjectMapper _objectMapper;
+    private readonly ContractInfoOptions _contractInfoOptions;
 
-    public BingoProcessor(
+    public PickedProcessor(
         ILogger<AElfLogEventProcessorBase<Picked, TransactionInfo>> logger,
+        ILogger<PickedProcessor> pickedLogger,
         IAElfIndexerClientEntityRepository<GameIndex, TransactionInfo> gameInfoIndexRepository,
         IAElfIndexerClientEntityRepository<RankSeasonConfigIndex, TransactionInfo> rankSeasonIndexRepository,
         IAElfIndexerClientEntityRepository<UserWeekRankIndex, TransactionInfo> rankWeekUserIndexRepository,
         IOptionsSnapshot<GameInfoOption> gameInfoOption,
         IOptionsSnapshot<ContractInfoOptions> contractInfoOptions,
-        IObjectMapper objectMapper
-    ) : base(logger, objectMapper, contractInfoOptions)
+        IObjectMapper objectMapper) : base(logger)
     {
-        _logger = logger;
+        _pickedLogger = pickedLogger;
         _gameInfoIndexRepository = gameInfoIndexRepository;
         _rankSeasonIndexRepository = rankSeasonIndexRepository;
         _rankWeekUserIndexRepository = rankWeekUserIndexRepository;
         _gameInfoOption = gameInfoOption.Value;
+        _objectMapper = objectMapper;
+        _contractInfoOptions = contractInfoOptions.Value;
     }
 
     public override string GetContractAddress(string chainId)
     {
-        return ContractInfoOptions.ContractInfos.First(c => c.ChainId == chainId).BeangoTownAddress;
+        return _contractInfoOptions.ContractInfos.First(c => c.ChainId == chainId).HamsterWoodsAddress;
     }
 
     protected override async Task HandleEventAsync(Picked eventValue, LogEventContext context)
     {
-        _logger.LogDebug("Bingoed HandleEventAsync BlockHeight:{BlockHeight} TransactionId:{TransactionId}",
+        _pickedLogger.LogDebug("Picked HandleEventAsync BlockHeight:{BlockHeight} TransactionId:{TransactionId}",
             context.BlockHeight, context.TransactionId);
 
-        RankSeasonConfigIndex seasonConfigRankIndex = null;
-        if (!string.IsNullOrEmpty(_gameInfoOption.Id))
-        {
-            seasonConfigRankIndex = await SaveGameConfigInfoAsync(context);
-        }
-
-        var weekNum = SeasonWeekUtil.GetRankWeekNum(seasonConfigRankIndex, context.BlockTime);
-        await SaveGameIndexAsync(eventValue, context, weekNum, eventValue.IsRace);
-        _logger.LogDebug(" SaveGameIndexAsync Success  TransactionId:{TransactionId}",
+        await SaveGameIndexAsync(eventValue, context, eventValue.WeekNum, eventValue.IsRace);
+        _pickedLogger.LogDebug(" SaveGameIndexAsync Success  TransactionId:{TransactionId}",
             context.TransactionId);
         //await SaveRankWeekUserIndexAsync(eventValue, context, weekNum, weekNum);
     }
@@ -70,7 +68,7 @@ public class BingoProcessor : HamsterWoodsProcessorBase<Picked>
         {
             return;
         }
-        
+
         // id start_date-end_date - dayofweed,
         //context.BlockTime
         var rankWeekUserId = IdGenerateHelper.GenerateId(eventValue.PlayerAddress.ToBase58());
@@ -99,19 +97,20 @@ public class BingoProcessor : HamsterWoodsProcessorBase<Picked>
             rankWeekUserIndex.UpdateTime = context.BlockTime;
         }
 
-        ObjectMapper.Map(context, rankWeekUserIndex);
+        _objectMapper.Map(context, rankWeekUserIndex);
         await _rankWeekUserIndexRepository.AddOrUpdateAsync(rankWeekUserIndex);
     }
 
     private async Task SaveGameIndexAsync(Picked eventValue, LogEventContext context,
-        int weekOfYear, bool isRace)
+        int weekNum, bool isRace)
     {
         var feeAmount = GetFeeAmount(context.ExtraProperties);
         var gameIndex = new GameIndex
         {
-            Id = context.TransactionId,
+            Id = IdGenerateHelper.GenerateId(context.BlockHash, context.TransactionId),
             CaAddress = AddressUtil.ToFullAddress(eventValue.PlayerAddress.ToBase58(), context.ChainId),
-            WeekOfYear = weekOfYear,
+            Chainid = context.ChainId,
+            WeekNum = weekNum,
             IsRace = isRace,
             BingoTransactionInfo = new TransactionInfoIndex()
             {
@@ -120,16 +119,58 @@ public class BingoProcessor : HamsterWoodsProcessorBase<Picked>
                 TransactionFee = feeAmount
             }
         };
-        ObjectMapper.Map(eventValue, gameIndex);
-        ObjectMapper.Map(context, gameIndex);
+        _objectMapper.Map(eventValue, gameIndex);
+        _objectMapper.Map(context, gameIndex);
         await _gameInfoIndexRepository.AddOrUpdateAsync(gameIndex);
     }
 
     private async Task<RankSeasonConfigIndex> SaveGameConfigInfoAsync(LogEventContext context)
     {
         var rankSeasonIndex = SeasonWeekUtil.ConvertRankSeasonIndex(_gameInfoOption);
-        ObjectMapper.Map(context, rankSeasonIndex);
+        _objectMapper.Map(context, rankSeasonIndex);
         await _rankSeasonIndexRepository.AddOrUpdateAsync(rankSeasonIndex);
         return rankSeasonIndex;
+    }
+
+    protected Dictionary<string, long> GetTransactionFee(Dictionary<string, string> extraProperties)
+    {
+        var feeMap = new Dictionary<string, long>();
+        if (extraProperties.TryGetValue("TransactionFee", out var transactionFee))
+        {
+            _pickedLogger.LogDebug("TransactionFee {Fee}", transactionFee);
+            feeMap = JsonConvert.DeserializeObject<Dictionary<string, long>>(transactionFee) ??
+                     new Dictionary<string, long>();
+        }
+
+        if (extraProperties.TryGetValue("ResourceFee", out var resourceFee))
+        {
+            _pickedLogger.LogDebug("ResourceFee {Fee}", resourceFee);
+            var resourceFeeMap = JsonConvert.DeserializeObject<Dictionary<string, long>>(resourceFee) ??
+                                 new Dictionary<string, long>();
+            foreach (var (symbol, fee) in resourceFeeMap)
+            {
+                if (feeMap.ContainsKey(symbol))
+                {
+                    feeMap[symbol] += fee;
+                }
+                else
+                {
+                    feeMap[symbol] = fee;
+                }
+            }
+        }
+
+        return feeMap;
+    }
+
+    protected long GetFeeAmount(Dictionary<string, string> extraProperties)
+    {
+        var feeMap = GetTransactionFee(extraProperties);
+        if (feeMap.TryGetValue("ELF", out var value))
+        {
+            return value;
+        }
+
+        return 0;
     }
 }

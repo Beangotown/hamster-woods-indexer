@@ -8,7 +8,7 @@
 using System.Collections.Generic;
 using aelf = global::AElf.CSharp.Core;
 
-namespace Contracts.HamsterWoodsContract {
+namespace Contracts.HamsterWoods {
 
   #region Events
   public partial class RankingRulesUpdated : aelf::IEvent<RankingRulesUpdated>
@@ -60,6 +60,7 @@ namespace Contracts.HamsterWoodsContract {
         TotalAcorns = TotalAcorns,
         TotalChance = TotalChance,
         IsRace = IsRace,
+        WeekNum = WeekNum,
       };
     }
   }
@@ -85,18 +86,18 @@ namespace Contracts.HamsterWoodsContract {
     }
   }
 
-  public partial class PurchasedChance : aelf::IEvent<PurchasedChance>
+  public partial class ChancePurchased : aelf::IEvent<ChancePurchased>
   {
-    public global::System.Collections.Generic.IEnumerable<PurchasedChance> GetIndexed()
+    public global::System.Collections.Generic.IEnumerable<ChancePurchased> GetIndexed()
     {
-      return new List<PurchasedChance>
+      return new List<ChancePurchased>
       {
       };
     }
 
-    public PurchasedChance GetNonIndexed()
+    public ChancePurchased GetNonIndexed()
     {
-      return new PurchasedChance
+      return new ChancePurchased
       {
         PlayerAddress = PlayerAddress,
         AcornsAmount = AcornsAmount,
@@ -114,24 +115,24 @@ namespace Contracts.HamsterWoodsContract {
     static readonly string __ServiceName = "HamsterWoodsContract";
 
     #region Marshallers
-    static readonly aelf::Marshaller<global::Contracts.HamsterWoodsContract.PlayInput> __Marshaller_PlayInput = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Contracts.HamsterWoodsContract.PlayInput.Parser.ParseFrom);
+    static readonly aelf::Marshaller<global::Contracts.HamsterWoods.PlayInput> __Marshaller_PlayInput = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Contracts.HamsterWoods.PlayInput.Parser.ParseFrom);
     static readonly aelf::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_google_protobuf_Empty = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Google.Protobuf.WellKnownTypes.Empty.Parser.ParseFrom);
     static readonly aelf::Marshaller<global::Google.Protobuf.WellKnownTypes.Int32Value> __Marshaller_google_protobuf_Int32Value = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Google.Protobuf.WellKnownTypes.Int32Value.Parser.ParseFrom);
-    static readonly aelf::Marshaller<global::Contracts.HamsterWoodsContract.GameLimitSettings> __Marshaller_GameLimitSettings = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Contracts.HamsterWoodsContract.GameLimitSettings.Parser.ParseFrom);
+    static readonly aelf::Marshaller<global::Contracts.HamsterWoods.GameLimitSettings> __Marshaller_GameLimitSettings = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Contracts.HamsterWoods.GameLimitSettings.Parser.ParseFrom);
     static readonly aelf::Marshaller<global::AElf.Types.Address> __Marshaller_aelf_Address = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::AElf.Types.Address.Parser.ParseFrom);
-    static readonly aelf::Marshaller<global::Contracts.HamsterWoodsContract.GameRules> __Marshaller_GameRules = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Contracts.HamsterWoodsContract.GameRules.Parser.ParseFrom);
-    static readonly aelf::Marshaller<global::Contracts.HamsterWoodsContract.RankingRules> __Marshaller_RankingRules = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Contracts.HamsterWoodsContract.RankingRules.Parser.ParseFrom);
-    static readonly aelf::Marshaller<global::Contracts.HamsterWoodsContract.PurchaseChanceConfig> __Marshaller_PurchaseChanceConfig = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Contracts.HamsterWoodsContract.PurchaseChanceConfig.Parser.ParseFrom);
-    static readonly aelf::Marshaller<global::Contracts.HamsterWoodsContract.UnlockAcornsInput> __Marshaller_UnlockAcornsInput = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Contracts.HamsterWoodsContract.UnlockAcornsInput.Parser.ParseFrom);
-    static readonly aelf::Marshaller<global::Contracts.HamsterWoodsContract.RaceConfig> __Marshaller_RaceConfig = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Contracts.HamsterWoodsContract.RaceConfig.Parser.ParseFrom);
+    static readonly aelf::Marshaller<global::Contracts.HamsterWoods.GameRules> __Marshaller_GameRules = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Contracts.HamsterWoods.GameRules.Parser.ParseFrom);
+    static readonly aelf::Marshaller<global::Contracts.HamsterWoods.RankingRules> __Marshaller_RankingRules = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Contracts.HamsterWoods.RankingRules.Parser.ParseFrom);
+    static readonly aelf::Marshaller<global::Contracts.HamsterWoods.PurchaseChanceConfig> __Marshaller_PurchaseChanceConfig = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Contracts.HamsterWoods.PurchaseChanceConfig.Parser.ParseFrom);
+    static readonly aelf::Marshaller<global::Contracts.HamsterWoods.UnlockAcornsInput> __Marshaller_UnlockAcornsInput = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Contracts.HamsterWoods.UnlockAcornsInput.Parser.ParseFrom);
+    static readonly aelf::Marshaller<global::Contracts.HamsterWoods.RaceConfig> __Marshaller_RaceConfig = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Contracts.HamsterWoods.RaceConfig.Parser.ParseFrom);
     static readonly aelf::Marshaller<global::Google.Protobuf.WellKnownTypes.BoolValue> __Marshaller_google_protobuf_BoolValue = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Google.Protobuf.WellKnownTypes.BoolValue.Parser.ParseFrom);
-    static readonly aelf::Marshaller<global::Contracts.HamsterWoodsContract.PlayerInformation> __Marshaller_PlayerInformation = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Contracts.HamsterWoodsContract.PlayerInformation.Parser.ParseFrom);
-    static readonly aelf::Marshaller<global::Contracts.HamsterWoodsContract.GetBoutInformationInput> __Marshaller_GetBoutInformationInput = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Contracts.HamsterWoodsContract.GetBoutInformationInput.Parser.ParseFrom);
-    static readonly aelf::Marshaller<global::Contracts.HamsterWoodsContract.BoutInformation> __Marshaller_BoutInformation = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Contracts.HamsterWoodsContract.BoutInformation.Parser.ParseFrom);
+    static readonly aelf::Marshaller<global::Contracts.HamsterWoods.PlayerInformation> __Marshaller_PlayerInformation = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Contracts.HamsterWoods.PlayerInformation.Parser.ParseFrom);
+    static readonly aelf::Marshaller<global::Contracts.HamsterWoods.GetBoutInformationInput> __Marshaller_GetBoutInformationInput = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Contracts.HamsterWoods.GetBoutInformationInput.Parser.ParseFrom);
+    static readonly aelf::Marshaller<global::Contracts.HamsterWoods.BoutInformation> __Marshaller_BoutInformation = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Contracts.HamsterWoods.BoutInformation.Parser.ParseFrom);
     #endregion
 
     #region Methods
-    static readonly aelf::Method<global::Contracts.HamsterWoodsContract.PlayInput, global::Google.Protobuf.WellKnownTypes.Empty> __Method_Play = new aelf::Method<global::Contracts.HamsterWoodsContract.PlayInput, global::Google.Protobuf.WellKnownTypes.Empty>(
+    static readonly aelf::Method<global::Contracts.HamsterWoods.PlayInput, global::Google.Protobuf.WellKnownTypes.Empty> __Method_Play = new aelf::Method<global::Contracts.HamsterWoods.PlayInput, global::Google.Protobuf.WellKnownTypes.Empty>(
         aelf::MethodType.Action,
         __ServiceName,
         "Play",
@@ -145,7 +146,7 @@ namespace Contracts.HamsterWoodsContract {
         __Marshaller_google_protobuf_Int32Value,
         __Marshaller_google_protobuf_Empty);
 
-    static readonly aelf::Method<global::Contracts.HamsterWoodsContract.GameLimitSettings, global::Google.Protobuf.WellKnownTypes.Empty> __Method_SetGameLimitSettings = new aelf::Method<global::Contracts.HamsterWoodsContract.GameLimitSettings, global::Google.Protobuf.WellKnownTypes.Empty>(
+    static readonly aelf::Method<global::Contracts.HamsterWoods.GameLimitSettings, global::Google.Protobuf.WellKnownTypes.Empty> __Method_SetGameLimitSettings = new aelf::Method<global::Contracts.HamsterWoods.GameLimitSettings, global::Google.Protobuf.WellKnownTypes.Empty>(
         aelf::MethodType.Action,
         __ServiceName,
         "SetGameLimitSettings",
@@ -166,21 +167,21 @@ namespace Contracts.HamsterWoodsContract {
         __Marshaller_aelf_Address,
         __Marshaller_google_protobuf_Empty);
 
-    static readonly aelf::Method<global::Contracts.HamsterWoodsContract.GameRules, global::Google.Protobuf.WellKnownTypes.Empty> __Method_SetGameRules = new aelf::Method<global::Contracts.HamsterWoodsContract.GameRules, global::Google.Protobuf.WellKnownTypes.Empty>(
+    static readonly aelf::Method<global::Contracts.HamsterWoods.GameRules, global::Google.Protobuf.WellKnownTypes.Empty> __Method_SetGameRules = new aelf::Method<global::Contracts.HamsterWoods.GameRules, global::Google.Protobuf.WellKnownTypes.Empty>(
         aelf::MethodType.Action,
         __ServiceName,
         "SetGameRules",
         __Marshaller_GameRules,
         __Marshaller_google_protobuf_Empty);
 
-    static readonly aelf::Method<global::Contracts.HamsterWoodsContract.RankingRules, global::Google.Protobuf.WellKnownTypes.Empty> __Method_SetRankingRules = new aelf::Method<global::Contracts.HamsterWoodsContract.RankingRules, global::Google.Protobuf.WellKnownTypes.Empty>(
+    static readonly aelf::Method<global::Contracts.HamsterWoods.RankingRules, global::Google.Protobuf.WellKnownTypes.Empty> __Method_SetRankingRules = new aelf::Method<global::Contracts.HamsterWoods.RankingRules, global::Google.Protobuf.WellKnownTypes.Empty>(
         aelf::MethodType.Action,
         __ServiceName,
         "SetRankingRules",
         __Marshaller_RankingRules,
         __Marshaller_google_protobuf_Empty);
 
-    static readonly aelf::Method<global::Contracts.HamsterWoodsContract.PurchaseChanceConfig, global::Google.Protobuf.WellKnownTypes.Empty> __Method_SetPurchaseChanceConfig = new aelf::Method<global::Contracts.HamsterWoodsContract.PurchaseChanceConfig, global::Google.Protobuf.WellKnownTypes.Empty>(
+    static readonly aelf::Method<global::Contracts.HamsterWoods.PurchaseChanceConfig, global::Google.Protobuf.WellKnownTypes.Empty> __Method_SetPurchaseChanceConfig = new aelf::Method<global::Contracts.HamsterWoods.PurchaseChanceConfig, global::Google.Protobuf.WellKnownTypes.Empty>(
         aelf::MethodType.Action,
         __ServiceName,
         "SetPurchaseChanceConfig",
@@ -194,7 +195,7 @@ namespace Contracts.HamsterWoodsContract {
         __Marshaller_aelf_Address,
         __Marshaller_google_protobuf_Empty);
 
-    static readonly aelf::Method<global::Contracts.HamsterWoodsContract.UnlockAcornsInput, global::Google.Protobuf.WellKnownTypes.Empty> __Method_BatchUnlockAcorns = new aelf::Method<global::Contracts.HamsterWoodsContract.UnlockAcornsInput, global::Google.Protobuf.WellKnownTypes.Empty>(
+    static readonly aelf::Method<global::Contracts.HamsterWoods.UnlockAcornsInput, global::Google.Protobuf.WellKnownTypes.Empty> __Method_BatchUnlockAcorns = new aelf::Method<global::Contracts.HamsterWoods.UnlockAcornsInput, global::Google.Protobuf.WellKnownTypes.Empty>(
         aelf::MethodType.Action,
         __ServiceName,
         "BatchUnlockAcorns",
@@ -215,7 +216,7 @@ namespace Contracts.HamsterWoodsContract {
         __Marshaller_google_protobuf_Empty,
         __Marshaller_google_protobuf_Empty);
 
-    static readonly aelf::Method<global::Contracts.HamsterWoodsContract.RaceConfig, global::Google.Protobuf.WellKnownTypes.Empty> __Method_SetRaceConfig = new aelf::Method<global::Contracts.HamsterWoodsContract.RaceConfig, global::Google.Protobuf.WellKnownTypes.Empty>(
+    static readonly aelf::Method<global::Contracts.HamsterWoods.RaceConfig, global::Google.Protobuf.WellKnownTypes.Empty> __Method_SetRaceConfig = new aelf::Method<global::Contracts.HamsterWoods.RaceConfig, global::Google.Protobuf.WellKnownTypes.Empty>(
         aelf::MethodType.Action,
         __ServiceName,
         "SetRaceConfig",
@@ -229,14 +230,14 @@ namespace Contracts.HamsterWoodsContract {
         __Marshaller_aelf_Address,
         __Marshaller_google_protobuf_BoolValue);
 
-    static readonly aelf::Method<global::AElf.Types.Address, global::Contracts.HamsterWoodsContract.PlayerInformation> __Method_GetPlayerInformation = new aelf::Method<global::AElf.Types.Address, global::Contracts.HamsterWoodsContract.PlayerInformation>(
+    static readonly aelf::Method<global::AElf.Types.Address, global::Contracts.HamsterWoods.PlayerInformation> __Method_GetPlayerInformation = new aelf::Method<global::AElf.Types.Address, global::Contracts.HamsterWoods.PlayerInformation>(
         aelf::MethodType.View,
         __ServiceName,
         "GetPlayerInformation",
         __Marshaller_aelf_Address,
         __Marshaller_PlayerInformation);
 
-    static readonly aelf::Method<global::Contracts.HamsterWoodsContract.GetBoutInformationInput, global::Contracts.HamsterWoodsContract.BoutInformation> __Method_GetBoutInformation = new aelf::Method<global::Contracts.HamsterWoodsContract.GetBoutInformationInput, global::Contracts.HamsterWoodsContract.BoutInformation>(
+    static readonly aelf::Method<global::Contracts.HamsterWoods.GetBoutInformationInput, global::Contracts.HamsterWoods.BoutInformation> __Method_GetBoutInformation = new aelf::Method<global::Contracts.HamsterWoods.GetBoutInformationInput, global::Contracts.HamsterWoods.BoutInformation>(
         aelf::MethodType.View,
         __ServiceName,
         "GetBoutInformation",
@@ -250,35 +251,35 @@ namespace Contracts.HamsterWoodsContract {
         __Marshaller_google_protobuf_Empty,
         __Marshaller_aelf_Address);
 
-    static readonly aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Contracts.HamsterWoodsContract.GameLimitSettings> __Method_GetGameLimitSettings = new aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Contracts.HamsterWoodsContract.GameLimitSettings>(
+    static readonly aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Contracts.HamsterWoods.GameLimitSettings> __Method_GetGameLimitSettings = new aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Contracts.HamsterWoods.GameLimitSettings>(
         aelf::MethodType.View,
         __ServiceName,
         "GetGameLimitSettings",
         __Marshaller_google_protobuf_Empty,
         __Marshaller_GameLimitSettings);
 
-    static readonly aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Contracts.HamsterWoodsContract.GameRules> __Method_GetGameRules = new aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Contracts.HamsterWoodsContract.GameRules>(
+    static readonly aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Contracts.HamsterWoods.GameRules> __Method_GetGameRules = new aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Contracts.HamsterWoods.GameRules>(
         aelf::MethodType.View,
         __ServiceName,
         "GetGameRules",
         __Marshaller_google_protobuf_Empty,
         __Marshaller_GameRules);
 
-    static readonly aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Contracts.HamsterWoodsContract.RankingRules> __Method_GetRankingRules = new aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Contracts.HamsterWoodsContract.RankingRules>(
+    static readonly aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Contracts.HamsterWoods.RankingRules> __Method_GetRankingRules = new aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Contracts.HamsterWoods.RankingRules>(
         aelf::MethodType.View,
         __ServiceName,
         "GetRankingRules",
         __Marshaller_google_protobuf_Empty,
         __Marshaller_RankingRules);
 
-    static readonly aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Contracts.HamsterWoodsContract.PurchaseChanceConfig> __Method_GetPurchaseChanceConfig = new aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Contracts.HamsterWoodsContract.PurchaseChanceConfig>(
+    static readonly aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Contracts.HamsterWoods.PurchaseChanceConfig> __Method_GetPurchaseChanceConfig = new aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Contracts.HamsterWoods.PurchaseChanceConfig>(
         aelf::MethodType.View,
         __ServiceName,
         "GetPurchaseChanceConfig",
         __Marshaller_google_protobuf_Empty,
         __Marshaller_PurchaseChanceConfig);
 
-    static readonly aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Contracts.HamsterWoodsContract.RaceConfig> __Method_GetRaceConfig = new aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Contracts.HamsterWoodsContract.RaceConfig>(
+    static readonly aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Contracts.HamsterWoods.RaceConfig> __Method_GetRaceConfig = new aelf::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Contracts.HamsterWoods.RaceConfig>(
         aelf::MethodType.View,
         __ServiceName,
         "GetRaceConfig",
@@ -290,7 +291,7 @@ namespace Contracts.HamsterWoodsContract {
     #region Descriptors
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::Contracts.HamsterWoodsContract.HamsterWoodsContractReflection.Descriptor.Services[0]; }
+      get { return global::Contracts.HamsterWoods.HamsterWoodsContractReflection.Descriptor.Services[0]; }
     }
 
     public static global::System.Collections.Generic.IReadOnlyList<global::Google.Protobuf.Reflection.ServiceDescriptor> Descriptors
@@ -300,11 +301,12 @@ namespace Contracts.HamsterWoodsContract {
         return new global::System.Collections.Generic.List<global::Google.Protobuf.Reflection.ServiceDescriptor>()
         {
           global::AElf.Standards.ACS12.Acs12Reflection.Descriptor.Services[0],
-          global::Contracts.HamsterWoodsContract.HamsterWoodsContractReflection.Descriptor.Services[0],
+          global::Contracts.HamsterWoods.HamsterWoodsContractReflection.Descriptor.Services[0],
         };
       }
     }
     #endregion
+
 
   }
 }
