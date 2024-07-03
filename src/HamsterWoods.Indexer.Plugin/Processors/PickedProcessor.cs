@@ -24,6 +24,7 @@ public class PickedProcessor : AElfLogEventProcessorBase<Picked, TransactionInfo
     private readonly ILogger<PickedProcessor> _pickedLogger;
     private readonly IObjectMapper _objectMapper;
     private readonly ContractInfoOptions _contractInfoOptions;
+    private readonly ScoreTokenOptions _scoreTokenOptions;
 
     public PickedProcessor(
         ILogger<AElfLogEventProcessorBase<Picked, TransactionInfo>> logger,
@@ -33,6 +34,7 @@ public class PickedProcessor : AElfLogEventProcessorBase<Picked, TransactionInfo
         IAElfIndexerClientEntityRepository<UserWeekRankIndex, TransactionInfo> rankWeekUserIndexRepository,
         IOptionsSnapshot<GameInfoOption> gameInfoOption,
         IOptionsSnapshot<ContractInfoOptions> contractInfoOptions,
+        IOptionsSnapshot<ScoreTokenOptions> scoreTokenOptions,
         IObjectMapper objectMapper) : base(logger)
     {
         _pickedLogger = pickedLogger;
@@ -42,6 +44,7 @@ public class PickedProcessor : AElfLogEventProcessorBase<Picked, TransactionInfo
         _gameInfoOption = gameInfoOption.Value;
         _objectMapper = objectMapper;
         _contractInfoOptions = contractInfoOptions.Value;
+        _scoreTokenOptions = scoreTokenOptions.Value;
     }
 
     public override string GetContractAddress(string chainId)
@@ -55,23 +58,14 @@ public class PickedProcessor : AElfLogEventProcessorBase<Picked, TransactionInfo
             context.BlockHeight, context.TransactionId);
 
         await SaveGameIndexAsync(eventValue, context, eventValue.WeekNum, eventValue.IsRace);
-        _pickedLogger.LogDebug(" SaveGameIndexAsync Success  TransactionId:{TransactionId}",
+        await SaveRankWeekUserIndexAsync(eventValue, context, eventValue.WeekNum);
+        _pickedLogger.LogDebug("Save Picked Success TransactionId:{TransactionId}",
             context.TransactionId);
-        //await SaveRankWeekUserIndexAsync(eventValue, context, weekNum, weekNum);
     }
 
-    private async Task SaveRankWeekUserIndexAsync(Picked eventValue, LogEventContext context, WeekInfo weekInfo)
+    private async Task SaveRankWeekUserIndexAsync(Picked eventValue, LogEventContext context, int weekNum)
     {
-        // day of week 1 no, suspend?
-        var dayOfWeek = 2;
-        if (!eventValue.IsRace)
-        {
-            return;
-        }
-
-        // id start_date-end_date - dayofweed,
-        //context.BlockTime
-        var rankWeekUserId = IdGenerateHelper.GenerateId(eventValue.PlayerAddress.ToBase58());
+        var rankWeekUserId = IdGenerateHelper.GenerateId(eventValue.PlayerAddress.ToBase58(), weekNum);
         var rankWeekUserIndex =
             await _rankWeekUserIndexRepository.GetFromBlockStateSetAsync(rankWeekUserId, context.ChainId);
         if (rankWeekUserIndex == null)
@@ -79,16 +73,17 @@ public class PickedProcessor : AElfLogEventProcessorBase<Picked, TransactionInfo
             rankWeekUserIndex = new UserWeekRankIndex()
             {
                 Id = rankWeekUserId,
-                WeekNum = weekInfo.WeekOfYear,
+                WeekNum = weekNum,
                 CaAddress = AddressUtil.ToFullAddress(eventValue.PlayerAddress.ToBase58(), context.ChainId),
                 UpdateTime = context.BlockTime,
                 SumScore = eventValue.Score,
-                // RankBeginTime = DateTimeHelper.ParseDateTimeByStr(weekInfo.RankBeginTime),
-                // RankEndTime = DateTimeHelper.ParseDateTimeByStr(weekInfo.RankEndTime),
-                // ShowBeginTime = DateTimeHelper.ParseDateTimeByStr(weekInfo.ShowBeginTime),
-                // ShowEndTime = DateTimeHelper.ParseDateTimeByStr(weekInfo.ShowEndTime),
                 Rank = HamsterWoodsIndexerConstants.UserDefaultRank,
-                IsRace = eventValue.IsRace
+                IsRace = eventValue.IsRace,
+                ScoreTokenInfo = new ScoreTokenInfo
+                {
+                    Symbol = _scoreTokenOptions.Symbol,
+                    Decimals = _scoreTokenOptions.Decimals
+                }
             };
         }
         else
@@ -117,6 +112,11 @@ public class PickedProcessor : AElfLogEventProcessorBase<Picked, TransactionInfo
                 TransactionId = context.TransactionId,
                 TriggerTime = context.BlockTime,
                 TransactionFee = feeAmount
+            },
+            ScoreTokenInfo = new ScoreTokenInfo
+            {
+                Symbol = _scoreTokenOptions.Symbol,
+                Decimals = _scoreTokenOptions.Decimals
             }
         };
         _objectMapper.Map(eventValue, gameIndex);

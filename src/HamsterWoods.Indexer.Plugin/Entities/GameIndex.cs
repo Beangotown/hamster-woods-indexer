@@ -14,10 +14,17 @@ public class GameIndex : AElfIndexerClientEntity<string>, IIndexBuild
     public bool IsComplete { get; set; }
     public GridType GridType { get; set; }
     public int GridNum { get; set; }
-    public int Score { get; set; }
+    public long Score { get; set; }
     public int WeekNum { get; set; }
     public bool IsRace { get; set; }
     public long BingoBlockHeight { get; set; }
     public TransactionInfoIndex? PlayTransactionInfo { get; set; }
     public TransactionInfoIndex? BingoTransactionInfo { get; set; }
+    public ScoreTokenInfo ScoreTokenInfo { get; set; }
+}
+
+public class ScoreTokenInfo
+{
+    [Keyword] public string Symbol { get; set; }
+    public int Decimals { get; set; }
 }

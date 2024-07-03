@@ -13,4 +13,5 @@ public class PurchaseChanceIndex : AElfIndexerClientEntity<string>, IIndexBuild
     public long Cost { get; set; }
     public int WeekNum { get; set; }
     public TransactionInfoIndex? TransactionInfo { get; set; }
+    public ScoreTokenInfo ScoreTokenInfo { get; set; }
 }

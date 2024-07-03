@@ -70,24 +70,14 @@ public class Query
         [FromServices] IObjectMapper objectMapper, GetRankDto getRankDto)
     {
         var rankResultDto = new WeekRankResultDto();
-        var seasonIndex = await GetRankSeasonConfigIndexAsync(rankSeasonRepository);
-        SeasonWeekUtil.GetWeekStatusAndRefreshTime(seasonIndex, DateTime.Now, out var status, out var refreshTime);
-        rankResultDto.Status = status;
-        rankResultDto.RefreshTime = refreshTime;
-        int week = SeasonWeekUtil.GetWeekNum(seasonIndex, DateTime.Now);
-        if (week == -1 || getRankDto.SkipCount >= seasonIndex.PlayerWeekShowCount)
-        {
-            return rankResultDto;
-        }
-
         var mustQuery = new List<Func<QueryContainerDescriptor<UserWeekRankIndex>, QueryContainer>>();
-        mustQuery.Add(q => q.Term(i => i.Field(f => f.WeekNum).Value(week)));
+        mustQuery.Add(q => q.Term(i => i.Field(f => f.WeekNum).Value(getRankDto.WeekNum)));
 
         QueryContainer Filter(QueryContainerDescriptor<UserWeekRankIndex> f) => f.Bool(b => b.Must(mustQuery));
 
         var result = await rankWeekUserRepository.GetSortListAsync(Filter, null,
             sortFunc: s => s.Descending(a => Convert.ToInt64(a.SumScore)).Ascending(a => a.UpdateTime)
-            , seasonIndex.PlayerWeekRankCount,
+            , 100,
             0);
 
         int rank = 0;
@@ -110,14 +100,13 @@ public class Query
         else
         {
             var count = Math.Min(rankDtos.Count - getRankDto.SkipCount,
-                Math.Min(getRankDto.MaxResultCount, seasonIndex.PlayerWeekShowCount - getRankDto.SkipCount));
+                Math.Min(getRankDto.MaxResultCount, 100));
             rankResultDto.RankingList = rankDtos.GetRange(getRankDto.SkipCount, count);
         }
 
         if (rankResultDto.SelfRank == null)
         {
-            var id = IdGenerateHelper.GenerateId(seasonIndex.Id, week,
-                AddressUtil.ToShortAddress(getRankDto.CaAddress));
+            var id = IdGenerateHelper.GenerateId(AddressUtil.ToShortAddress(getRankDto.CaAddress), getRankDto.WeekNum);
             var userWeekRankIndex = await rankWeekUserRepository.GetAsync(id);
             rankResultDto.SelfRank = ConvertWeekRankDto(objectMapper, getRankDto.CaAddress, userWeekRankIndex);
         }
@@ -472,7 +461,8 @@ public class Query
         QueryContainer Filter(QueryContainerDescriptor<PurchaseChanceIndex> f) => f.Bool(b => b.Must(mustQuery));
 
         var gameResult = await purchaseIndexRepository.GetSortListAsync(Filter, null,
-            sortFunc: s => s.Descending(a => a.BlockHeight), getBuyChanceRecordsDto.MaxResultCount, getBuyChanceRecordsDto.SkipCount
+            sortFunc: s => s.Descending(a => a.BlockHeight), getBuyChanceRecordsDto.MaxResultCount,
+            getBuyChanceRecordsDto.SkipCount
         );
         if (!gameResult.Item2.IsNullOrEmpty())
         {

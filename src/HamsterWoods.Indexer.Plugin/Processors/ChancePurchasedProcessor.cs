@@ -18,9 +18,12 @@ public class ChancePurchasedProcessor : AElfLogEventProcessorBase<ChancePurchase
 
     private readonly IAElfIndexerClientEntityRepository<PurchaseChanceIndex, TransactionInfo>
         _purchaseChanceIndexRepository;
+    private readonly ScoreTokenOptions _scoreTokenOptions;
 
     public ChancePurchasedProcessor(ILogger<AElfLogEventProcessorBase<ChancePurchased, TransactionInfo>> logger,
-        IOptionsSnapshot<ContractInfoOptions> contractInfoOptions, IObjectMapper objectMapper,
+        IOptionsSnapshot<ContractInfoOptions> contractInfoOptions,
+        IOptionsSnapshot<ScoreTokenOptions> scoreTokenOptions,
+        IObjectMapper objectMapper,
         ILogger<ChancePurchasedProcessor> chanceLogger,
         IAElfIndexerClientEntityRepository<PurchaseChanceIndex, TransactionInfo> purchaseChanceIndexRepository) :
         base(logger)
@@ -29,6 +32,7 @@ public class ChancePurchasedProcessor : AElfLogEventProcessorBase<ChancePurchase
         _chanceLogger = chanceLogger;
         _purchaseChanceIndexRepository = purchaseChanceIndexRepository;
         _contractInfoOptions = contractInfoOptions.Value;
+        _scoreTokenOptions = scoreTokenOptions.Value;
     }
 
     public override string GetContractAddress(string chainId)
@@ -55,6 +59,11 @@ public class ChancePurchasedProcessor : AElfLogEventProcessorBase<ChancePurchase
                 TransactionId = context.TransactionId,
                 TriggerTime = context.BlockTime,
                 TransactionFee = feeAmount
+            },
+            ScoreTokenInfo = new ScoreTokenInfo
+            {
+                Symbol = _scoreTokenOptions.Symbol,
+                Decimals = _scoreTokenOptions.Decimals
             }
         };
         

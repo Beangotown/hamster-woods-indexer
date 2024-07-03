@@ -3,7 +3,6 @@ using AElfIndexer.Client.Handlers;
 using AElfIndexer.Grains.State.Client;
 using HamsterWoods.Indexer.Plugin.Entities;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.ObjectMapping;
 
@@ -12,20 +11,21 @@ namespace HamsterWoods.Indexer.Plugin.Processors;
 public class UserBalanceDto
 {
     public string Symbol { get; set; }
-    
+
     public long Amount { get; set; }
 }
-
-
 
 public class UserBalanceProvider : IUserBalanceProvider, ITransientDependency
 {
     private readonly IAElfIndexerClientEntityRepository<UserBalanceIndex, TransactionInfo> _userBalanceIndexRepository;
     private readonly IObjectMapper _objectMapper;
     private readonly ILogger<IUserBalanceProvider> _logger;
-    private const string BeanGoTownCollectionSymbol = "HAMSTERPASS-"; 
-    
-    public UserBalanceProvider(IObjectMapper objectMapper, IAElfIndexerClientEntityRepository<UserBalanceIndex, TransactionInfo> userBalanceIndexRepository, ILogger<IUserBalanceProvider> logger)
+    private const string HamsterPassCollectionSymbol = "HAMSTERPASS-";
+    private const string AcornsSymbol = "ACORNS";
+
+    public UserBalanceProvider(IObjectMapper objectMapper,
+        IAElfIndexerClientEntityRepository<UserBalanceIndex, TransactionInfo> userBalanceIndexRepository,
+        ILogger<IUserBalanceProvider> logger)
     {
         _objectMapper = objectMapper;
         _userBalanceIndexRepository = userBalanceIndexRepository;
@@ -34,15 +34,19 @@ public class UserBalanceProvider : IUserBalanceProvider, ITransientDependency
 
     public async Task SaveUserBalanceAsync(string symbol, string address, long amount, LogEventContext context)
     {
-        _logger.LogDebug("SaveUserBalanceAsync : symbol:{symbol},address:{address},amount:{amount}", symbol, address, amount);
-        
+        _logger.LogDebug("Balance change : symbol:{symbol},address:{address},amount:{amount}", symbol, address,
+            amount);
+
         if (symbol.IsNullOrWhiteSpace() ||
             address.IsNullOrWhiteSpace() ||
-            !symbol.StartsWith(BeanGoTownCollectionSymbol))
+            (!symbol.StartsWith(HamsterPassCollectionSymbol) && symbol != AcornsSymbol))
         {
+            _logger.LogDebug("No need to save, symbol:{symbol}", symbol);
             return;
         }
         
+        
+
         var userBalanceId = IdGenerateHelper.GetUserBalanceId(address, context.ChainId, symbol);
         var userBalanceIndex =
             await _userBalanceIndexRepository.GetFromBlockStateSetAsync(userBalanceId, context.ChainId);
@@ -66,9 +70,12 @@ public class UserBalanceProvider : IUserBalanceProvider, ITransientDependency
 
         _objectMapper.Map(context, userBalanceIndex);
         await _userBalanceIndexRepository.AddOrUpdateAsync(userBalanceIndex);
+        _logger.LogDebug("SaveUserBalanceAsync success : symbol:{symbol},address:{address},amount:{amount}", symbol, address,
+            amount);
     }
 
-    public async Task<List<UserBalanceDto>> QueryUserBalanceBySymbolsAsync(string chainId, List<string> symbols, string address)
+    public async Task<List<UserBalanceDto>> QueryUserBalanceBySymbolsAsync(string chainId, List<string> symbols,
+        string address)
     {
         var userBalanceDtoList = new List<UserBalanceDto>();
         if (symbols.IsNullOrEmpty())
@@ -84,8 +91,8 @@ public class UserBalanceProvider : IUserBalanceProvider, ITransientDependency
         foreach (var symbol in symbols)
         {
             var userBalanceId = IdGenerateHelper.GetUserBalanceId(address, chainId, symbol);
-            var userBalanceIndex = 
-                await _userBalanceIndexRepository.GetFromBlockStateSetAsync(userBalanceId,chainId);
+            var userBalanceIndex =
+                await _userBalanceIndexRepository.GetFromBlockStateSetAsync(userBalanceId, chainId);
             var userBalanceDto = new UserBalanceDto
             {
                 Amount = userBalanceIndex.Amount,
@@ -93,6 +100,7 @@ public class UserBalanceProvider : IUserBalanceProvider, ITransientDependency
             };
             userBalanceDtoList.Add(userBalanceDto);
         }
+
         return userBalanceDtoList;
     }
 
@@ -103,8 +111,7 @@ public class UserBalanceProvider : IUserBalanceProvider, ITransientDependency
         {
             return null;
         }
-        return await _userBalanceIndexRepository.GetFromBlockStateSetAsync(userBalanceId,chainId);
+
+        return await _userBalanceIndexRepository.GetFromBlockStateSetAsync(userBalanceId, chainId);
     }
 }
-
-    

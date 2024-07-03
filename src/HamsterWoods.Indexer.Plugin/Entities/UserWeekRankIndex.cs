@@ -13,4 +13,5 @@ public class UserWeekRankIndex : AElfIndexerClientEntity<string>, IIndexBuild
     public DateTime UpdateTime { get; set; }
     public int Rank { get; set; }
     public bool IsRace { get; set; }
+    public ScoreTokenInfo ScoreTokenInfo { get; set; }
 }

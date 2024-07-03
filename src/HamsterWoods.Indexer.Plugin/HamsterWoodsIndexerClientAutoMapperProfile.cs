@@ -17,7 +17,9 @@ public class HamsterWoodsIndexerClientAutoMapperProfile : Profile
         CreateMap<LogEventContext, RankSeasonConfigIndex>();
         CreateMap<LogEventContext, GameIndex>();
         CreateMap<LogEventContext, PurchaseChanceIndex>();
-        CreateMap<PurchaseChanceIndex, PurchaseDto>();
+        CreateMap<PurchaseChanceIndex, PurchaseDto>()
+            .ForMember(dest => dest.Symbol, source => source.MapFrom(f => f.ScoreTokenInfo.Symbol))
+            .ForMember(dest => dest.Decimals, source => source.MapFrom(f => f.ScoreTokenInfo.Decimals));
         CreateMap<LogEventContext, UserBalanceIndex>();
         CreateMap<LogEventContext, UserWeekRankIndex>();
         CreateMap<BlockInfo, UserWeekRankIndex>().Ignore(destination => destination.Id);
@@ -27,15 +29,19 @@ public class HamsterWoodsIndexerClientAutoMapperProfile : Profile
             opt => opt.MapFrom(source => source.SumScore));
 
         CreateMap<UserWeekRankIndex, WeekRankDto>().ForMember(destination => destination.Score,
-            opt => opt.MapFrom(source => source.SumScore));
+            opt => opt.MapFrom(source => source.SumScore))
+            .ForMember(dest => dest.Symbol, source => source.MapFrom(f => f.ScoreTokenInfo.Symbol))
+            .ForMember(dest => dest.Decimals, source => source.MapFrom(f => f.ScoreTokenInfo.Decimals));
+        
         CreateMap<UserSeasonRankIndex, RankDto>().ForMember(destination => destination.Score,
             opt => opt.MapFrom(source => source.SumScore));
         CreateMap<GameIndex, GameResultDto>().ForMember(destination => destination.TranscationFee,
-            opt => opt.MapFrom(source =>
-                (source.PlayTransactionInfo != null ? source.PlayTransactionInfo.TransactionFee : 0).Add(
-                    source.BingoTransactionInfo != null
-                    ? source.BingoTransactionInfo.TransactionFee
-                    : 0)));
+                opt => opt.MapFrom(source =>
+                    (source.PlayTransactionInfo != null ? source.PlayTransactionInfo.TransactionFee : 0).Add(
+                        source.BingoTransactionInfo != null
+                            ? source.BingoTransactionInfo.TransactionFee
+                            : 0)))
+            .ForMember(dest => dest.Decimals, source => source.MapFrom(f => f.ScoreTokenInfo.Decimals));
         CreateMap<TransactionInfoIndex, TransactionInfoDto>();
         CreateMap<UserBalanceIndex, UserBalanceResultDto>();
         CreateMap<RankSeasonConfigIndex, SeasonDto>();
