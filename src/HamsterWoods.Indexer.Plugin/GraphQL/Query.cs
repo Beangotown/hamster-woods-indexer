@@ -64,6 +64,7 @@ public class Query
         return rankRecordDto;
     }
 
+    [Name("getWeekRank")]
     public static async Task<WeekRankResultDto> GetWeekRank(
         [FromServices] IAElfIndexerClientEntityRepository<RankSeasonConfigIndex, TransactionInfo> rankSeasonRepository,
         [FromServices] IAElfIndexerClientEntityRepository<UserWeekRankIndex, TransactionInfo> rankWeekUserRepository,
@@ -76,7 +77,7 @@ public class Query
         QueryContainer Filter(QueryContainerDescriptor<UserWeekRankIndex> f) => f.Bool(b => b.Must(mustQuery));
 
         var result = await rankWeekUserRepository.GetSortListAsync(Filter, null,
-            sortFunc: s => s.Descending(a => Convert.ToInt64(a.SumScore)).Ascending(a => a.UpdateTime)
+            sortFunc: s => s.Descending(a => a.SumScore).Ascending(a => a.UpdateTime)
             , 100,
             0);
 
@@ -93,16 +94,9 @@ public class Query
             }
         }
 
-        if (getRankDto.SkipCount >= rankDtos.Count)
-        {
-            rankResultDto.RankingList = new List<RankDto>();
-        }
-        else
-        {
-            var count = Math.Min(rankDtos.Count - getRankDto.SkipCount,
-                Math.Min(getRankDto.MaxResultCount, 100));
-            rankResultDto.RankingList = rankDtos.GetRange(getRankDto.SkipCount, count);
-        }
+        rankResultDto.RankingList = getRankDto.SkipCount >= rankDtos.Count
+            ? new List<RankDto>()
+            : rankDtos.Skip(getRankDto.SkipCount).Take(getRankDto.MaxResultCount).ToList();
 
         if (rankResultDto.SelfRank == null)
         {
