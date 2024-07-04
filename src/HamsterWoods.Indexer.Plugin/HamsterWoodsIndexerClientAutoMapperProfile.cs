@@ -33,8 +33,11 @@ public class HamsterWoodsIndexerClientAutoMapperProfile : Profile
             .ForMember(dest => dest.Symbol, source => source.MapFrom(f => f.ScoreTokenInfo.Symbol))
             .ForMember(dest => dest.Decimals, source => source.MapFrom(f => f.ScoreTokenInfo.Decimals));
         
-        CreateMap<UserSeasonRankIndex, RankDto>().ForMember(destination => destination.Score,
-            opt => opt.MapFrom(source => source.SumScore));
+        CreateMap<UserWeekRankIndex, RankRecordDto>().ForMember(destination => destination.Score,
+                opt => opt.MapFrom(source => source.SumScore))
+            .ForMember(dest => dest.Symbol, source => source.MapFrom(f => f.ScoreTokenInfo.Symbol))
+            .ForMember(dest => dest.Decimals, source => source.MapFrom(f => f.ScoreTokenInfo.Decimals));
+        
         CreateMap<GameIndex, GameResultDto>().ForMember(destination => destination.TranscationFee,
                 opt => opt.MapFrom(source =>
                     (source.PlayTransactionInfo != null ? source.PlayTransactionInfo.TransactionFee : 0).Add(
@@ -44,7 +47,6 @@ public class HamsterWoodsIndexerClientAutoMapperProfile : Profile
             .ForMember(dest => dest.Decimals, source => source.MapFrom(f => f.ScoreTokenInfo.Decimals));
         CreateMap<TransactionInfoIndex, TransactionInfoDto>();
         CreateMap<UserBalanceIndex, UserBalanceResultDto>();
-        CreateMap<RankSeasonConfigIndex, SeasonDto>();
         CreateMap<RankWeekIndex, WeekDto>();
         CreateMap<Picked, GameIndex>().ForMember(destination => destination.Score,
             opt => opt.MapFrom(source => Convert.ToInt32(source.Score)));
