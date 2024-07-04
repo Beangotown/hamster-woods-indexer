@@ -433,16 +433,16 @@ public class Query
     [Name("getWeekRankRecords")]
     public static async Task<UserWeekRankRecordDto> GetWeekRankRecords(
         [FromServices] IAElfIndexerClientEntityRepository<UserWeekRankIndex, TransactionInfo> rankWeekUserRepository,
-        [FromServices] IObjectMapper objectMapper, GetRankDto getRankDto)
+        [FromServices] IObjectMapper objectMapper, GetRankRecordsDto getRankRecordsDto)
     {
         var mustQuery = new List<Func<QueryContainerDescriptor<UserWeekRankIndex>, QueryContainer>>();
-        mustQuery.Add(q => q.Term(i => i.Field(f => f.WeekNum).Value(getRankDto.WeekNum)));
+        mustQuery.Add(q => q.Term(i => i.Field(f => f.WeekNum).Value(getRankRecordsDto.WeekNum)));
         QueryContainer Filter(QueryContainerDescriptor<UserWeekRankIndex> f) => f.Bool(b => b.Must(mustQuery));
 
         var result = await rankWeekUserRepository.GetSortListAsync(Filter, null,
             sortFunc: s => s.Descending(a => a.SumScore).Ascending(a => a.UpdateTime)
-            , getRankDto.MaxResultCount,
-            getRankDto.SkipCount);
+            , getRankRecordsDto.MaxResultCount,
+            getRankRecordsDto.SkipCount);
         
         return new UserWeekRankRecordDto
         {

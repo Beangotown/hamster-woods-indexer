@@ -33,8 +33,7 @@ public class HamsterWoodsIndexerClientAutoMapperProfile : Profile
             .ForMember(dest => dest.Symbol, source => source.MapFrom(f => f.ScoreTokenInfo.Symbol))
             .ForMember(dest => dest.Decimals, source => source.MapFrom(f => f.ScoreTokenInfo.Decimals));
         
-        CreateMap<UserWeekRankIndex, RankRecordDto>().ForMember(destination => destination.Score,
-                opt => opt.MapFrom(source => source.SumScore))
+        CreateMap<UserWeekRankIndex, RankRecordDto>()
             .ForMember(dest => dest.Symbol, source => source.MapFrom(f => f.ScoreTokenInfo.Symbol))
             .ForMember(dest => dest.Decimals, source => source.MapFrom(f => f.ScoreTokenInfo.Decimals));
         

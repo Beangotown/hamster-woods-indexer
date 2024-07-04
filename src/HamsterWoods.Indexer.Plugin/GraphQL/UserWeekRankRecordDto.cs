@@ -8,8 +8,9 @@ public class UserWeekRankRecordDto
 public class RankRecordDto
 {
     public string CaAddress { get; set; }
-    public long Score { get; set; }
+    public long SumScore { get; set; }
     public string Symbol { get; set; } = "ACORNS";
     public int Decimals { get; set; } = 8;
     public int WeekNum { get; set; }
+    public DateTime UpdateTime { get; set; }
 }
