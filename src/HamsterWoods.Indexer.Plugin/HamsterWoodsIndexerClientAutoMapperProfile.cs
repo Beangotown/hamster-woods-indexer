@@ -47,8 +47,7 @@ public class HamsterWoodsIndexerClientAutoMapperProfile : Profile
         CreateMap<TransactionInfoIndex, TransactionInfoDto>();
         CreateMap<UserBalanceIndex, UserBalanceResultDto>();
         CreateMap<RankWeekIndex, WeekDto>();
-        CreateMap<Picked, GameIndex>().ForMember(destination => destination.Score,
-            opt => opt.MapFrom(source => Convert.ToInt32(source.Score)));
+        CreateMap<Picked, GameIndex>();
         CreateMap<LogEventContext, TransactionChargedFeeIndex>();
         CreateMap<TransactionFeeCharged, TransactionChargedFeeIndex>();
     }

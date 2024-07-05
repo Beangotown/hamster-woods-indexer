@@ -61,6 +61,7 @@ namespace Contracts.HamsterWoods {
         TotalChance = TotalChance,
         IsRace = IsRace,
         WeekNum = WeekNum,
+        AcornsDecimals = AcornsDecimals,
       };
     }
   }
@@ -306,7 +307,6 @@ namespace Contracts.HamsterWoods {
       }
     }
     #endregion
-
 
   }
 }
