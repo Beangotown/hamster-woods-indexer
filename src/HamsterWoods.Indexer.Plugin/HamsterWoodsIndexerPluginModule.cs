@@ -36,5 +36,5 @@ public class HamsterWoodsIndexerPluginModule : AElfIndexerClientPluginBaseModule
     }
 
     protected override string ClientId => "AElfIndexer_HamsterWoods";
-    protected override string Version => "aecebebcf25b461fa4866b9262b785e6";
+    protected override string Version => "";
 }
