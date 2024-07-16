@@ -31,7 +31,7 @@ namespace Contracts.HamsterWoods {
             "YXlJbnB1dBITCgtyZXNldF9zdGFydBgBIAEoCBISCgpkaWNlX2NvdW50GAIg",
             "ASgFIisKClBsYXlPdXRwdXQSHQoVZXhwZWN0ZWRfYmxvY2tfaGVpZ2h0GAEg",
             "ASgDIjYKF0dldEJvdXRJbmZvcm1hdGlvbklucHV0EhsKB3BsYXlfaWQYASAB",
-            "KAsyCi5hZWxmLkhhc2gi8AMKEVBsYXllckluZm9ybWF0aW9uEiUKDnBsYXll",
+            "KAsyCi5hZWxmLkhhc2giggQKEVBsYXllckluZm9ybWF0aW9uEiUKDnBsYXll",
             "cl9hZGRyZXNzGAEgASgLMg0uYWVsZi5BZGRyZXNzEhYKDnBsYXlhYmxlX2Nv",
             "dW50GAIgASgFEhwKFGRhaWx5X3BsYXlhYmxlX2NvdW50GAMgASgFEjIKDmxh",
             "c3RfcGxheV90aW1lGAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFt",
@@ -42,108 +42,111 @@ namespace Contracts.HamsterWoods {
             "X3B1cmNoYXNlX2NoYW5jZV90aW1lGAwgASgLMhouZ29vZ2xlLnByb3RvYnVm",
             "LlRpbWVzdGFtcBImCh53ZWVrbHlfcHVyY2hhc2VkX2NoYW5jZXNfY291bnQY",
             "DSABKAUSHwoXbGFzdF9iaW5nb19ibG9ja19oZWlnaHQYDiABKAMSFwoPYWNv",
-            "cm5zX2RlY2ltYWxzGA8gASgFIrcCCg9Cb3V0SW5mb3JtYXRpb24SHAoJZ3Jp",
-            "ZF90eXBlGAEgASgOMgkuR3JpZFR5cGUSEAoIZ3JpZF9udW0YAiABKAUSDQoF",
-            "c2NvcmUYAyABKAUSGwoHcGxheV9pZBgEIAEoCzIKLmFlbGYuSGFzaBIaChJi",
-            "aW5nb19ibG9ja19oZWlnaHQYBSABKAMSLQoJcGxheV90aW1lGAYgASgLMhou",
-            "Z29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIlCg5wbGF5ZXJfYWRkcmVzcxgH",
-            "IAEoCzINLmFlbGYuQWRkcmVzcxISCgpkaWNlX2NvdW50GAggASgFEhQKDGRp",
-            "Y2VfbnVtYmVycxgJIAMoBRIWCg5zdGFydF9ncmlkX251bRgKIAEoBRIUCgxl",
-            "bmRfZ3JpZF9udW0YCyABKAUiVwoRR2FtZUxpbWl0U2V0dGluZ3MSHAoUZGFp",
-            "bHlfbWF4X3BsYXlfY291bnQYASABKAUSJAocZGFpbHlfcGxheV9jb3VudF9y",
-            "ZXNldF9ob3VycxgCIAEoBSKPAQoJR2FtZVJ1bGVzEi4KCmJlZ2luX3RpbWUY",
-            "ASABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEiwKCGVuZF90aW1l",
-            "GAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIRCgltaW5fc2Nv",
-            "cmUYAyABKAUSEQoJbWF4X3Njb3JlGAQgASgFItEBCgxSYW5raW5nUnVsZXMS",
-            "LgoKYmVnaW5fdGltZRgBIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3Rh",
-            "bXASIwobd2Vla2x5X3RvdXJuYW1lbnRfYmVnaW5fbnVtGAIgASgFEhUKDXJh",
-            "bmtpbmdfaG91cnMYAyABKAUSFwoPcHVibGljaXR5X2hvdXJzGAQgASgFEhwK",
-            "FHJhbmtpbmdfcGxheWVyX2NvdW50GAUgASgFEh4KFnB1YmxpY2l0eV9wbGF5",
-            "ZXJfY291bnQYBiABKAUi3gEKE1JhbmtpbmdSdWxlc1VwZGF0ZWQSLgoKYmVn",
-            "aW5fdGltZRgBIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASIwob",
-            "d2Vla2x5X3RvdXJuYW1lbnRfYmVnaW5fbnVtGAIgASgFEhUKDXJhbmtpbmdf",
-            "aG91cnMYAyABKAUSFwoPcHVibGljaXR5X2hvdXJzGAQgASgFEhwKFHJhbmtp",
-            "bmdfcGxheWVyX2NvdW50GAUgASgFEh4KFnB1YmxpY2l0eV9wbGF5ZXJfY291",
-            "bnQYBiABKAU6BKC7GAEiKAoMR3JpZFR5cGVMaXN0EhgKBXZhbHVlGAEgAygO",
-            "MgkuR3JpZFR5cGUiGQoIRGljZUxpc3QSDQoFdmFsdWUYASADKAUiMAoLUmV3",
-            "YXJkUnVsZXMSIQoMcmV3YXJkX3J1bGVzGAEgAygLMgsuUmV3YXJkUnVsZSJs",
-            "CgpSZXdhcmRSdWxlEhIKCnJhbmtfYmVnaW4YASABKAUSEAoIcmFua19lbmQY",
-            "AiABKAUSGwoTcmV3YXJkX3Rva2VuX2Ftb3VudBgEIAEoBRIbChNyZXdhcmRf",
-            "dG9rZW5fc3ltYm9sGAUgASgJInYKFFB1cmNoYXNlQ2hhbmNlQ29uZmlnEh0K",
-            "FXdlZWtseV9wdXJjaGFzZV9jb3VudBgBIAEoBRIVCg1hY29ybnNfYW1vdW50",
-            "GAIgASgDEigKIHdlZWtseV9wdXJjaGFzZV9jb3VudF9yZXNldF9ob3VyGAMg",
-            "ASgFIvICCgZQaWNrZWQSHAoJZ3JpZF90eXBlGAEgASgOMgkuR3JpZFR5cGUS",
-            "EAoIZ3JpZF9udW0YAiABKAUSDQoFc2NvcmUYAyABKAMSGgoSYmluZ29fYmxv",
-            "Y2tfaGVpZ2h0GAQgASgDEiUKDnBsYXllcl9hZGRyZXNzGAUgASgLMg0uYWVs",
-            "Zi5BZGRyZXNzEhIKCmRpY2VfY291bnQYBiABKAUSHwoMZGljZV9udW1iZXJz",
-            "GAcgASgLMgkuRGljZUxpc3QSFgoOc3RhcnRfZ3JpZF9udW0YCCABKAUSFAoM",
-            "ZW5kX2dyaWRfbnVtGAkgASgFEhUKDXdlZWtseV9hY29ybnMYCiABKAMSFAoM",
-            "dG90YWxfYWNvcm5zGAsgASgDEhQKDHRvdGFsX2NoYW5jZRgMIAEoBRIPCgdp",
-            "c19yYWNlGA0gASgIEhAKCHdlZWtfbnVtGA4gASgFEhcKD2Fjb3Juc19kZWNp",
-            "bWFscxgPIAEoBToEoLsYASJuCg5BY29ybnNVbmxvY2tlZBIbCgRmcm9tGAEg",
-            "ASgLMg0uYWVsZi5BZGRyZXNzEhkKAnRvGAIgASgLMg0uYWVsZi5BZGRyZXNz",
-            "Eg4KBnN5bWJvbBgDIAEoCRIOCgZhbW91bnQYBCABKAM6BKC7GAEirgEKD0No",
-            "YW5jZVB1cmNoYXNlZBIlCg5wbGF5ZXJfYWRkcmVzcxgBIAEoCzINLmFlbGYu",
-            "QWRkcmVzcxIVCg1hY29ybnNfYW1vdW50GAIgASgDEhQKDGNoYW5jZV9jb3Vu",
-            "dBgDIAEoBRIVCg13ZWVrbHlfYWNvcm5zGAQgASgDEhQKDHRvdGFsX2Fjb3Ju",
-            "cxgFIAEoAxIUCgx0b3RhbF9jaGFuY2UYBiABKAU6BKC7GAEiOAoUTG9ja2Vk",
-            "QWNvcm5zSW5mb0xpc3QSIAoFdmFsdWUYASADKAsyES5Mb2NrZWRBY29ybnNJ",
-            "bmZvInYKEExvY2tlZEFjb3Juc0luZm8SDAoEd2VlaxgBIAEoBRIOCgZhY29y",
-            "bnMYAiABKAMSLwoLc2V0dGxlX3RpbWUYAyABKAsyGi5nb29nbGUucHJvdG9i",
-            "dWYuVGltZXN0YW1wEhMKC2lzX3VubG9ja2VkGAQgASgIIjEKEVVubG9ja0Fj",
-            "b3Juc0lucHV0EhwKBXZhbHVlGAEgAygLMg0uYWVsZi5BZGRyZXNzIisKC01h",
-            "bmFnZXJMaXN0EhwKBXZhbHVlGAEgAygLMg0uYWVsZi5BZGRyZXNzIpcBCgpS",
-            "YWNlQ29uZmlnEi4KCmJlZ2luX3RpbWUYASABKAsyGi5nb29nbGUucHJvdG9i",
-            "dWYuVGltZXN0YW1wEhIKCmdhbWVfaG91cnMYAiABKAUSDwoHaXNfcmFjZRgD",
-            "IAEoCBI0ChBjYWxpYnJhdGlvbl90aW1lGAQgASgLMhouZ29vZ2xlLnByb3Rv",
-            "YnVmLlRpbWVzdGFtcCLYAQoMUmFjZVRpbWVJbmZvEi4KCmJlZ2luX3RpbWUY",
-            "ASABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEiwKCGVuZF90aW1l",
-            "GAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBI1ChFzZXR0bGVf",
-            "YmVnaW5fdGltZRgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXAS",
-            "MwoPc2V0dGxlX2VuZF90aW1lGAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRp",
-            "bWVzdGFtcConCghHcmlkVHlwZRIICgRCbHVlEAASBwoDUmVkEAESCAoER29s",
-            "ZBACMuULChRIYW1zdGVyV29vZHNDb250cmFjdBIsCgRQbGF5EgouUGxheUlu",
-            "cHV0GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgASRwoOUHVyY2hhc2VDaGFu",
-            "Y2USGy5nb29nbGUucHJvdG9idWYuSW50MzJWYWx1ZRoWLmdvb2dsZS5wcm90",
-            "b2J1Zi5FbXB0eSIAEkQKFFNldEdhbWVMaW1pdFNldHRpbmdzEhIuR2FtZUxp",
-            "bWl0U2V0dGluZ3MaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABI+CgpJbml0",
-            "aWFsaXplEhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5GhYuZ29vZ2xlLnByb3Rv",
-            "YnVmLkVtcHR5IgASNgoLQ2hhbmdlQWRtaW4SDS5hZWxmLkFkZHJlc3MaFi5n",
-            "b29nbGUucHJvdG9idWYuRW1wdHkiABI0CgxTZXRHYW1lUnVsZXMSCi5HYW1l",
-            "UnVsZXMaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABI6Cg9TZXRSYW5raW5n",
-            "UnVsZXMSDS5SYW5raW5nUnVsZXMaFi5nb29nbGUucHJvdG9idWYuRW1wdHki",
-            "ABJKChdTZXRQdXJjaGFzZUNoYW5jZUNvbmZpZxIVLlB1cmNoYXNlQ2hhbmNl",
-            "Q29uZmlnGhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgASOwoQU2V0VW5sb2Nr",
-            "TWFuYWdlchINLmFlbGYuQWRkcmVzcxoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0",
-            "eSIAEkEKEUJhdGNoVW5sb2NrQWNvcm5zEhIuVW5sb2NrQWNvcm5zSW5wdXQa",
-            "Fi5nb29nbGUucHJvdG9idWYuRW1wdHkiABI9CglTdGFydFJhY2USFi5nb29n",
-            "bGUucHJvdG9idWYuRW1wdHkaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABI8",
-            "CghTdG9wUmFjZRIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eRoWLmdvb2dsZS5w",
-            "cm90b2J1Zi5FbXB0eSIAEjYKDVNldFJhY2VDb25maWcSCy5SYWNlQ29uZmln",
-            "GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgASRAoQQ2hlY2tIYW1zdGVyUGFz",
-            "cxINLmFlbGYuQWRkcmVzcxoaLmdvb2dsZS5wcm90b2J1Zi5Cb29sVmFsdWUi",
-            "BYiJ9wEBEkAKFEdldFBsYXllckluZm9ybWF0aW9uEg0uYWVsZi5BZGRyZXNz",
-            "GhIuUGxheWVySW5mb3JtYXRpb24iBYiJ9wEBEkcKEkdldEJvdXRJbmZvcm1h",
-            "dGlvbhIYLkdldEJvdXRJbmZvcm1hdGlvbklucHV0GhAuQm91dEluZm9ybWF0",
-            "aW9uIgWIifcBARI4CghHZXRBZG1pbhIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0",
-            "eRoNLmFlbGYuQWRkcmVzcyIFiIn3AQESSQoUR2V0R2FtZUxpbWl0U2V0dGlu",
-            "Z3MSFi5nb29nbGUucHJvdG9idWYuRW1wdHkaEi5HYW1lTGltaXRTZXR0aW5n",
-            "cyIFiIn3AQESOQoMR2V0R2FtZVJ1bGVzEhYuZ29vZ2xlLnByb3RvYnVmLkVt",
-            "cHR5GgouR2FtZVJ1bGVzIgWIifcBARI/Cg9HZXRSYW5raW5nUnVsZXMSFi5n",
-            "b29nbGUucHJvdG9idWYuRW1wdHkaDS5SYW5raW5nUnVsZXMiBYiJ9wEBEk8K",
-            "F0dldFB1cmNoYXNlQ2hhbmNlQ29uZmlnEhYuZ29vZ2xlLnByb3RvYnVmLkVt",
-            "cHR5GhUuUHVyY2hhc2VDaGFuY2VDb25maWciBYiJ9wEBEjsKDUdldFJhY2VD",
-            "b25maWcSFi5nb29nbGUucHJvdG9idWYuRW1wdHkaCy5SYWNlQ29uZmlnIgWI",
-            "ifcBARpFssz2ATBDb250cmFjdHMuSGFtc3Rlcldvb2RzLkhhbXN0ZXJXb29k",
-            "c0NvbnRyYWN0U3RhdGXKyvYBC2FjczEyLnByb3RvQhmqAhZDb250cmFjdHMu",
-            "SGFtc3Rlcldvb2RzYgZwcm90bzM="));
+            "cm5zX2RlY2ltYWxzGA8gASgFEhAKCHdlZWtfbnVtGBAgASgFIrcCCg9Cb3V0",
+            "SW5mb3JtYXRpb24SHAoJZ3JpZF90eXBlGAEgASgOMgkuR3JpZFR5cGUSEAoI",
+            "Z3JpZF9udW0YAiABKAUSDQoFc2NvcmUYAyABKAUSGwoHcGxheV9pZBgEIAEo",
+            "CzIKLmFlbGYuSGFzaBIaChJiaW5nb19ibG9ja19oZWlnaHQYBSABKAMSLQoJ",
+            "cGxheV90aW1lGAYgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIl",
+            "Cg5wbGF5ZXJfYWRkcmVzcxgHIAEoCzINLmFlbGYuQWRkcmVzcxISCgpkaWNl",
+            "X2NvdW50GAggASgFEhQKDGRpY2VfbnVtYmVycxgJIAMoBRIWCg5zdGFydF9n",
+            "cmlkX251bRgKIAEoBRIUCgxlbmRfZ3JpZF9udW0YCyABKAUiVwoRR2FtZUxp",
+            "bWl0U2V0dGluZ3MSHAoUZGFpbHlfbWF4X3BsYXlfY291bnQYASABKAUSJAoc",
+            "ZGFpbHlfcGxheV9jb3VudF9yZXNldF9ob3VycxgCIAEoBSKPAQoJR2FtZVJ1",
+            "bGVzEi4KCmJlZ2luX3RpbWUYASABKAsyGi5nb29nbGUucHJvdG9idWYuVGlt",
+            "ZXN0YW1wEiwKCGVuZF90aW1lGAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRp",
+            "bWVzdGFtcBIRCgltaW5fc2NvcmUYAyABKAUSEQoJbWF4X3Njb3JlGAQgASgF",
+            "ItEBCgxSYW5raW5nUnVsZXMSLgoKYmVnaW5fdGltZRgBIAEoCzIaLmdvb2ds",
+            "ZS5wcm90b2J1Zi5UaW1lc3RhbXASIwobd2Vla2x5X3RvdXJuYW1lbnRfYmVn",
+            "aW5fbnVtGAIgASgFEhUKDXJhbmtpbmdfaG91cnMYAyABKAUSFwoPcHVibGlj",
+            "aXR5X2hvdXJzGAQgASgFEhwKFHJhbmtpbmdfcGxheWVyX2NvdW50GAUgASgF",
+            "Eh4KFnB1YmxpY2l0eV9wbGF5ZXJfY291bnQYBiABKAUi3gEKE1JhbmtpbmdS",
+            "dWxlc1VwZGF0ZWQSLgoKYmVnaW5fdGltZRgBIAEoCzIaLmdvb2dsZS5wcm90",
+            "b2J1Zi5UaW1lc3RhbXASIwobd2Vla2x5X3RvdXJuYW1lbnRfYmVnaW5fbnVt",
+            "GAIgASgFEhUKDXJhbmtpbmdfaG91cnMYAyABKAUSFwoPcHVibGljaXR5X2hv",
+            "dXJzGAQgASgFEhwKFHJhbmtpbmdfcGxheWVyX2NvdW50GAUgASgFEh4KFnB1",
+            "YmxpY2l0eV9wbGF5ZXJfY291bnQYBiABKAU6BKC7GAEiKAoMR3JpZFR5cGVM",
+            "aXN0EhgKBXZhbHVlGAEgAygOMgkuR3JpZFR5cGUiGQoIRGljZUxpc3QSDQoF",
+            "dmFsdWUYASADKAUiMAoLUmV3YXJkUnVsZXMSIQoMcmV3YXJkX3J1bGVzGAEg",
+            "AygLMgsuUmV3YXJkUnVsZSJsCgpSZXdhcmRSdWxlEhIKCnJhbmtfYmVnaW4Y",
+            "ASABKAUSEAoIcmFua19lbmQYAiABKAUSGwoTcmV3YXJkX3Rva2VuX2Ftb3Vu",
+            "dBgEIAEoBRIbChNyZXdhcmRfdG9rZW5fc3ltYm9sGAUgASgJInYKFFB1cmNo",
+            "YXNlQ2hhbmNlQ29uZmlnEh0KFXdlZWtseV9wdXJjaGFzZV9jb3VudBgBIAEo",
+            "BRIVCg1hY29ybnNfYW1vdW50GAIgASgDEigKIHdlZWtseV9wdXJjaGFzZV9j",
+            "b3VudF9yZXNldF9ob3VyGAMgASgFIvICCgZQaWNrZWQSHAoJZ3JpZF90eXBl",
+            "GAEgASgOMgkuR3JpZFR5cGUSEAoIZ3JpZF9udW0YAiABKAUSDQoFc2NvcmUY",
+            "AyABKAMSGgoSYmluZ29fYmxvY2tfaGVpZ2h0GAQgASgDEiUKDnBsYXllcl9h",
+            "ZGRyZXNzGAUgASgLMg0uYWVsZi5BZGRyZXNzEhIKCmRpY2VfY291bnQYBiAB",
+            "KAUSHwoMZGljZV9udW1iZXJzGAcgASgLMgkuRGljZUxpc3QSFgoOc3RhcnRf",
+            "Z3JpZF9udW0YCCABKAUSFAoMZW5kX2dyaWRfbnVtGAkgASgFEhUKDXdlZWts",
+            "eV9hY29ybnMYCiABKAMSFAoMdG90YWxfYWNvcm5zGAsgASgDEhQKDHRvdGFs",
+            "X2NoYW5jZRgMIAEoBRIPCgdpc19yYWNlGA0gASgIEhAKCHdlZWtfbnVtGA4g",
+            "ASgFEhcKD2Fjb3Juc19kZWNpbWFscxgPIAEoBToEoLsYASKAAQoOQWNvcm5z",
+            "VW5sb2NrZWQSGwoEZnJvbRgBIAEoCzINLmFlbGYuQWRkcmVzcxIZCgJ0bxgC",
+            "IAEoCzINLmFlbGYuQWRkcmVzcxIOCgZzeW1ib2wYAyABKAkSDgoGYW1vdW50",
+            "GAQgASgDEhAKCHdlZWtfbnVtGAUgASgFOgSguxgBIq4BCg9DaGFuY2VQdXJj",
+            "aGFzZWQSJQoOcGxheWVyX2FkZHJlc3MYASABKAsyDS5hZWxmLkFkZHJlc3MS",
+            "FQoNYWNvcm5zX2Ftb3VudBgCIAEoAxIUCgxjaGFuY2VfY291bnQYAyABKAUS",
+            "FQoNd2Vla2x5X2Fjb3JucxgEIAEoAxIUCgx0b3RhbF9hY29ybnMYBSABKAMS",
+            "FAoMdG90YWxfY2hhbmNlGAYgASgFOgSguxgBIjgKFExvY2tlZEFjb3Juc0lu",
+            "Zm9MaXN0EiAKBXZhbHVlGAEgAygLMhEuTG9ja2VkQWNvcm5zSW5mbyKUAQoQ",
+            "TG9ja2VkQWNvcm5zSW5mbxIMCgR3ZWVrGAEgASgFEg4KBmFjb3JucxgCIAEo",
+            "AxIvCgtzZXR0bGVfdGltZRgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1l",
+            "c3RhbXASHAoUaXNfYWRkX2xvY2tlZF9hY29ybnMYBSABKAgSEwoLaXNfdW5s",
+            "b2NrZWQYBiABKAgiMQoRVW5sb2NrQWNvcm5zSW5wdXQSHAoFdmFsdWUYASAD",
+            "KAsyDS5hZWxmLkFkZHJlc3MiKwoLTWFuYWdlckxpc3QSHAoFdmFsdWUYASAD",
+            "KAsyDS5hZWxmLkFkZHJlc3MilwEKClJhY2VDb25maWcSLgoKYmVnaW5fdGlt",
+            "ZRgBIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASEgoKZ2FtZV9o",
+            "b3VycxgCIAEoBRIPCgdpc19yYWNlGAMgASgIEjQKEGNhbGlicmF0aW9uX3Rp",
+            "bWUYBCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wItgBCgxSYWNl",
+            "VGltZUluZm8SLgoKYmVnaW5fdGltZRgBIAEoCzIaLmdvb2dsZS5wcm90b2J1",
+            "Zi5UaW1lc3RhbXASLAoIZW5kX3RpbWUYAiABKAsyGi5nb29nbGUucHJvdG9i",
+            "dWYuVGltZXN0YW1wEjUKEXNldHRsZV9iZWdpbl90aW1lGAMgASgLMhouZ29v",
+            "Z2xlLnByb3RvYnVmLlRpbWVzdGFtcBIzCg9zZXR0bGVfZW5kX3RpbWUYBCAB",
+            "KAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wKicKCEdyaWRUeXBlEggK",
+            "BEJsdWUQABIHCgNSZWQQARIICgRHb2xkEAIyrQwKFEhhbXN0ZXJXb29kc0Nv",
+            "bnRyYWN0EiwKBFBsYXkSCi5QbGF5SW5wdXQaFi5nb29nbGUucHJvdG9idWYu",
+            "RW1wdHkiABJHCg5QdXJjaGFzZUNoYW5jZRIbLmdvb2dsZS5wcm90b2J1Zi5J",
+            "bnQzMlZhbHVlGhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgASRAoUU2V0R2Ft",
+            "ZUxpbWl0U2V0dGluZ3MSEi5HYW1lTGltaXRTZXR0aW5ncxoWLmdvb2dsZS5w",
+            "cm90b2J1Zi5FbXB0eSIAEj4KCkluaXRpYWxpemUSFi5nb29nbGUucHJvdG9i",
+            "dWYuRW1wdHkaFi5nb29nbGUucHJvdG9idWYuRW1wdHkiABI2CgtDaGFuZ2VB",
+            "ZG1pbhINLmFlbGYuQWRkcmVzcxoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIA",
+            "EjQKDFNldEdhbWVSdWxlcxIKLkdhbWVSdWxlcxoWLmdvb2dsZS5wcm90b2J1",
+            "Zi5FbXB0eSIAEjoKD1NldFJhbmtpbmdSdWxlcxINLlJhbmtpbmdSdWxlcxoW",
+            "Lmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIAEkoKF1NldFB1cmNoYXNlQ2hhbmNl",
+            "Q29uZmlnEhUuUHVyY2hhc2VDaGFuY2VDb25maWcaFi5nb29nbGUucHJvdG9i",
+            "dWYuRW1wdHkiABI7ChBTZXRVbmxvY2tNYW5hZ2VyEg0uYWVsZi5BZGRyZXNz",
+            "GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgASQQoRQmF0Y2hVbmxvY2tBY29y",
+            "bnMSEi5VbmxvY2tBY29ybnNJbnB1dBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0",
+            "eSIAEj0KCVN0YXJ0UmFjZRIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eRoWLmdv",
+            "b2dsZS5wcm90b2J1Zi5FbXB0eSIAEjwKCFN0b3BSYWNlEhYuZ29vZ2xlLnBy",
+            "b3RvYnVmLkVtcHR5GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgASNgoNU2V0",
+            "UmFjZUNvbmZpZxILLlJhY2VDb25maWcaFi5nb29nbGUucHJvdG9idWYuRW1w",
+            "dHkiABJEChBDaGVja0hhbXN0ZXJQYXNzEg0uYWVsZi5BZGRyZXNzGhouZ29v",
+            "Z2xlLnByb3RvYnVmLkJvb2xWYWx1ZSIFiIn3AQESQAoUR2V0UGxheWVySW5m",
+            "b3JtYXRpb24SDS5hZWxmLkFkZHJlc3MaEi5QbGF5ZXJJbmZvcm1hdGlvbiIF",
+            "iIn3AQESRwoSR2V0Qm91dEluZm9ybWF0aW9uEhguR2V0Qm91dEluZm9ybWF0",
+            "aW9uSW5wdXQaEC5Cb3V0SW5mb3JtYXRpb24iBYiJ9wEBEjgKCEdldEFkbWlu",
+            "EhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5Gg0uYWVsZi5BZGRyZXNzIgWIifcB",
+            "ARJJChRHZXRHYW1lTGltaXRTZXR0aW5ncxIWLmdvb2dsZS5wcm90b2J1Zi5F",
+            "bXB0eRoSLkdhbWVMaW1pdFNldHRpbmdzIgWIifcBARI5CgxHZXRHYW1lUnVs",
+            "ZXMSFi5nb29nbGUucHJvdG9idWYuRW1wdHkaCi5HYW1lUnVsZXMiBYiJ9wEB",
+            "Ej8KD0dldFJhbmtpbmdSdWxlcxIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eRoN",
+            "LlJhbmtpbmdSdWxlcyIFiIn3AQESTwoXR2V0UHVyY2hhc2VDaGFuY2VDb25m",
+            "aWcSFi5nb29nbGUucHJvdG9idWYuRW1wdHkaFS5QdXJjaGFzZUNoYW5jZUNv",
+            "bmZpZyIFiIn3AQESOwoNR2V0UmFjZUNvbmZpZxIWLmdvb2dsZS5wcm90b2J1",
+            "Zi5FbXB0eRoLLlJhY2VDb25maWciBYiJ9wEBEkYKF0dldExvY2tlZEFjb3Ju",
+            "c0luZm9MaXN0Eg0uYWVsZi5BZGRyZXNzGhUuTG9ja2VkQWNvcm5zSW5mb0xp",
+            "c3QiBYiJ9wEBGkWyzPYBMENvbnRyYWN0cy5IYW1zdGVyV29vZHMuSGFtc3Rl",
+            "cldvb2RzQ29udHJhY3RTdGF0ZcrK9gELYWNzMTIucHJvdG9CGaoCFkNvbnRy",
+            "YWN0cy5IYW1zdGVyV29vZHNiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::AElf.Types.CoreReflection.Descriptor, global::AElf.OptionsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::AElf.Standards.ACS12.Acs12Reflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Contracts.HamsterWoods.GridType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.PlayInput), global::Contracts.HamsterWoods.PlayInput.Parser, new[]{ "ResetStart", "DiceCount" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.PlayOutput), global::Contracts.HamsterWoods.PlayOutput.Parser, new[]{ "ExpectedBlockHeight" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.GetBoutInformationInput), global::Contracts.HamsterWoods.GetBoutInformationInput.Parser, new[]{ "PlayId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.PlayerInformation), global::Contracts.HamsterWoods.PlayerInformation.Parser, new[]{ "PlayerAddress", "PlayableCount", "DailyPlayableCount", "LastPlayTime", "CurGridNum", "HamsterPassOwned", "TotalAcorns", "WeeklyAcorns", "LockedAcorns", "SumScores", "PurchasedChancesCount", "LastPurchaseChanceTime", "WeeklyPurchasedChancesCount", "LastBingoBlockHeight", "AcornsDecimals" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.PlayerInformation), global::Contracts.HamsterWoods.PlayerInformation.Parser, new[]{ "PlayerAddress", "PlayableCount", "DailyPlayableCount", "LastPlayTime", "CurGridNum", "HamsterPassOwned", "TotalAcorns", "WeeklyAcorns", "LockedAcorns", "SumScores", "PurchasedChancesCount", "LastPurchaseChanceTime", "WeeklyPurchasedChancesCount", "LastBingoBlockHeight", "AcornsDecimals", "WeekNum" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.BoutInformation), global::Contracts.HamsterWoods.BoutInformation.Parser, new[]{ "GridType", "GridNum", "Score", "PlayId", "BingoBlockHeight", "PlayTime", "PlayerAddress", "DiceCount", "DiceNumbers", "StartGridNum", "EndGridNum" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.GameLimitSettings), global::Contracts.HamsterWoods.GameLimitSettings.Parser, new[]{ "DailyMaxPlayCount", "DailyPlayCountResetHours" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.GameRules), global::Contracts.HamsterWoods.GameRules.Parser, new[]{ "BeginTime", "EndTime", "MinScore", "MaxScore" }, null, null, null, null),
@@ -155,10 +158,10 @@ namespace Contracts.HamsterWoods {
             new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.RewardRule), global::Contracts.HamsterWoods.RewardRule.Parser, new[]{ "RankBegin", "RankEnd", "RewardTokenAmount", "RewardTokenSymbol" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.PurchaseChanceConfig), global::Contracts.HamsterWoods.PurchaseChanceConfig.Parser, new[]{ "WeeklyPurchaseCount", "AcornsAmount", "WeeklyPurchaseCountResetHour" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.Picked), global::Contracts.HamsterWoods.Picked.Parser, new[]{ "GridType", "GridNum", "Score", "BingoBlockHeight", "PlayerAddress", "DiceCount", "DiceNumbers", "StartGridNum", "EndGridNum", "WeeklyAcorns", "TotalAcorns", "TotalChance", "IsRace", "WeekNum", "AcornsDecimals" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.AcornsUnlocked), global::Contracts.HamsterWoods.AcornsUnlocked.Parser, new[]{ "From", "To", "Symbol", "Amount" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.AcornsUnlocked), global::Contracts.HamsterWoods.AcornsUnlocked.Parser, new[]{ "From", "To", "Symbol", "Amount", "WeekNum" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.ChancePurchased), global::Contracts.HamsterWoods.ChancePurchased.Parser, new[]{ "PlayerAddress", "AcornsAmount", "ChanceCount", "WeeklyAcorns", "TotalAcorns", "TotalChance" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.LockedAcornsInfoList), global::Contracts.HamsterWoods.LockedAcornsInfoList.Parser, new[]{ "Value" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.LockedAcornsInfo), global::Contracts.HamsterWoods.LockedAcornsInfo.Parser, new[]{ "Week", "Acorns", "SettleTime", "IsUnlocked" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.LockedAcornsInfo), global::Contracts.HamsterWoods.LockedAcornsInfo.Parser, new[]{ "Week", "Acorns", "SettleTime", "IsAddLockedAcorns", "IsUnlocked" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.UnlockAcornsInput), global::Contracts.HamsterWoods.UnlockAcornsInput.Parser, new[]{ "Value" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.ManagerList), global::Contracts.HamsterWoods.ManagerList.Parser, new[]{ "Value" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Contracts.HamsterWoods.RaceConfig), global::Contracts.HamsterWoods.RaceConfig.Parser, new[]{ "BeginTime", "GameHours", "IsRace", "CalibrationTime" }, null, null, null, null),
@@ -840,6 +843,7 @@ namespace Contracts.HamsterWoods {
       weeklyPurchasedChancesCount_ = other.weeklyPurchasedChancesCount_;
       lastBingoBlockHeight_ = other.lastBingoBlockHeight_;
       acornsDecimals_ = other.acornsDecimals_;
+      weekNum_ = other.weekNum_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1029,6 +1033,18 @@ namespace Contracts.HamsterWoods {
       }
     }
 
+    /// <summary>Field number for the "week_num" field.</summary>
+    public const int WeekNumFieldNumber = 16;
+    private int weekNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int WeekNum {
+      get { return weekNum_; }
+      set {
+        weekNum_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1059,6 +1075,7 @@ namespace Contracts.HamsterWoods {
       if (WeeklyPurchasedChancesCount != other.WeeklyPurchasedChancesCount) return false;
       if (LastBingoBlockHeight != other.LastBingoBlockHeight) return false;
       if (AcornsDecimals != other.AcornsDecimals) return false;
+      if (WeekNum != other.WeekNum) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1081,6 +1098,7 @@ namespace Contracts.HamsterWoods {
       if (WeeklyPurchasedChancesCount != 0) hash ^= WeeklyPurchasedChancesCount.GetHashCode();
       if (LastBingoBlockHeight != 0L) hash ^= LastBingoBlockHeight.GetHashCode();
       if (AcornsDecimals != 0) hash ^= AcornsDecimals.GetHashCode();
+      if (WeekNum != 0) hash ^= WeekNum.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1159,6 +1177,10 @@ namespace Contracts.HamsterWoods {
         output.WriteRawTag(120);
         output.WriteInt32(AcornsDecimals);
       }
+      if (WeekNum != 0) {
+        output.WriteRawTag(128, 1);
+        output.WriteInt32(WeekNum);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1229,6 +1251,10 @@ namespace Contracts.HamsterWoods {
         output.WriteRawTag(120);
         output.WriteInt32(AcornsDecimals);
       }
+      if (WeekNum != 0) {
+        output.WriteRawTag(128, 1);
+        output.WriteInt32(WeekNum);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1283,6 +1309,9 @@ namespace Contracts.HamsterWoods {
       }
       if (AcornsDecimals != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(AcornsDecimals);
+      }
+      if (WeekNum != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(WeekNum);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1349,6 +1378,9 @@ namespace Contracts.HamsterWoods {
       }
       if (other.AcornsDecimals != 0) {
         AcornsDecimals = other.AcornsDecimals;
+      }
+      if (other.WeekNum != 0) {
+        WeekNum = other.WeekNum;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1434,6 +1466,10 @@ namespace Contracts.HamsterWoods {
             AcornsDecimals = input.ReadInt32();
             break;
           }
+          case 128: {
+            WeekNum = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -1516,6 +1552,10 @@ namespace Contracts.HamsterWoods {
           }
           case 120: {
             AcornsDecimals = input.ReadInt32();
+            break;
+          }
+          case 128: {
+            WeekNum = input.ReadInt32();
             break;
           }
         }
@@ -5282,6 +5322,7 @@ namespace Contracts.HamsterWoods {
       to_ = other.to_ != null ? other.to_.Clone() : null;
       symbol_ = other.symbol_;
       amount_ = other.amount_;
+      weekNum_ = other.weekNum_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -5339,6 +5380,18 @@ namespace Contracts.HamsterWoods {
       }
     }
 
+    /// <summary>Field number for the "week_num" field.</summary>
+    public const int WeekNumFieldNumber = 5;
+    private int weekNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int WeekNum {
+      get { return weekNum_; }
+      set {
+        weekNum_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -5358,6 +5411,7 @@ namespace Contracts.HamsterWoods {
       if (!object.Equals(To, other.To)) return false;
       if (Symbol != other.Symbol) return false;
       if (Amount != other.Amount) return false;
+      if (WeekNum != other.WeekNum) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -5369,6 +5423,7 @@ namespace Contracts.HamsterWoods {
       if (to_ != null) hash ^= To.GetHashCode();
       if (Symbol.Length != 0) hash ^= Symbol.GetHashCode();
       if (Amount != 0L) hash ^= Amount.GetHashCode();
+      if (WeekNum != 0) hash ^= WeekNum.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -5403,6 +5458,10 @@ namespace Contracts.HamsterWoods {
         output.WriteRawTag(32);
         output.WriteInt64(Amount);
       }
+      if (WeekNum != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(WeekNum);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -5429,6 +5488,10 @@ namespace Contracts.HamsterWoods {
         output.WriteRawTag(32);
         output.WriteInt64(Amount);
       }
+      if (WeekNum != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(WeekNum);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -5450,6 +5513,9 @@ namespace Contracts.HamsterWoods {
       }
       if (Amount != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(Amount);
+      }
+      if (WeekNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(WeekNum);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -5480,6 +5546,9 @@ namespace Contracts.HamsterWoods {
       }
       if (other.Amount != 0L) {
         Amount = other.Amount;
+      }
+      if (other.WeekNum != 0) {
+        WeekNum = other.WeekNum;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -5518,6 +5587,10 @@ namespace Contracts.HamsterWoods {
             Amount = input.ReadInt64();
             break;
           }
+          case 40: {
+            WeekNum = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -5553,6 +5626,10 @@ namespace Contracts.HamsterWoods {
           }
           case 32: {
             Amount = input.ReadInt64();
+            break;
+          }
+          case 40: {
+            WeekNum = input.ReadInt32();
             break;
           }
         }
@@ -6160,6 +6237,7 @@ namespace Contracts.HamsterWoods {
       week_ = other.week_;
       acorns_ = other.acorns_;
       settleTime_ = other.settleTime_ != null ? other.settleTime_.Clone() : null;
+      isAddLockedAcorns_ = other.isAddLockedAcorns_;
       isUnlocked_ = other.isUnlocked_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -6206,8 +6284,20 @@ namespace Contracts.HamsterWoods {
       }
     }
 
+    /// <summary>Field number for the "is_add_locked_acorns" field.</summary>
+    public const int IsAddLockedAcornsFieldNumber = 5;
+    private bool isAddLockedAcorns_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsAddLockedAcorns {
+      get { return isAddLockedAcorns_; }
+      set {
+        isAddLockedAcorns_ = value;
+      }
+    }
+
     /// <summary>Field number for the "is_unlocked" field.</summary>
-    public const int IsUnlockedFieldNumber = 4;
+    public const int IsUnlockedFieldNumber = 6;
     private bool isUnlocked_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6236,6 +6326,7 @@ namespace Contracts.HamsterWoods {
       if (Week != other.Week) return false;
       if (Acorns != other.Acorns) return false;
       if (!object.Equals(SettleTime, other.SettleTime)) return false;
+      if (IsAddLockedAcorns != other.IsAddLockedAcorns) return false;
       if (IsUnlocked != other.IsUnlocked) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -6247,6 +6338,7 @@ namespace Contracts.HamsterWoods {
       if (Week != 0) hash ^= Week.GetHashCode();
       if (Acorns != 0L) hash ^= Acorns.GetHashCode();
       if (settleTime_ != null) hash ^= SettleTime.GetHashCode();
+      if (IsAddLockedAcorns != false) hash ^= IsAddLockedAcorns.GetHashCode();
       if (IsUnlocked != false) hash ^= IsUnlocked.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -6278,8 +6370,12 @@ namespace Contracts.HamsterWoods {
         output.WriteRawTag(26);
         output.WriteMessage(SettleTime);
       }
+      if (IsAddLockedAcorns != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(IsAddLockedAcorns);
+      }
       if (IsUnlocked != false) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(48);
         output.WriteBool(IsUnlocked);
       }
       if (_unknownFields != null) {
@@ -6304,8 +6400,12 @@ namespace Contracts.HamsterWoods {
         output.WriteRawTag(26);
         output.WriteMessage(SettleTime);
       }
+      if (IsAddLockedAcorns != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(IsAddLockedAcorns);
+      }
       if (IsUnlocked != false) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(48);
         output.WriteBool(IsUnlocked);
       }
       if (_unknownFields != null) {
@@ -6326,6 +6426,9 @@ namespace Contracts.HamsterWoods {
       }
       if (settleTime_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(SettleTime);
+      }
+      if (IsAddLockedAcorns != false) {
+        size += 1 + 1;
       }
       if (IsUnlocked != false) {
         size += 1 + 1;
@@ -6353,6 +6456,9 @@ namespace Contracts.HamsterWoods {
           SettleTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
         }
         SettleTime.MergeFrom(other.SettleTime);
+      }
+      if (other.IsAddLockedAcorns != false) {
+        IsAddLockedAcorns = other.IsAddLockedAcorns;
       }
       if (other.IsUnlocked != false) {
         IsUnlocked = other.IsUnlocked;
@@ -6387,7 +6493,11 @@ namespace Contracts.HamsterWoods {
             input.ReadMessage(SettleTime);
             break;
           }
-          case 32: {
+          case 40: {
+            IsAddLockedAcorns = input.ReadBool();
+            break;
+          }
+          case 48: {
             IsUnlocked = input.ReadBool();
             break;
           }
@@ -6421,7 +6531,11 @@ namespace Contracts.HamsterWoods {
             input.ReadMessage(SettleTime);
             break;
           }
-          case 32: {
+          case 40: {
+            IsAddLockedAcorns = input.ReadBool();
+            break;
+          }
+          case 48: {
             IsUnlocked = input.ReadBool();
             break;
           }

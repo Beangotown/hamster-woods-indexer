@@ -83,6 +83,7 @@ namespace Contracts.HamsterWoods {
         To = To,
         Symbol = Symbol,
         Amount = Amount,
+        WeekNum = WeekNum,
       };
     }
   }
@@ -130,6 +131,7 @@ namespace Contracts.HamsterWoods {
     static readonly aelf::Marshaller<global::Contracts.HamsterWoods.PlayerInformation> __Marshaller_PlayerInformation = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Contracts.HamsterWoods.PlayerInformation.Parser.ParseFrom);
     static readonly aelf::Marshaller<global::Contracts.HamsterWoods.GetBoutInformationInput> __Marshaller_GetBoutInformationInput = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Contracts.HamsterWoods.GetBoutInformationInput.Parser.ParseFrom);
     static readonly aelf::Marshaller<global::Contracts.HamsterWoods.BoutInformation> __Marshaller_BoutInformation = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Contracts.HamsterWoods.BoutInformation.Parser.ParseFrom);
+    static readonly aelf::Marshaller<global::Contracts.HamsterWoods.LockedAcornsInfoList> __Marshaller_LockedAcornsInfoList = aelf::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Contracts.HamsterWoods.LockedAcornsInfoList.Parser.ParseFrom);
     #endregion
 
     #region Methods
@@ -286,6 +288,13 @@ namespace Contracts.HamsterWoods {
         "GetRaceConfig",
         __Marshaller_google_protobuf_Empty,
         __Marshaller_RaceConfig);
+
+    static readonly aelf::Method<global::AElf.Types.Address, global::Contracts.HamsterWoods.LockedAcornsInfoList> __Method_GetLockedAcornsInfoList = new aelf::Method<global::AElf.Types.Address, global::Contracts.HamsterWoods.LockedAcornsInfoList>(
+        aelf::MethodType.View,
+        __ServiceName,
+        "GetLockedAcornsInfoList",
+        __Marshaller_aelf_Address,
+        __Marshaller_LockedAcornsInfoList);
 
     #endregion
 

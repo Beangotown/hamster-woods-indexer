@@ -73,22 +73,6 @@ public class Query
         return rankResultDto;
     }
 
-    private static RankDto ConvertSeasonRankDto(IObjectMapper objectMapper, String caAddress,
-        UserSeasonRankIndex? userSeasonRankIndex)
-    {
-        if (userSeasonRankIndex == null)
-        {
-            return new RankDto
-            {
-                CaAddress = caAddress,
-                Score = 0,
-                Rank = HamsterWoodsIndexerConstants.UserDefaultRank
-            };
-        }
-
-        return objectMapper.Map<UserSeasonRankIndex, RankDto>(userSeasonRankIndex);
-    }
-
     private static RankDto ConvertWeekRankDto(IObjectMapper objectMapper, String caAddress,
         UserWeekRankIndex? userWeekRankIndex)
     {
@@ -103,45 +87,6 @@ public class Query
         }
 
         return objectMapper.Map<UserWeekRankIndex, RankDto>(userWeekRankIndex);
-    }
-
-    public static async Task<RankingHisResultDto> GetRankingHistory(
-        [FromServices] IAElfIndexerClientEntityRepository<UserWeekRankIndex, TransactionInfo> userRankWeekRepository,
-        [FromServices]
-        IAElfIndexerClientEntityRepository<UserSeasonRankIndex, TransactionInfo> userRankSeasonRepository,
-        [FromServices] IObjectMapper objectMapper, GetRankingHisDto getRankingHisDto)
-    {
-        if (string.IsNullOrEmpty(getRankingHisDto.CaAddress) || string.IsNullOrEmpty(getRankingHisDto.SeasonId))
-        {
-            return new RankingHisResultDto();
-        }
-
-        var id = IdGenerateHelper.GenerateId(getRankingHisDto.SeasonId,
-            AddressUtil.ToShortAddress(getRankingHisDto.CaAddress));
-        var userSeasonRankIndex = await userRankSeasonRepository.GetAsync(id);
-        var seasonRankDto = ConvertSeasonRankDto(objectMapper, getRankingHisDto.CaAddress, userSeasonRankIndex);
-        var mustQuery = new List<Func<QueryContainerDescriptor<UserWeekRankIndex>, QueryContainer>>();
-        mustQuery.Add(q => q.Term(i => i.Field(f => f.CaAddress).Value(getRankingHisDto.CaAddress)));
-
-        QueryContainer Filter(QueryContainerDescriptor<UserWeekRankIndex> f) => f.Bool(b => b.Must(mustQuery));
-
-        var result = await userRankWeekRepository.GetSortListAsync(Filter, null,
-            sortFunc: s => s.Ascending(a => a.WeekNum)
-        );
-        if (result.Item2.Count > 0)
-        {
-            return new RankingHisResultDto()
-            {
-                Weeks = objectMapper.Map<List<UserWeekRankIndex>, List<WeekRankDto>>(result.Item2),
-                Season = seasonRankDto
-            };
-        }
-
-        return new RankingHisResultDto
-        {
-            Weeks = new List<WeekRankDto>(),
-            Season = seasonRankDto
-        };
     }
 
     [Name("getGameHistory")]
@@ -436,17 +381,84 @@ public class Query
         [FromServices] IObjectMapper objectMapper, GetRankRecordsDto getRankRecordsDto)
     {
         var mustQuery = new List<Func<QueryContainerDescriptor<UserWeekRankIndex>, QueryContainer>>();
-        mustQuery.Add(q => q.Term(i => i.Field(f => f.WeekNum).Value(getRankRecordsDto.WeekNum)));
+
+        if (getRankRecordsDto.WeekNum > 0)
+        {
+            mustQuery.Add(q => q.Term(i => i.Field(f => f.WeekNum).Value(getRankRecordsDto.WeekNum)));
+        }
+
         QueryContainer Filter(QueryContainerDescriptor<UserWeekRankIndex> f) => f.Bool(b => b.Must(mustQuery));
 
         var result = await rankWeekUserRepository.GetSortListAsync(Filter, null,
             sortFunc: s => s.Descending(a => a.SumScore).Ascending(a => a.UpdateTime)
             , getRankRecordsDto.MaxResultCount,
             getRankRecordsDto.SkipCount);
-        
+
         return new UserWeekRankRecordDto
         {
             RankRecordList = objectMapper.Map<List<UserWeekRankIndex>, List<RankRecordDto>>(result.Item2)
         };
+    }
+
+    [Name("getUnLockedRecords")]
+    public static async Task<UnLockedRecordsDto> GetUnLockedRecords(
+        [FromServices] IAElfIndexerClientEntityRepository<UnLockAcornsIndex, TransactionInfo> unLockRecordRepository,
+        [FromServices] IObjectMapper objectMapper, GetUnLockedRecordsDto getUnLockedRecordsDto)
+    {
+        var mustQuery = new List<Func<QueryContainerDescriptor<UnLockAcornsIndex>, QueryContainer>>();
+        mustQuery.Add(q => q.Term(i => i.Field(f => f.CaAddress).Value(getUnLockedRecordsDto.CaAddress)));
+
+        if (getUnLockedRecordsDto.WeekNum > 0)
+        {
+            mustQuery.Add(q => q.Term(i => i.Field(f => f.WeekNum).Value(getUnLockedRecordsDto.WeekNum)));
+        }
+
+        QueryContainer Filter(QueryContainerDescriptor<UnLockAcornsIndex> f) => f.Bool(b => b.Must(mustQuery));
+
+        var result = await unLockRecordRepository.GetSortListAsync(Filter, null,
+            sortFunc: s => s.Descending(a => a.WeekNum)
+            , getUnLockedRecordsDto.MaxResultCount,
+            getUnLockedRecordsDto.SkipCount);
+
+        return new UnLockedRecordsDto
+        {
+            UnLockRecordList = objectMapper.Map<List<UnLockAcornsIndex>, List<UnLockRecordDto>>(result.Item2)
+        };
+    }
+
+    [Name("getSelfWeekRank")]
+    public static async Task<RankDto> GetSelfWeekRank(
+        [FromServices] IAElfIndexerClientEntityRepository<UserWeekRankIndex, TransactionInfo> rankWeekUserRepository,
+        [FromServices] IObjectMapper objectMapper, GetSelfWeekRankDto getRankDto)
+    {
+        var mustQuery = new List<Func<QueryContainerDescriptor<UserWeekRankIndex>, QueryContainer>>();
+        mustQuery.Add(q => q.Term(i => i.Field(f => f.WeekNum).Value(getRankDto.WeekNum)));
+
+        QueryContainer Filter(QueryContainerDescriptor<UserWeekRankIndex> f) => f.Bool(b => b.Must(mustQuery));
+
+        var result = await rankWeekUserRepository.GetSortListAsync(Filter, null,
+            sortFunc: s => s.Descending(a => a.SumScore).Ascending(a => a.UpdateTime)
+            , 1000,
+            0);
+        var userRankIndex = result.Item2.FirstOrDefault(t => t.CaAddress == getRankDto.CaAddress);
+        if (userRankIndex == null)
+        {
+            var id = IdGenerateHelper.GenerateId(AddressUtil.ToShortAddress(getRankDto.CaAddress), getRankDto.WeekNum);
+            var userWeekRankIndex = await rankWeekUserRepository.GetAsync(id);
+            return ConvertWeekRankDto(objectMapper, getRankDto.CaAddress, userWeekRankIndex);;
+        }
+        
+        var rank = 0;
+        foreach (var item in result.Item2)
+        {
+            if (item.CaAddress == getRankDto.CaAddress)
+            {
+                userRankIndex.Rank = ++rank;
+                break;
+            }
+            ++rank;
+        }
+
+        return objectMapper.Map<UserWeekRankIndex, RankDto>(userRankIndex);
     }
 }

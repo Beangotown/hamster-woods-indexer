@@ -17,6 +17,7 @@ public class HamsterWoodsIndexerClientAutoMapperProfile : Profile
         CreateMap<LogEventContext, RankSeasonConfigIndex>();
         CreateMap<LogEventContext, GameIndex>();
         CreateMap<LogEventContext, PurchaseChanceIndex>();
+        CreateMap<LogEventContext, UnLockAcornsIndex>();
         CreateMap<PurchaseChanceIndex, PurchaseDto>()
             .ForMember(dest => dest.Symbol, source => source.MapFrom(f => f.ScoreTokenInfo.Symbol))
             .ForMember(dest => dest.Decimals, source => source.MapFrom(f => f.ScoreTokenInfo.Decimals));
@@ -50,5 +51,6 @@ public class HamsterWoodsIndexerClientAutoMapperProfile : Profile
         CreateMap<Picked, GameIndex>();
         CreateMap<LogEventContext, TransactionChargedFeeIndex>();
         CreateMap<TransactionFeeCharged, TransactionChargedFeeIndex>();
+        CreateMap<UnLockAcornsIndex, UnLockRecordDto>();
     }
 }

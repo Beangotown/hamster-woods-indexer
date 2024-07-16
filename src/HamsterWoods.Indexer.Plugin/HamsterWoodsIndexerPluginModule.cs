@@ -17,7 +17,9 @@ public class HamsterWoodsIndexerPluginModule : AElfIndexerClientPluginBaseModule
     protected override void ConfigureServices(IServiceCollection serviceCollection)
     {
         var configuration = serviceCollection.GetConfiguration();
-        serviceCollection.AddSingleton<IAElfLogEventProcessor<TransactionInfo>, BingoProcessor>();
+        serviceCollection.AddSingleton<IAElfLogEventProcessor<TransactionInfo>, PickedProcessor>();
+        serviceCollection.AddSingleton<IAElfLogEventProcessor<TransactionInfo>, ChancePurchasedProcessor>();
+        serviceCollection.AddSingleton<IAElfLogEventProcessor<TransactionInfo>, UnLockAcornsProcessor>();
         serviceCollection.AddSingleton<IBlockChainDataHandler, HamsterWoodsHandler>();
 
         serviceCollection.AddSingleton<IAElfLogEventProcessor<TransactionInfo>, CrossChainReceivedProcessor>();
@@ -28,10 +30,11 @@ public class HamsterWoodsIndexerPluginModule : AElfIndexerClientPluginBaseModule
         Configure<ContractInfoOptions>(configuration.GetSection("ContractInfo"));
         Configure<GameInfoOption>(configuration.GetSection("GameInfo"));
         Configure<RankInfoOption>(configuration.GetSection("RankInfo"));
+        Configure<ScoreTokenOptions>(configuration.GetSection("ScoreToken"));
         serviceCollection
             .AddSingleton<IAElfLogEventProcessor<TransactionInfo>, TransactionFeeChargedProcessor>();
     }
 
-    protected override string ClientId => "";
-    protected override string Version => "";
+    protected override string ClientId => "AElfIndexer_HamsterWoods";
+    protected override string Version => "aecebebcf25b461fa4866b9262b785e6";
 }
