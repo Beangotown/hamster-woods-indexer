@@ -445,9 +445,10 @@ public class Query
         {
             var id = IdGenerateHelper.GenerateId(AddressUtil.ToShortAddress(getRankDto.CaAddress), getRankDto.WeekNum);
             var userWeekRankIndex = await rankWeekUserRepository.GetAsync(id);
-            return ConvertWeekRankDto(objectMapper, getRankDto.CaAddress, userWeekRankIndex);;
+            return ConvertWeekRankDto(objectMapper, getRankDto.CaAddress, userWeekRankIndex);
+            ;
         }
-        
+
         var rank = 0;
         foreach (var item in result.Item2)
         {
@@ -456,9 +457,63 @@ public class Query
                 userRankIndex.Rank = ++rank;
                 break;
             }
+
             ++rank;
         }
 
         return objectMapper.Map<UserWeekRankIndex, RankDto>(userRankIndex);
+    }
+
+    [Name("getScoreInfos")]
+    public static async Task<List<ScoreInfosDto>> GetScoreInfos(
+        [FromServices] IAElfIndexerClientEntityRepository<GameIndex, TransactionInfo> gameRepository,
+        GetScoreInfosDto getScoreInfosDto)
+    {
+        var mustQuery = new List<Func<QueryContainerDescriptor<GameIndex>, QueryContainer>>();
+        if (getScoreInfosDto.CaAddressList.IsNullOrEmpty() || getScoreInfosDto.CaAddressList.Count > 100)
+        {
+            return new List<ScoreInfosDto>();
+        }
+
+        mustQuery.Add(q => q.Terms(i => i.Field(f => f.CaAddress).Terms(getScoreInfosDto.CaAddressList)));
+        if (getScoreInfosDto.BeginTime != null)
+        {
+            mustQuery.Add(q => q.DateRange(i =>
+                i.Field(f => f.BingoTransactionInfo.TriggerTime).GreaterThanOrEquals(getScoreInfosDto.BeginTime)));
+        }
+
+        if (getScoreInfosDto.EndTime != null)
+        {
+            mustQuery.Add(q =>
+                q.DateRange(i =>
+                    i.Field(f => f.BingoTransactionInfo.TriggerTime).LessThanOrEquals(getScoreInfosDto.EndTime)));
+        }
+
+        QueryContainer Filter(QueryContainerDescriptor<GameIndex> f) => f.Bool(b => b.Must(mustQuery));
+
+        var gameList = new List<GameIndex>();
+        var skipCount = 0;
+        Tuple<long, List<GameIndex>> result = null;
+        do
+        {
+            result = await gameRepository.GetListAsync(Filter, skip: skipCount, limit: GetGoDto.MaxMaxResultCount);
+            if (result.Item2.Count == 0) break;
+            gameList.AddRange(result.Item2);
+            skipCount += GetGoDto.MaxMaxResultCount;
+        } while (result.Item2.Count >= GetGoDto.MaxMaxResultCount);
+
+
+        var resultDto = new List<ScoreInfosDto>();
+        var gameGroup = gameList.GroupBy(g => g.CaAddress);
+        foreach (var groupInfo in gameGroup)
+        {
+            resultDto.Add(new ScoreInfosDto()
+            {
+                CaAddress = groupInfo.Key,
+                SumScore = groupInfo.Sum(t => t.Score)
+            });
+        }
+
+        return resultDto;
     }
 }
