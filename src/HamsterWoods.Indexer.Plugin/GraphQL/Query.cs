@@ -269,10 +269,17 @@ public class Query
             mustQuery.Add(q => q.Term(i => i.Field(f => f.CaAddress).Value(getGameHistoryDto.CaAddress)));
         }
 
-        mustQuery.Add(q => q.DateRange(i =>
-            i.Field(f => f.BingoTransactionInfo!.TriggerTime).GreaterThanOrEquals(getGameHistoryDto.BeginTime)));
-        mustQuery.Add(q => q.DateRange(i =>
-            i.Field(f => f.BingoTransactionInfo!.TriggerTime).LessThanOrEquals(getGameHistoryDto.EndTime)));
+        if (getGameHistoryDto.BeginTime != null)
+        {
+            mustQuery.Add(q => q.DateRange(i =>
+                i.Field(f => f.BingoTransactionInfo!.TriggerTime).GreaterThanOrEquals(getGameHistoryDto.BeginTime)));
+        }
+
+        if (getGameHistoryDto.EndTime != null)
+        {
+            mustQuery.Add(q => q.DateRange(i =>
+                i.Field(f => f.BingoTransactionInfo!.TriggerTime).LessThanOrEquals(getGameHistoryDto.EndTime)));
+        }
 
         QueryContainer Filter(QueryContainerDescriptor<GameIndex> f) => f.Bool(b => b.Must(mustQuery));
 
@@ -515,5 +522,66 @@ public class Query
         }
 
         return resultDto;
+    }
+
+    [Name("getHopCount")]
+    public static async Task<GetHopCountDto> GetHopCountAsync(
+        [FromServices] IAElfIndexerClientEntityRepository<GameIndex, TransactionInfo> gameRepository,
+        GetHopCountRequestDto requestDto)
+    {
+        var mustQuery = new List<Func<QueryContainerDescriptor<GameIndex>, QueryContainer>>();
+        mustQuery.Add(q => q.Term(i => i.Field(f => f.CaAddress).Field(requestDto.Address)));
+
+        if (requestDto.StartTime != null)
+        {
+            mustQuery.Add(q => q.DateRange(i =>
+                i.Field(f => f.BingoTransactionInfo.TriggerTime).GreaterThanOrEquals(requestDto.StartTime)));
+        }
+
+        if (requestDto.EndTime != null)
+        {
+            mustQuery.Add(q =>
+                q.DateRange(i =>
+                    i.Field(f => f.BingoTransactionInfo.TriggerTime).LessThanOrEquals(requestDto.EndTime)));
+        }
+
+        QueryContainer Filter(QueryContainerDescriptor<GameIndex> f) => f.Bool(b => b.Must(mustQuery));
+        var result = await gameRepository.GetListAsync(Filter, skip: 0, limit: 1);
+
+
+        return new GetHopCountDto
+        {
+            HopCount = result.Item1
+        };
+    }
+
+
+    [Name("getPurchaseCount")]
+    public static async Task<GetPurchaseCountDto> GetPurchaseCountAsync(
+        [FromServices] IAElfIndexerClientEntityRepository<PurchaseChanceIndex, TransactionInfo> purchaseRepository,
+        GetPurchaseCountRequestDto requestDto)
+    {
+        var mustQuery = new List<Func<QueryContainerDescriptor<PurchaseChanceIndex>, QueryContainer>>();
+        mustQuery.Add(q => q.Term(i => i.Field(f => f.CaAddress).Field(requestDto.Address)));
+
+        if (requestDto.StartTime != null)
+        {
+            mustQuery.Add(q => q.DateRange(i =>
+                i.Field(f => f.TransactionInfo.TriggerTime).GreaterThanOrEquals(requestDto.StartTime)));
+        }
+
+        if (requestDto.EndTime != null)
+        {
+            mustQuery.Add(q =>
+                q.DateRange(i => i.Field(f => f.TransactionInfo.TriggerTime).LessThanOrEquals(requestDto.EndTime)));
+        }
+
+        QueryContainer Filter(QueryContainerDescriptor<PurchaseChanceIndex> f) => f.Bool(b => b.Must(mustQuery));
+        var result = await purchaseRepository.GetListAsync(Filter);
+
+        return new GetPurchaseCountDto
+        {
+            PurchaseCount = result.Item2.IsNullOrEmpty() ? 0 : result.Item2.Sum(t => t.Chance)
+        };
     }
 }
