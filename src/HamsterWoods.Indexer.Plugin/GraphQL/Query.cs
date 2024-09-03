@@ -530,7 +530,7 @@ public class Query
         GetHopCountRequestDto requestDto)
     {
         var mustQuery = new List<Func<QueryContainerDescriptor<GameIndex>, QueryContainer>>();
-        mustQuery.Add(q => q.Term(i => i.Field(f => f.CaAddress).Field(requestDto.Address)));
+        mustQuery.Add(q => q.Term(i => i.Field(f => f.CaAddress).Value(requestDto.Address)));
 
         if (requestDto.StartTime != null)
         {
@@ -562,7 +562,7 @@ public class Query
         GetPurchaseCountRequestDto requestDto)
     {
         var mustQuery = new List<Func<QueryContainerDescriptor<PurchaseChanceIndex>, QueryContainer>>();
-        mustQuery.Add(q => q.Term(i => i.Field(f => f.CaAddress).Field(requestDto.Address)));
+        mustQuery.Add(q => q.Term(i => i.Field(f => f.CaAddress).Value(requestDto.Address)));
 
         if (requestDto.StartTime != null)
         {
@@ -582,6 +582,41 @@ public class Query
         return new GetPurchaseCountDto
         {
             PurchaseCount = result.Item2.IsNullOrEmpty() ? 0 : result.Item2.Sum(t => t.Chance)
+        };
+    }
+
+    [Name("getPurchaseRecords")]
+    public static async Task<PurchaseResultDto> GetPurchaseRecordsAsync(
+        [FromServices] IAElfIndexerClientEntityRepository<PurchaseChanceIndex, LogEventInfo> purchaseIndexRepository,
+        [FromServices] IObjectMapper objectMapper, GetPurchaseRecordsDto requestDto)
+    {
+        var mustQuery = new List<Func<QueryContainerDescriptor<PurchaseChanceIndex>, QueryContainer>>();
+        if (!requestDto.CaAddress.IsNullOrEmpty())
+        {
+            mustQuery.Add(q => q.Term(i => i.Field(f => f.CaAddress).Value(requestDto.CaAddress)));
+        }
+        
+        if (requestDto.StartTime != null)
+        {
+            mustQuery.Add(q => q.DateRange(i =>
+                i.Field(f => f.TransactionInfo.TriggerTime).GreaterThanOrEquals(requestDto.StartTime)));
+        }
+
+        if (requestDto.EndTime != null)
+        {
+            mustQuery.Add(q =>
+                q.DateRange(i => i.Field(f => f.TransactionInfo.TriggerTime).LessThanOrEquals(requestDto.EndTime)));
+        }
+
+        QueryContainer Filter(QueryContainerDescriptor<PurchaseChanceIndex> f) => f.Bool(b => b.Must(mustQuery));
+
+        var result =
+            await purchaseIndexRepository.GetListAsync(Filter, skip: requestDto.SkipCount,
+                limit: requestDto.MaxResultCount);
+
+        return new PurchaseResultDto()
+        {
+            BuyChanceList = objectMapper.Map<List<PurchaseChanceIndex>, List<PurchaseDto>>(result.Item2)
         };
     }
 }
